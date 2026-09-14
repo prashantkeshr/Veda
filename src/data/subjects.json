@@ -1,0 +1,112 @@
+[
+  {
+    "id": "veda-subject-engg-maths",
+    "slug": "engineering-mathematics",
+    "title": "Engineering Mathematics",
+    "shortTitle": "Engg Maths",
+    "description": "The mathematical foundation of all engineering disciplines — covering calculus, linear algebra, differential equations, complex variables, probability, and numerical methods as required by GATE and university curricula.",
+    "academicLevels": ["undergraduate", "competitive-exam"],
+    "topicIds": [
+      "veda-topic-differential-calculus",
+      "veda-topic-integral-calculus",
+      "veda-topic-linear-algebra",
+      "veda-topic-differential-equations",
+      "veda-topic-probability-statistics",
+      "veda-topic-numerical-methods",
+      "veda-topic-complex-variables"
+    ],
+    "courseIds": ["veda-course-btech-me", "veda-course-btech-ce", "veda-course-gate-me-prep"],
+    "examIds": ["veda-exam-gate-me", "veda-exam-gate-ce", "veda-exam-upsc-ese-me"],
+    "relatedSubjectIds": ["veda-subject-engg-physics"],
+    "tags": ["mathematics", "calculus", "linear algebra", "GATE", "engineering"],
+    "color": "#1B4082",
+    "updatedAt": "2026-08-01"
+  },
+  {
+    "id": "veda-subject-engg-thermo",
+    "slug": "engineering-thermodynamics",
+    "title": "Engineering Thermodynamics",
+    "shortTitle": "Thermodynamics",
+    "description": "Study of energy, heat, work, and thermodynamic cycles — from fundamental laws and entropy to power cycles, refrigeration, and internal combustion engines. Core to GATE Mechanical and all ME degree programmes.",
+    "academicLevels": ["undergraduate", "competitive-exam"],
+    "topicIds": [
+      "veda-topic-thermo-systems-properties",
+      "veda-topic-first-law",
+      "veda-topic-second-law-entropy",
+      "veda-topic-thermo-cycles",
+      "veda-topic-gas-power-cycles",
+      "veda-topic-refrigeration-ac",
+      "veda-topic-heat-transfer-intro"
+    ],
+    "courseIds": ["veda-course-btech-me", "veda-course-diploma-me", "veda-course-gate-me-prep"],
+    "examIds": ["veda-exam-gate-me", "veda-exam-upsc-ese-me"],
+    "relatedSubjectIds": ["veda-subject-fluid-mech", "veda-subject-engg-maths"],
+    "tags": ["thermodynamics", "heat", "entropy", "GATE ME", "power cycles"],
+    "color": "#C47A2A",
+    "updatedAt": "2026-08-10"
+  },
+  {
+    "id": "veda-subject-fluid-mech",
+    "slug": "fluid-mechanics",
+    "title": "Fluid Mechanics",
+    "shortTitle": "Fluid Mech",
+    "description": "Mechanics of fluids at rest and in motion — fluid statics, Bernoulli's theorem, pipe flow, boundary layers, dimensional analysis, and turbomachinery. High weightage in GATE ME and CE.",
+    "academicLevels": ["undergraduate", "competitive-exam"],
+    "topicIds": [
+      "veda-topic-fluid-properties",
+      "veda-topic-fluid-statics",
+      "veda-topic-bernoulli-equation",
+      "veda-topic-pipe-flow",
+      "veda-topic-boundary-layer",
+      "veda-topic-turbomachinery"
+    ],
+    "courseIds": ["veda-course-btech-me", "veda-course-btech-ce", "veda-course-gate-me-prep"],
+    "examIds": ["veda-exam-gate-me", "veda-exam-gate-ce", "veda-exam-upsc-ese-me"],
+    "relatedSubjectIds": ["veda-subject-engg-thermo", "veda-subject-som"],
+    "tags": ["fluid mechanics", "Bernoulli", "pipe flow", "GATE", "CFD"],
+    "color": "#1A6B6B",
+    "updatedAt": "2026-08-05"
+  },
+  {
+    "id": "veda-subject-som",
+    "slug": "strength-of-materials",
+    "title": "Strength of Materials",
+    "shortTitle": "SOM / MOS",
+    "description": "Analysis of stress, strain, bending, shear, deflection, torsion, columns, and buckling in structural members. Also known as Mechanics of Solids. Fundamental to structural and mechanical design.",
+    "academicLevels": ["undergraduate", "competitive-exam"],
+    "topicIds": [
+      "veda-topic-stress-strain",
+      "veda-topic-bending-shear",
+      "veda-topic-beam-deflection",
+      "veda-topic-torsion",
+      "veda-topic-columns-buckling"
+    ],
+    "courseIds": ["veda-course-btech-me", "veda-course-btech-ce", "veda-course-gate-me-prep"],
+    "examIds": ["veda-exam-gate-me", "veda-exam-gate-ce", "veda-exam-upsc-ese-me"],
+    "relatedSubjectIds": ["veda-subject-engg-maths", "veda-subject-fluid-mech"],
+    "tags": ["stress", "strain", "bending", "torsion", "GATE", "structural"],
+    "color": "#6A3A96",
+    "updatedAt": "2026-07-28"
+  },
+  {
+    "id": "veda-subject-engg-physics",
+    "slug": "engineering-physics",
+    "title": "Engineering Physics",
+    "shortTitle": "Engg Physics",
+    "description": "Physics for engineers — mechanics, waves, optics, modern physics, electromagnetism, and semiconductor fundamentals. Also covers JEE-level physics for competitive exam aspirants.",
+    "academicLevels": ["higher-secondary", "undergraduate", "competitive-exam"],
+    "topicIds": [
+      "veda-topic-mechanics-kinematics",
+      "veda-topic-waves-oscillations",
+      "veda-topic-electrostatics",
+      "veda-topic-thermodynamics-physics",
+      "veda-topic-modern-physics"
+    ],
+    "courseIds": ["veda-course-btech-me", "veda-course-btech-ce"],
+    "examIds": ["veda-exam-jee-main", "veda-exam-jee-advanced"],
+    "relatedSubjectIds": ["veda-subject-engg-maths", "veda-subject-engg-thermo"],
+    "tags": ["physics", "mechanics", "JEE", "waves", "electromagnetism"],
+    "color": "#266B42",
+    "updatedAt": "2026-08-15"
+  }
+]

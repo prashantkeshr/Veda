@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Dark mode via .dark class on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* VEDA brand colors */
+  --color-veda-50:  #EEF3FA;
+  --color-veda-100: #D5E2F4;
+  --color-veda-200: #ABCAE9;
+  --color-veda-300: #7FAFD8;
+  --color-veda-400: #5A8EC4;
+  --color-veda-500: #3D70B0;
+  --color-veda-600: #2B5599;
+  --color-veda-700: #1B4082;
+  --color-veda-800: #162F60;
+  --color-veda-900: #0E1E3D;
+
+  --color-veda-amber-50:  #FDF4EE;
+  --color-veda-amber-100: #FAE4D0;
+  --color-veda-amber-500: #C87030;
+  --color-veda-amber-600: #B05820;
+}
+
+/* Base */
+html { font-family: var(--font-sans); }
+
+body {
+  @apply bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100;
+  min-height: 100vh;
+}
+
+* { box-sizing: border-box; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-stone-300 dark:bg-stone-700 rounded-full; }
+
+/* Focus visible */
+:focus-visible { @apply outline-2 outline-veda-700 outline-offset-2 dark:outline-veda-400 rounded; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
