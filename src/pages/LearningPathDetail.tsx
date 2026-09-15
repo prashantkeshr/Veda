@@ -5,6 +5,8 @@ import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { Badge, DifficultyBadge, SectionHeader } from '../components/ui';
 import { formatMinutes } from '../utils/format';
 import { cn } from '../utils/cn';
+import { useSEO } from '../hooks/useSEO';
+import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 
 const stepTypeIcon: Record<string, typeof Hash> = {
   topic: Hash,
@@ -16,6 +18,20 @@ const stepTypeIcon: Record<string, typeof Hash> = {
 export function LearningPathDetail() {
   const { slug } = useParams<{ slug: string }>();
   const path = learningPathRepo.getBySlug(slug ?? '');
+  useSEO(path?.title, path?.description);
+  useStructuredData(path ? {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: path.title,
+    description: path.description,
+    url: `${LD_BASE}/learning-paths/${path.slug}`,
+    educationalLevel: path.academicLevel,
+    timeRequired: `PT${path.totalMinutes}M`,
+    keywords: path.tags.join(', '),
+    numberOfCredits: path.steps.length,
+    isAccessibleForFree: true,
+    provider: LD_PROVIDER,
+  } : null);
   if (!path) return <Navigate to="/learning-paths" replace />;
 
   const goalExams = examRepo.getMany(path.goalExamIds);

@@ -1,5 +1,6 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
+import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 import { BookOpen, Hash, FileText, ClipboardList } from 'lucide-react';
 import { subjectRepo, topicRepo, resourceRepo, examRepo } from '../repositories';
 import { TopicCard } from '../components/knowledge/TopicCard';
@@ -11,6 +12,17 @@ export function SubjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const subject = subjectRepo.getBySlug(slug ?? '');
   useSEO(subject?.title, subject?.description);
+  useStructuredData(subject ? {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: subject.title,
+    description: subject.description,
+    url: `${LD_BASE}/subjects/${subject.slug}`,
+    educationalLevel: subject.academicLevels.join(', '),
+    keywords: subject.tags.join(', '),
+    isAccessibleForFree: true,
+    provider: LD_PROVIDER,
+  } : null);
 
   if (!subject) return <Navigate to="/subjects" replace />;
 

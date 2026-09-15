@@ -3,10 +3,25 @@ import { GraduationCap, BookOpen } from 'lucide-react';
 import { courseRepo, subjectRepo } from '../repositories';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { Badge, SectionHeader } from '../components/ui';
+import { useSEO } from '../hooks/useSEO';
+import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 
 export function CourseDetail() {
   const { slug } = useParams<{ slug: string }>();
   const course = courseRepo.getBySlug(slug ?? '');
+  useSEO(course?.title, course?.description);
+  useStructuredData(course ? {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: course.title,
+    description: course.description,
+    url: `${LD_BASE}/courses/${course.slug}`,
+    educationalLevel: course.academicLevel.replace(/-/g, ' '),
+    courseWorkload: `P${course.durationYears}Y`,
+    keywords: course.tags.join(', '),
+    isAccessibleForFree: true,
+    provider: LD_PROVIDER,
+  } : null);
   if (!course) return <Navigate to="/courses" replace />;
 
   return (

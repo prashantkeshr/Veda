@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
+import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 import { Clock, Zap, BookOpen, ChevronRight, ArrowRight, Circle, CheckCircle } from 'lucide-react';
 import { topicRepo, subjectRepo, resourceRepo, questionRepo } from '../repositories';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
@@ -26,6 +27,19 @@ export function TopicDetail() {
   const { slug } = useParams<{ slug: string }>();
   const topic = topicRepo.getBySlug(slug ?? '');
   useSEO(topic?.title, topic?.description);
+  useStructuredData(topic ? {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: topic.title,
+    description: topic.description,
+    url: `${LD_BASE}/topics/${topic.slug}`,
+    educationalLevel: topic.academicLevel,
+    timeRequired: topic.estimatedMinutes ? `PT${topic.estimatedMinutes}M` : undefined,
+    teaches: topic.keyConcepts ?? [],
+    keywords: (topic.tags ?? []).join(', '),
+    isAccessibleForFree: true,
+    provider: LD_PROVIDER,
+  } : null);
   const { progressMap, setTopicProgress, saveQuizAttempt } = useUserData();
   const [quizOpen, setQuizOpen] = useState(false);
 

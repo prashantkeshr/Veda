@@ -4,10 +4,30 @@ import { examRepo, subjectRepo, resourceRepo, learningPathRepo } from '../reposi
 import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { Badge, SectionHeader } from '../components/ui';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
+import { useSEO } from '../hooks/useSEO';
+import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 
 export function ExamDetail() {
   const { slug } = useParams<{ slug: string }>();
   const exam = examRepo.getBySlug(slug ?? '');
+  useSEO(exam?.title, exam?.description);
+  useStructuredData(exam ? {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: exam.title,
+    description: exam.description,
+    url: `${LD_BASE}/exams/${exam.slug}`,
+    educationalLevel: exam.level,
+    about: {
+      '@type': 'EducationalOccupationalCredential',
+      name: exam.title,
+      credentialCategory: exam.type,
+      recognizedBy: { '@type': 'Organization', name: exam.conductingBody },
+    },
+    keywords: exam.tags.join(', '),
+    isAccessibleForFree: true,
+    provider: LD_PROVIDER,
+  } : null);
   if (!exam) return <Navigate to="/exams" replace />;
 
   const subjects = subjectRepo.getByExamId(exam.id);
