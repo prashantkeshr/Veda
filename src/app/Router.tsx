@@ -3,6 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import { AppShell } from '../components/layout/AppShell';
 import { Spinner } from '../components/ui';
 
+// ── Admin (Kendra) — not linked in student UI ──────────────────────────
+const KendraLogin     = lazy(() => import('../pages/kendra/KendraLogin').then(m => ({ default: m.KendraLogin })));
+const KendraShell     = lazy(() => import('../pages/kendra/KendraShell').then(m => ({ default: m.KendraShell })));
+const KendraDashboard = lazy(() => import('../pages/kendra/KendraDashboard').then(m => ({ default: m.KendraDashboard })));
+
 const Home             = lazy(() => import('../pages/Home').then(m => ({ default: m.Home })));
 const Subjects         = lazy(() => import('../pages/Subjects').then(m => ({ default: m.Subjects })));
 const SubjectDetail    = lazy(() => import('../pages/SubjectDetail').then(m => ({ default: m.SubjectDetail })));
@@ -81,6 +86,15 @@ export function Router() {
         <Route path="revision" element={<Suspense fallback={<PageLoader />}><Revision /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
+
+      {/* ── Kendra CMS — hidden management route ───────────────────── */}
+      <Route path="veda-kendra">
+        <Route index element={<Suspense fallback={<PageLoader />}><KendraLogin /></Suspense>} />
+        <Route element={<Suspense fallback={<PageLoader />}><KendraShell /></Suspense>}>
+          <Route path="dashboard" element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
+        </Route>
+      </Route>
+
     </Routes>
   );
 }
