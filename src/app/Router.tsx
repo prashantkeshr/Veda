@@ -22,6 +22,7 @@ const KnowledgeMap     = lazy(() => import('../pages/KnowledgeMap').then(m => ({
 const ContentStudio    = lazy(() => import('../pages/ContentStudio').then(m => ({ default: m.ContentStudio })));
 const Quiz             = lazy(() => import('../pages/Quiz').then(m => ({ default: m.Quiz })));
 const ApiExplorer      = lazy(() => import('../pages/ApiExplorer').then(m => ({ default: m.ApiExplorer })));
+const Insights         = lazy(() => import('../pages/Insights').then(m => ({ default: m.Insights })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -55,6 +56,7 @@ export function Router() {
         <Route path="quiz" element={<Suspense fallback={<PageLoader />}><Quiz /></Suspense>} />
         <Route path="content-studio" element={<Suspense fallback={<PageLoader />}><ContentStudio /></Suspense>} />
         <Route path="api-explorer" element={<Suspense fallback={<PageLoader />}><ApiExplorer /></Suspense>} />
+        <Route path="insights" element={<Suspense fallback={<PageLoader />}><Insights /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
