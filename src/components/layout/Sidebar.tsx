@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Search, BookOpen, Hash, GraduationCap,
   FileText, ClipboardList, Route, User, LayoutGrid,
-  Map, X, Code2
+  Map, X, Code2, ClipboardCheck
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -18,6 +18,7 @@ const navItems = [
   { to: '/learning-paths', icon: Route, label: 'Learning Paths' },
   { divider: true },
   { to: '/my-learning', icon: User, label: 'My Learning' },
+  { to: '/quiz', icon: ClipboardCheck, label: 'Practice Quiz' },
   { to: '/knowledge-map', icon: Map, label: 'Knowledge Map' },
   { to: '/content-studio', icon: LayoutGrid, label: 'Content Studio' },
   { to: '/api-explorer', icon: Code2, label: 'API Explorer' },

@@ -20,6 +20,7 @@ const Search           = lazy(() => import('../pages/Search').then(m => ({ defau
 const MyLearning       = lazy(() => import('../pages/MyLearning').then(m => ({ default: m.MyLearning })));
 const KnowledgeMap     = lazy(() => import('../pages/KnowledgeMap').then(m => ({ default: m.KnowledgeMap })));
 const ContentStudio    = lazy(() => import('../pages/ContentStudio').then(m => ({ default: m.ContentStudio })));
+const Quiz             = lazy(() => import('../pages/Quiz').then(m => ({ default: m.Quiz })));
 const ApiExplorer      = lazy(() => import('../pages/ApiExplorer').then(m => ({ default: m.ApiExplorer })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
@@ -51,6 +52,7 @@ export function Router() {
         <Route path="search" element={<Suspense fallback={<PageLoader />}><Search /></Suspense>} />
         <Route path="my-learning" element={<Suspense fallback={<PageLoader />}><MyLearning /></Suspense>} />
         <Route path="knowledge-map" element={<Suspense fallback={<PageLoader />}><KnowledgeMap /></Suspense>} />
+        <Route path="quiz" element={<Suspense fallback={<PageLoader />}><Quiz /></Suspense>} />
         <Route path="content-studio" element={<Suspense fallback={<PageLoader />}><ContentStudio /></Suspense>} />
         <Route path="api-explorer" element={<Suspense fallback={<PageLoader />}><ApiExplorer /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
