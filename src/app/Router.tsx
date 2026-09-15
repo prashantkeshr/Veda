@@ -25,6 +25,7 @@ const ApiExplorer      = lazy(() => import('../pages/ApiExplorer').then(m => ({ 
 const Insights         = lazy(() => import('../pages/Insights').then(m => ({ default: m.Insights })));
 const Achievements     = lazy(() => import('../pages/Achievements').then(m => ({ default: m.Achievements })));
 const Settings         = lazy(() => import('../pages/Settings').then(m => ({ default: m.Settings })));
+const Flashcards       = lazy(() => import('../pages/Flashcards').then(m => ({ default: m.Flashcards })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -61,6 +62,7 @@ export function Router() {
         <Route path="insights" element={<Suspense fallback={<PageLoader />}><Insights /></Suspense>} />
         <Route path="achievements" element={<Suspense fallback={<PageLoader />}><Achievements /></Suspense>} />
         <Route path="settings" element={<Suspense fallback={<PageLoader />}><Settings /></Suspense>} />
+        <Route path="flashcards" element={<Suspense fallback={<PageLoader />}><Flashcards /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
