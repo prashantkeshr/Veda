@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import { BookOpen, Hash, GraduationCap, FileText, ClipboardList, Route, ArrowRight, Zap, Sparkles, Map, RotateCcw, Bookmark } from 'lucide-react';
 import { subjectRepo, topicRepo, resourceRepo, examRepo } from '../repositories';
 import { SubjectCard } from '../components/knowledge/SubjectCard';
@@ -33,6 +34,7 @@ const TAG_COLORS = {
 } as const;
 
 export function Home() {
+  useSEO(undefined, 'Your personalised engineering knowledge hub — topics, subjects, courses, and exam prep in one place.');
   const { progressMap, bookmarks, quizAttempts, ready } = useUserData();
   const subjects = subjectRepo.getAll({ limit: 4 });
   const totalTopics = topicRepo.count();

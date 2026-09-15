@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import { Clock, Zap, BookOpen, ChevronRight, ArrowRight, Circle, CheckCircle } from 'lucide-react';
 import { topicRepo, subjectRepo, resourceRepo, questionRepo } from '../repositories';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
@@ -24,6 +25,7 @@ const progressSteps: { status: ProgressStatus; label: string; icon: typeof Circl
 export function TopicDetail() {
   const { slug } = useParams<{ slug: string }>();
   const topic = topicRepo.getBySlug(slug ?? '');
+  useSEO(topic?.title, topic?.description);
   const { progressMap, setTopicProgress, saveQuizAttempt } = useUserData();
   const [quizOpen, setQuizOpen] = useState(false);
 

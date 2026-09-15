@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prashantkeshr.github.io/Veda/sitemap.xml

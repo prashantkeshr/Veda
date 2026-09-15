@@ -1,10 +1,12 @@
 import { Route, Clock } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { learningPathRepo } from '../repositories';
 import { Card, DifficultyBadge, EmptyState, SectionHeader } from '../components/ui';
 import { formatMinutes } from '../utils/format';
 
 export function LearningPaths() {
+  useSEO('Learning Paths', 'Curated step-by-step learning paths through engineering subjects and exam preparation.');
   const paths = learningPathRepo.getAll();
 
   return (

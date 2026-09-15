@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FileText } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { resourceRepo } from '../repositories';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
 import { EmptyState, SectionHeader } from '../components/ui';
@@ -8,6 +9,7 @@ import { cn } from '../utils/cn';
 const TYPES = ['All', 'notes', 'pdf', 'video', 'article', 'question-paper', 'practice-set', 'mock-test'];
 
 export function Resources() {
+  useSEO('Resources', 'Notes, PDFs, videos, question papers, and practice sets for engineering and competitive exams.');
   const [type, setType] = useState('All');
   const [search, setSearch] = useState('');
 

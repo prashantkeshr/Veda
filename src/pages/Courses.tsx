@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { GraduationCap } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { courseRepo } from '../repositories';
 import { Card, Badge, EmptyState, SectionHeader } from '../components/ui';
 
 export function Courses() {
+  useSEO('Courses', 'Structured engineering courses covering key exam syllabi — GATE, UPSC ESE, and more.');
   const [search, setSearch] = useState('');
   const courses = search ? courseRepo.getAll({ search }) : courseRepo.getAll();
 

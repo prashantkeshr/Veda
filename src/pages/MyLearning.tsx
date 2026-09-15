@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import {
   BookOpen, Hash, FileText, GraduationCap, ClipboardList, Route,
   CheckCircle, Clock, Bookmark, BarChart2, Trophy, ChevronRight,
@@ -21,6 +22,7 @@ const entityIcon: Record<string, typeof BookOpen> = {
 };
 
 export function MyLearning() {
+  useSEO('My Learning', 'Track your progress, bookmarks, and quiz history across all topics.');
   const { progressMap, bookmarks, quizAttempts, ready } = useUserData();
 
   if (!ready) {

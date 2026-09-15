@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Hash } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { topicRepo, subjectRepo } from '../repositories';
 import { TopicCard } from '../components/knowledge/TopicCard';
 import { EmptyState, SectionHeader } from '../components/ui';
 import { cn } from '../utils/cn';
 
 export function Topics() {
+  useSEO('Topics', 'All topics across engineering subjects — from Differential Calculus to Gas Power Cycles.');
   const [search, setSearch] = useState('');
   const [subjectId, setSubjectId] = useState('');
 

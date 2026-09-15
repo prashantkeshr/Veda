@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useSEO } from '../hooks/useSEO';
 import {
   LayoutGrid, BookOpen, HelpCircle, Download, Plus, Search,
   Pencil, Trash2, AlertTriangle, CheckCircle, ChevronDown, ChevronRight,
@@ -19,6 +20,7 @@ function slugify(s: string): string {
 }
 
 export function ContentStudio() {
+  useSEO('Content Studio', 'Create, edit, and export topics and questions for the VEDA knowledge platform.');
   const [tab, setTab] = useState<Tab>('overview');
   const [draftTopics, setDraftTopics] = useState<DraftTopic[]>([]);
   const [draftQuestions, setDraftQuestions] = useState<DraftQuestion[]>([]);

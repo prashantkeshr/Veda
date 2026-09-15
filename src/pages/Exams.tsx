@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { ClipboardList } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { examRepo } from '../repositories';
 import { Card, Badge, EmptyState, SectionHeader } from '../components/ui';
 
 export function Exams() {
+  useSEO('Exams', 'Explore GATE, UPSC ESE, and other competitive engineering exam syllabi and resources.');
   const [search, setSearch] = useState('');
   const exams = search ? examRepo.getAll({ search }) : examRepo.getAll();
 

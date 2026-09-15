@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import { Circle, Clock, CheckCircle, Map } from 'lucide-react';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { useTheme } from '../app/providers/ThemeProvider';
@@ -150,6 +151,7 @@ const SUBJECT_LABELS: Record<SubjectKey, string> = {
 const ALL_SUBJECTS = Object.keys(SUBJECT_LABELS) as SubjectKey[];
 
 export function KnowledgeMap() {
+  useSEO('Knowledge Map', 'Visual map of all engineering topics and how they connect — prerequisites, related topics, and learning paths.');
   const navigate = useNavigate();
   const { progressMap } = useUserData();
   const { resolved } = useTheme();

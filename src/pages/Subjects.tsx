@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BookOpen } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 import { subjectRepo } from '../repositories';
 import { SubjectCard } from '../components/knowledge/SubjectCard';
 import { EmptyState, SectionHeader } from '../components/ui';
@@ -8,6 +9,7 @@ import { cn } from '../utils/cn';
 const LEVELS = ['All', 'undergraduate', 'competitive-exam', 'postgraduate'];
 
 export function Subjects() {
+  useSEO('Subjects', 'Browse all engineering and science subjects — Mathematics, Thermodynamics, Fluid Mechanics, and more.');
   const [level, setLevel] = useState('All');
   const [search, setSearch] = useState('');
 

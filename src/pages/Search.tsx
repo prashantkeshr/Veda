@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useSEO } from '../hooks/useSEO';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Search as SearchIcon, BookOpen, Hash, FileText, GraduationCap, ClipboardList, Route } from 'lucide-react';
 import { search } from '../services/search.service';
@@ -61,6 +62,7 @@ function ResultItem({ result }: { result: SearchResult }) {
 export function Search() {
   const [params, setParams] = useSearchParams();
   const query = params.get('q') ?? '';
+  useSEO(query ? `Search: ${query}` : 'Search', 'Search across all subjects, topics, courses, resources, and exams.');
   const [input, setInput] = useState(query);
   const [results, setResults] = useState<SearchResult[]>([]);
 

@@ -1,4 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO';
 import { BookOpen, Hash, FileText, ClipboardList } from 'lucide-react';
 import { subjectRepo, topicRepo, resourceRepo, examRepo } from '../repositories';
 import { TopicCard } from '../components/knowledge/TopicCard';
@@ -9,6 +10,7 @@ import { Badge, SectionHeader, EmptyState } from '../components/ui';
 export function SubjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const subject = subjectRepo.getBySlug(slug ?? '');
+  useSEO(subject?.title, subject?.description);
 
   if (!subject) return <Navigate to="/subjects" replace />;
 
