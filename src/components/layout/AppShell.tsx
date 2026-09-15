@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { BottomNav } from './BottomNav';
+import { InstallBanner } from '../ui/InstallBanner';
 
 export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -42,6 +43,7 @@ export function AppShell() {
 
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <Header onMenuOpen={() => setSidebarOpen(true)} />
+        <InstallBanner />
 
         <main
           id="main-content"
