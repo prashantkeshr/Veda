@@ -4,12 +4,14 @@ import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { BottomNav } from './BottomNav';
 import { InstallBanner } from '../ui/InstallBanner';
+import { OnboardingModal, useOnboarding } from '../onboarding/OnboardingModal';
 
 export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
   const [announcement, setAnnouncement] = useState('');
+  const showOnboarding = useOnboarding();
 
   useEffect(() => {
     if (mainRef.current) {
@@ -58,6 +60,7 @@ export function AppShell() {
       </div>
 
       <BottomNav />
+      {showOnboarding && <OnboardingModal />}
     </div>
   );
 }
