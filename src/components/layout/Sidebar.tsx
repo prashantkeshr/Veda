@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Search, BookOpen, Hash, GraduationCap,
   FileText, ClipboardList, Route, User, LayoutGrid,
-  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays
+  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -27,6 +27,7 @@ const navItems = [
   { to: '/exam-readiness', icon: Target, label: 'Exam Readiness' },
   { to: '/insights', icon: BarChart2, label: 'Insights' },
   { to: '/achievements', icon: Trophy, label: 'Achievements' },
+  { to: '/bookmarks', icon: Bookmark, label: 'Saved Items' },
   { divider: true },
   { to: '/settings', icon: Settings2, label: 'Settings' },
   { to: '/knowledge-map', icon: Map, label: 'Knowledge Map' },

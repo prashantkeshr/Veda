@@ -31,6 +31,7 @@ const FormulaSheet     = lazy(() => import('../pages/FormulaSheet').then(m => ({
 const ExamReadiness    = lazy(() => import('../pages/ExamReadiness').then(m => ({ default: m.ExamReadiness })));
 const TimerPage        = lazy(() => import('../pages/Timer').then(m => ({ default: m.Timer })));
 const Planner          = lazy(() => import('../pages/Planner').then(m => ({ default: m.Planner })));
+const Bookmarks        = lazy(() => import('../pages/Bookmarks').then(m => ({ default: m.Bookmarks })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -73,6 +74,7 @@ export function Router() {
         <Route path="exam-readiness" element={<Suspense fallback={<PageLoader />}><ExamReadiness /></Suspense>} />
         <Route path="timer" element={<Suspense fallback={<PageLoader />}><TimerPage /></Suspense>} />
         <Route path="planner" element={<Suspense fallback={<PageLoader />}><Planner /></Suspense>} />
+        <Route path="bookmarks" element={<Suspense fallback={<PageLoader />}><Bookmarks /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
