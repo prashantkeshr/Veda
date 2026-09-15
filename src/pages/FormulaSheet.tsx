@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import {
   Calculator, Search, Copy, Check, BookOpen,
-  ChevronDown, ChevronRight, Hash,
+  ChevronDown, ChevronRight, Hash, Printer,
 } from 'lucide-react';
 import { topicRepo, subjectRepo } from '../repositories';
 import { cn } from '../utils/cn';
@@ -105,7 +105,7 @@ function TopicGroup({ topicId, topicTitle, topicSlug, entries }: {
   const conceptCount = entries.filter(e => e.kind === 'concept').length;
 
   return (
-    <div className="bg-white dark:bg-stone-900 rounded-xl border border-stone-200 dark:border-stone-800 overflow-hidden">
+    <div className="formula-topic-group bg-white dark:bg-stone-900 rounded-xl border border-stone-200 dark:border-stone-800 overflow-hidden">
       <button
         onClick={() => setOpen(o => !o)}
         className="w-full flex items-center gap-3 px-4 py-3 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition-colors text-left"
@@ -158,7 +158,7 @@ function SubjectSection({ subjectId, entries }: { subjectId: string; entries: En
   }
 
   return (
-    <div className="space-y-2">
+    <div className="formula-subject-section space-y-2">
       <div className="flex items-center gap-2 px-1">
         <div className="w-1.5 h-1.5 rounded-full bg-veda-600 dark:bg-veda-400" />
         <h2 className="text-xs font-bold text-stone-500 dark:text-stone-400 uppercase tracking-widest">
@@ -228,12 +228,19 @@ export function FormulaSheet() {
         <div className="w-10 h-10 rounded-xl bg-blue-700 flex items-center justify-center">
           <Calculator size={20} className="text-white" />
         </div>
-        <div>
+        <div className="flex-1">
           <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">Formula Sheet</h1>
           <p className="text-sm text-stone-500 dark:text-stone-400">
             {formulaTotal} formulas · {conceptTotal} key concepts · click any entry to copy
           </p>
         </div>
+        <button
+          onClick={() => window.print()}
+          className="no-print flex items-center gap-1.5 px-3 py-2 text-sm rounded-lg border border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
+          aria-label="Print formula sheet"
+        >
+          <Printer size={14} /> Print
+        </button>
       </div>
 
       {/* Controls */}

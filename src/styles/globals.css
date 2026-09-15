@@ -47,3 +47,35 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ── Print styles (Formula Sheet & detail pages) ──────────────────────── */
+@media print {
+  /* Hide chrome */
+  header, aside, nav, footer,
+  [data-noprint], .no-print { display: none !important; }
+
+  /* Reset layout so content fills page */
+  body { background: white !important; color: black !important; }
+  .flex.h-screen { display: block !important; }
+  main { overflow: visible !important; padding-bottom: 0 !important; }
+
+  /* Remove side padding from the shell wrapper */
+  .max-w-7xl { max-width: 100% !important; padding-inline: 12pt !important; }
+
+  /* Expand all collapsible groups */
+  [data-open="false"] > :last-child { display: block !important; }
+
+  /* Page breaks */
+  .formula-subject-section { break-before: auto; break-inside: avoid-column; }
+  .formula-topic-group { break-inside: avoid; margin-bottom: 8pt; }
+
+  /* Print-specific typography */
+  h1 { font-size: 16pt; }
+  h2 { font-size: 13pt; }
+  .font-mono, code { font-size: 9pt; }
+  p, li, span { font-size: 10pt; }
+
+  /* Remove hover/interactive affordances */
+  .group-hover\:opacity-100 { opacity: 0 !important; }
+  button[aria-label="Copy to clipboard"] { display: none !important; }
+}

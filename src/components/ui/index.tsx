@@ -1,3 +1,5 @@
+export { ErrorBoundary } from './ErrorBoundary';
+
 import { type ReactNode, type ButtonHTMLAttributes, type HTMLAttributes, forwardRef } from 'react';
 import { cn } from '../../utils/cn';
 

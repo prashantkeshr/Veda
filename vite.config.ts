@@ -12,7 +12,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       base: '/Veda/',
       scope: '/Veda/',
-      includeAssets: ['favicon.svg', 'icon.svg', 'veda-logo.png', 'veda-logo.svg'],
+      includeAssets: ['favicon.svg', 'icon.svg', 'veda-logo.png', 'veda-logo-sm.png', 'veda-logo.svg'],
       manifest: {
         name: 'VEDA — Vital Education & Data Archive',
         short_name: 'VEDA',

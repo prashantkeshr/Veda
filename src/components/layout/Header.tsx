@@ -84,7 +84,7 @@ export function Header({ onMenuOpen }: HeaderProps) {
           className="lg:hidden ml-1 flex items-center gap-1.5 font-bold text-veda-700 dark:text-veda-400 text-sm"
         >
           <img
-            src="/Veda/veda-logo.png"
+            src="/Veda/veda-logo-sm.png"
             alt="VEDA"
             className="w-7 h-7 rounded object-cover"
           />
