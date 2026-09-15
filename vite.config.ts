@@ -36,7 +36,7 @@ export default defineConfig({
             purpose: 'maskable',
           },
           {
-            src: '/icon.svg',
+            src: '/veda-logo.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any',
