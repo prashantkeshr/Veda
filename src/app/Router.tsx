@@ -29,6 +29,7 @@ const Flashcards       = lazy(() => import('../pages/Flashcards').then(m => ({ d
 const Notes            = lazy(() => import('../pages/Notes').then(m => ({ default: m.Notes })));
 const FormulaSheet     = lazy(() => import('../pages/FormulaSheet').then(m => ({ default: m.FormulaSheet })));
 const ExamReadiness    = lazy(() => import('../pages/ExamReadiness').then(m => ({ default: m.ExamReadiness })));
+const TimerPage        = lazy(() => import('../pages/Timer').then(m => ({ default: m.Timer })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -69,6 +70,7 @@ export function Router() {
         <Route path="notes" element={<Suspense fallback={<PageLoader />}><Notes /></Suspense>} />
         <Route path="formula-sheet" element={<Suspense fallback={<PageLoader />}><FormulaSheet /></Suspense>} />
         <Route path="exam-readiness" element={<Suspense fallback={<PageLoader />}><ExamReadiness /></Suspense>} />
+        <Route path="timer" element={<Suspense fallback={<PageLoader />}><TimerPage /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
