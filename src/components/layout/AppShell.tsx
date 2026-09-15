@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { BottomNav } from './BottomNav';
@@ -14,8 +14,25 @@ export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [announcement, setAnnouncement] = useState('');
   const showOnboarding = useOnboarding();
+
+  // Global Ctrl+K / Cmd+K → focus search
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        navigate('/search');
+        setTimeout(() => {
+          const el = document.getElementById('veda-search-input');
+          if (el) (el as HTMLInputElement).focus();
+        }, 50);
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [navigate]);
 
   useEffect(() => {
     if (mainRef.current) {
