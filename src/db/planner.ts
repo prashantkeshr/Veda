@@ -35,8 +35,9 @@ async function run<T>(mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRe
 }
 
 export const plannerDB = {
-  get:  (id: string)    => run<DayPlan | undefined>('readonly',  s => s.get(id)),
-  save: (plan: DayPlan) => run<IDBValidKey>('readwrite', s => s.put(plan)).then(() => undefined as void),
+  get:    (id: string)    => run<DayPlan | undefined>('readonly',  s => s.get(id)),
+  getAll: ()              => run<DayPlan[]>('readonly', s => s.getAll()),
+  save:   (plan: DayPlan) => run<IDBValidKey>('readwrite', s => s.put(plan)).then(() => undefined as void),
 };
 
 export function emptyDayPlan(id: string): DayPlan {

@@ -1,17 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { useTheme } from '../app/providers/ThemeProvider';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { assessmentsDB } from '../db/assessments';
+import { flashcardsDB } from '../db/flashcards';
+import { notesDB } from '../db/notes';
+import { studySessionsDB } from '../db/studySessions';
+import { plannerDB } from '../db/planner';
 import { getAllProgress, getAllBookmarks, getAllQuizAttempts } from '../db';
+import { topicRepo } from '../repositories';
 import {
   Settings2, Sun, Moon, Monitor, Download, Smartphone,
   Database, Trash2, CheckCircle, AlertTriangle, Info,
+  Upload, FileText, BookOpen, X,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
-// ── Section wrapper ───────────────────────────────────────────────────────
+// ── Section / Row wrappers ────────────────────────────────────────────────
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -39,7 +45,7 @@ function RowLabel({ title, description }: { title: string; description?: string 
   );
 }
 
-// ── Confirm dialog ────────────────────────────────────────────────────────
+// ── Confirm: clear all data ───────────────────────────────────────────────
 
 function ConfirmDialog({ message, onConfirm, onCancel }: {
   message: string;
@@ -72,75 +78,402 @@ function ConfirmDialog({ message, onConfirm, onCancel }: {
   );
 }
 
+// ── Backup preview + restore modal ────────────────────────────────────────
+
+type BackupData = {
+  version:        string;
+  exportedAt:     string;
+  platform:       string;
+  progress:       unknown[];
+  bookmarks:      unknown[];
+  quizAttempts:   unknown[];
+  quizSessions:   unknown[];
+  flashcards?:    unknown[];
+  notes?:         unknown[];
+  studySessions?: unknown[];
+  plannerDays?:   unknown[];
+  preferences?:   Record<string, string>;
+};
+
+function RestoreModal({ backup, onClose, onDone }: {
+  backup: BackupData;
+  onClose: () => void;
+  onDone:  () => void;
+}) {
+  const [mode, setMode]     = useState<'merge' | 'replace'>('merge');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errMsg, setErrMsg] = useState('');
+
+  const counts = [
+    { label: 'Topic progress',   n: backup.progress?.length       ?? 0 },
+    { label: 'Bookmarks',        n: backup.bookmarks?.length      ?? 0 },
+    { label: 'Quiz attempts',    n: backup.quizAttempts?.length   ?? 0 },
+    { label: 'Quiz sessions',    n: backup.quizSessions?.length   ?? 0 },
+    { label: 'Flashcard states', n: backup.flashcards?.length     ?? 0 },
+    { label: 'Notes',            n: backup.notes?.length          ?? 0 },
+    { label: 'Study sessions',   n: backup.studySessions?.length  ?? 0 },
+    { label: 'Planner days',     n: backup.plannerDays?.length    ?? 0 },
+  ].filter(c => c.n > 0);
+
+  async function restoreDB(
+    dbName: string,
+    storeName: string,
+    records: unknown[],
+    replaceAll: boolean,
+  ): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(dbName);
+      req.onsuccess = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(storeName)) { db.close(); resolve(); return; }
+        const t = db.transaction(storeName, 'readwrite');
+        const store = t.objectStore(storeName);
+        if (replaceAll) store.clear();
+        for (const r of records) store.put(r);
+        t.oncomplete = () => { db.close(); resolve(); };
+        t.onerror    = () => { db.close(); reject(t.error); };
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async function doRestore() {
+    setStatus('loading');
+    try {
+      const rep = mode === 'replace';
+
+      await restoreDB('veda-user-data', 'progress',      backup.progress      ?? [], rep);
+      await restoreDB('veda-user-data', 'bookmarks',     backup.bookmarks     ?? [], rep);
+      await restoreDB('veda-user-data', 'quizAttempts',  backup.quizAttempts  ?? [], rep);
+      await restoreDB('veda-assessments', 'sessions',    backup.quizSessions  ?? [], rep);
+      await restoreDB('veda-flashcards', 'cards',        backup.flashcards    ?? [], rep);
+      await restoreDB('veda-notes', 'notes',             backup.notes         ?? [], rep);
+      await restoreDB('veda-study-sessions', 'sessions', backup.studySessions ?? [], rep);
+      await restoreDB('veda-planner', 'plans',           backup.plannerDays   ?? [], rep);
+
+      if (backup.preferences?.targetExam) {
+        try { localStorage.setItem('veda-target-exam', backup.preferences.targetExam); } catch {}
+      }
+
+      setStatus('success');
+      setTimeout(() => { onDone(); window.location.reload(); }, 1200);
+    } catch (e) {
+      setErrMsg(e instanceof Error ? e.message : 'Unknown error');
+      setStatus('error');
+    }
+  }
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      <div className="bg-white dark:bg-stone-900 rounded-xl shadow-2xl border border-stone-200 dark:border-stone-700 max-w-md w-full overflow-hidden">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-stone-100 dark:border-stone-800">
+          <h3 className="font-semibold text-stone-900 dark:text-stone-100 text-sm">Restore from Backup</h3>
+          <button onClick={onClose} className="p-1 rounded text-stone-400 hover:text-stone-600 dark:hover:text-stone-300">
+            <X size={16} />
+          </button>
+        </div>
+
+        <div className="px-5 py-4 space-y-4">
+          {/* Backup info */}
+          <div className="text-xs text-stone-500 dark:text-stone-400 space-y-0.5">
+            <div><span className="text-stone-400">Exported:</span> {new Date(backup.exportedAt).toLocaleString()}</div>
+            <div><span className="text-stone-400">Schema:</span> v{backup.version}</div>
+          </div>
+
+          {/* Counts */}
+          {counts.length > 0 ? (
+            <div className="grid grid-cols-2 gap-1.5">
+              {counts.map(c => (
+                <div key={c.label} className="flex items-center justify-between px-3 py-2 rounded-lg bg-stone-50 dark:bg-stone-800">
+                  <span className="text-xs text-stone-600 dark:text-stone-400">{c.label}</span>
+                  <span className="text-xs font-semibold text-stone-900 dark:text-stone-100 tabular-nums">{c.n}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-stone-500">Backup appears empty.</p>
+          )}
+
+          {/* Mode */}
+          <div className="space-y-2">
+            <p className="text-xs font-medium text-stone-700 dark:text-stone-300">Restore mode</p>
+            {(['merge', 'replace'] as const).map(m => (
+              <label key={m} className={cn(
+                'flex items-start gap-3 px-4 py-3 rounded-lg border-2 cursor-pointer transition-colors',
+                mode === m
+                  ? 'border-veda-500 bg-veda-50 dark:bg-veda-900/20'
+                  : 'border-stone-200 dark:border-stone-700 hover:border-stone-300 dark:hover:border-stone-600',
+              )}>
+                <input
+                  type="radio"
+                  name="restore-mode"
+                  className="mt-0.5 accent-veda-600"
+                  checked={mode === m}
+                  onChange={() => setMode(m)}
+                />
+                <div>
+                  <div className="text-sm font-medium text-stone-800 dark:text-stone-200">
+                    {m === 'merge' ? 'Merge' : 'Replace all'}
+                  </div>
+                  <div className="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                    {m === 'merge'
+                      ? 'Adds backup data on top of existing data — safe, nothing is lost'
+                      : 'Clears current data first, then restores backup — full clean restore'}
+                  </div>
+                </div>
+              </label>
+            ))}
+          </div>
+
+          {status === 'error' && (
+            <div className="flex items-start gap-2 px-3 py-2.5 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-xs">
+              <AlertTriangle size={13} className="mt-0.5 flex-shrink-0" />
+              <span>{errMsg || 'Restore failed. Check the file and try again.'}</span>
+            </div>
+          )}
+        </div>
+
+        <div className="px-5 pb-5 flex gap-3 justify-end">
+          <button
+            onClick={onClose}
+            className="px-4 py-2 text-sm rounded-lg border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={doRestore}
+            disabled={status === 'loading' || status === 'success'}
+            className={cn(
+              'flex items-center gap-1.5 px-5 py-2 text-sm rounded-lg font-medium transition-colors',
+              status === 'success'
+                ? 'bg-emerald-600 text-white'
+                : status === 'loading'
+                ? 'bg-veda-400 text-white cursor-not-allowed'
+                : 'bg-veda-600 hover:bg-veda-700 text-white',
+            )}
+          >
+            {status === 'success'  ? <><CheckCircle size={14}/> Restored</> :
+             status === 'loading'  ? 'Restoring…'                           :
+             mode === 'replace'    ? 'Replace & Restore'                    : 'Merge & Restore'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export function Settings() {
   useSEO('Settings', 'App preferences, data management, and install options for VEDA.');
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme }    = useTheme();
   const { canInstall, installed, install } = usePWAInstall();
   const { quizAttempts, bookmarks, progressMap } = useUserData();
 
-  const [exportStatus, setExportStatus] = useState<Status>('idle');
-  const [clearStatus, setClearStatus] = useState<Status>('idle');
-  const [showConfirm, setShowConfirm] = useState(false);
+  const [backupStatus,   setBackupStatus]   = useState<Status>('idle');
+  const [clearStatus,    setClearStatus]    = useState<Status>('idle');
+  const [notesStatus,    setNotesStatus]    = useState<Status>('idle');
+  const [formulaStatus,  setFormulaStatus]  = useState<Status>('idle');
+  const [showConfirm,    setShowConfirm]    = useState(false);
+  const [restoreBackup,  setRestoreBackup]  = useState<BackupData | null>(null);
+  const [restoreError,   setRestoreError]   = useState('');
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const themes = [
-    { key: 'light' as const, icon: Sun, label: 'Light' },
+    { key: 'light'  as const, icon: Sun,     label: 'Light'  },
     { key: 'system' as const, icon: Monitor, label: 'System' },
-    { key: 'dark' as const, icon: Moon, label: 'Dark' },
+    { key: 'dark'   as const, icon: Moon,    label: 'Dark'   },
   ];
 
-  async function exportData() {
-    setExportStatus('loading');
+  // ── Full backup export ─────────────────────────────────────────────────
+
+  async function exportFullBackup() {
+    setBackupStatus('loading');
     try {
-      const [progress, bmarks, attempts, sessions] = await Promise.all([
+      const [progress, bmarks, attempts, sessions, cards, notes, study, plans] = await Promise.all([
         getAllProgress(),
         getAllBookmarks(),
         getAllQuizAttempts(),
         assessmentsDB.getAllSessions(),
+        flashcardsDB.getAll(),
+        notesDB.getAll(),
+        studySessionsDB.getAll(),
+        plannerDB.getAll(),
       ]);
+
+      let targetExam = '';
+      try { targetExam = localStorage.getItem('veda-target-exam') ?? ''; } catch {}
+
       const data = {
-        exportedAt: new Date().toISOString(),
-        version: '1.0',
-        platform: 'VEDA — Vital Education & Data Archive',
+        exportedAt:    new Date().toISOString(),
+        version:       '2.0',
+        platform:      'VEDA — Vital Education & Data Archive',
         progress,
-        bookmarks: bmarks,
-        quizAttempts: attempts,
-        quizSessions: sessions,
+        bookmarks:     bmarks,
+        quizAttempts:  attempts,
+        quizSessions:  sessions,
+        flashcards:    cards,
+        notes,
+        studySessions: study,
+        plannerDays:   plans,
+        preferences:   { targetExam },
       };
+
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `veda-export-${new Date().toISOString().slice(0, 10)}.json`;
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = `veda-backup-${new Date().toISOString().slice(0, 10)}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      setExportStatus('success');
-      setTimeout(() => setExportStatus('idle'), 3000);
+      setBackupStatus('success');
+      setTimeout(() => setBackupStatus('idle'), 3000);
     } catch {
-      setExportStatus('error');
-      setTimeout(() => setExportStatus('idle'), 3000);
+      setBackupStatus('error');
+      setTimeout(() => setBackupStatus('idle'), 3000);
     }
   }
+
+  // ── Import backup ──────────────────────────────────────────────────────
+
+  function openFilePicker() {
+    setRestoreError('');
+    fileInputRef.current?.click();
+  }
+
+  function onFileSelected(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!e.target) return;
+    e.target.value = '';
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const parsed = JSON.parse(reader.result as string) as BackupData;
+        if (!parsed.version || !parsed.exportedAt) throw new Error('Not a valid VEDA backup file.');
+        setRestoreBackup(parsed);
+      } catch (err) {
+        setRestoreError(err instanceof Error ? err.message : 'Could not parse backup file.');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  // ── Export notes as plain text ─────────────────────────────────────────
+
+  async function exportNotes() {
+    setNotesStatus('loading');
+    try {
+      const notes = await notesDB.getAll();
+      if (notes.length === 0) { setNotesStatus('idle'); return; }
+
+      const lines: string[] = ['VEDA — Study Notes Export', `Exported: ${new Date().toLocaleString()}`, ''];
+      for (const note of notes) {
+        lines.push(`# ${note.title || '(Untitled)'}`);
+        if (note.tags?.length) lines.push(`Tags: ${note.tags.join(', ')}`);
+        lines.push(`Updated: ${new Date(note.updatedAt).toLocaleString()}`);
+        lines.push('');
+        lines.push(note.body ?? '');
+        lines.push('', '---', '');
+      }
+
+      const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = `veda-notes-${new Date().toISOString().slice(0, 10)}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      setNotesStatus('success');
+      setTimeout(() => setNotesStatus('idle'), 3000);
+    } catch {
+      setNotesStatus('error');
+      setTimeout(() => setNotesStatus('idle'), 3000);
+    }
+  }
+
+  // ── Export formula sheet as printable HTML ─────────────────────────────
+
+  function exportFormulaSheet() {
+    setFormulaStatus('loading');
+    try {
+      const topics  = topicRepo.getAll();
+      const rows    = topics
+        .filter(t => t.formulaHighlights && t.formulaHighlights.length > 0)
+        .map(t => ({
+          title:    t.title,
+          formulas: t.formulaHighlights!,
+        }));
+
+      if (rows.length === 0) { setFormulaStatus('idle'); return; }
+
+      const body = rows.map(r => `
+        <section>
+          <h2>${escHtml(r.title)}</h2>
+          <ul>${r.formulas.map(f => `<li><code>${escHtml(f)}</code></li>`).join('')}</ul>
+        </section>`).join('');
+
+      const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VEDA Formula Sheet</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;max-width:800px;margin:0 auto;padding:24px;color:#111}
+  h1{font-size:1.5rem;margin-bottom:4px}
+  .meta{color:#666;font-size:.85rem;margin-bottom:24px}
+  h2{font-size:1rem;font-weight:600;margin:20px 0 6px;border-bottom:1px solid #ddd;padding-bottom:4px}
+  ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+  li{background:#f5f5f5;border-radius:6px;padding:8px 12px}
+  code{font-family:'Courier New',monospace;font-size:.9rem}
+  @media print{body{padding:12px}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<h1>VEDA Formula Sheet</h1>
+<div class="meta">Exported ${new Date().toLocaleString()} &nbsp;·&nbsp; ${rows.length} topics &nbsp;·&nbsp; ${rows.reduce((s,r)=>s+r.formulas.length,0)} formulas</div>
+${body}
+<script>window.print();<\/script>
+</body></html>`;
+
+      const win = window.open('', '_blank');
+      if (win) { win.document.write(html); win.document.close(); }
+      setFormulaStatus('success');
+      setTimeout(() => setFormulaStatus('idle'), 3000);
+    } catch {
+      setFormulaStatus('error');
+      setTimeout(() => setFormulaStatus('idle'), 3000);
+    }
+  }
+
+  function escHtml(s: string) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Clear all data ─────────────────────────────────────────────────────
 
   async function clearAllData() {
     setShowConfirm(false);
     setClearStatus('loading');
     try {
-      const databases = ['veda-user-data', 'veda-studio', 'veda-assessments'];
+      const databases = ['veda-user-data', 'veda-studio', 'veda-assessments', 'veda-flashcards', 'veda-notes', 'veda-study-sessions', 'veda-planner'];
       await Promise.all(databases.map(name =>
         new Promise<void>((resolve, reject) => {
           const req = indexedDB.deleteDatabase(name);
-          req.onsuccess = () => resolve();
-          req.onerror = () => reject(req.error);
-          req.onblocked = () => resolve(); // proceed even if blocked
+          req.onsuccess  = () => resolve();
+          req.onerror    = () => reject(req.error);
+          req.onblocked  = () => resolve();
         })
       ));
-      // Clear localStorage keys
       const keysToRemove = Object.keys(localStorage).filter(k => k.startsWith('veda-'));
       keysToRemove.forEach(k => { try { localStorage.removeItem(k); } catch {} });
       setClearStatus('success');
@@ -151,18 +484,37 @@ export function Settings() {
     }
   }
 
-  const totalTopics = Object.keys(progressMap).length;
-  const completed = Object.values(progressMap).filter(s => s === 'completed').length;
+  // ── Stats ──────────────────────────────────────────────────────────────
+
+  const totalTopics  = Object.keys(progressMap).length;
+  const completed    = Object.values(progressMap).filter(s => s === 'completed').length;
 
   return (
     <div className="max-w-2xl mx-auto space-y-5 pb-8">
       {showConfirm && (
         <ConfirmDialog
-          message="This will permanently delete all your progress, bookmarks, quiz history, and Content Studio data. This cannot be undone."
+          message="This will permanently delete all your progress, bookmarks, quiz history, notes, flashcards, planner, and study session data. This cannot be undone."
           onConfirm={clearAllData}
           onCancel={() => setShowConfirm(false)}
         />
       )}
+
+      {restoreBackup && (
+        <RestoreModal
+          backup={restoreBackup}
+          onClose={() => setRestoreBackup(null)}
+          onDone={() => setRestoreBackup(null)}
+        />
+      )}
+
+      {/* Hidden file input for restore */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".json,application/json"
+        className="hidden"
+        onChange={onFileSelected}
+      />
 
       {/* Header */}
       <div className="flex items-center gap-3">
@@ -232,10 +584,10 @@ export function Settings() {
         </Row>
       </Section>
 
-      {/* Data */}
-      <Section title="Your Data">
+      {/* Backup & Restore */}
+      <Section title="Backup & Restore">
         <Row>
-          <RowLabel title="Summary" description="Stored locally in your browser (IndexedDB)" />
+          <RowLabel title="Storage summary" description="All data is stored locally in your browser (IndexedDB)" />
           <div className="text-right flex-shrink-0">
             <div className="text-sm font-semibold text-stone-900 dark:text-stone-100 tabular-nums">
               {completed}/{totalTopics} topics · {quizAttempts.length} quizzes · {bookmarks.length} bookmarks
@@ -246,34 +598,102 @@ export function Settings() {
 
         <Row>
           <RowLabel
-            title="Export Data"
-            description="Download all your progress, bookmarks, and quiz history as JSON"
+            title="Full backup"
+            description="Downloads all progress, notes, flashcards, planner, and preferences as a single JSON file"
           />
           <button
-            onClick={exportData}
-            disabled={exportStatus === 'loading'}
+            onClick={exportFullBackup}
+            disabled={backupStatus === 'loading'}
             className={cn(
               'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-shrink-0',
-              exportStatus === 'success'
+              backupStatus === 'success'
                 ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
-                : exportStatus === 'error'
+                : backupStatus === 'error'
                 ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
                 : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'
             )}
           >
-            {exportStatus === 'success'
-              ? <><CheckCircle size={14} /> Downloaded</>
-              : exportStatus === 'error'
-              ? <><AlertTriangle size={14} /> Failed</>
-              : <><Database size={14} /> Export</>
-            }
+            {backupStatus === 'success' ? <><CheckCircle size={14} /> Saved</>
+            : backupStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
+            : <><Database size={14} /> Backup</>}
           </button>
         </Row>
 
         <Row>
           <RowLabel
-            title="Clear All Data"
-            description="Permanently delete all progress, bookmarks, quizzes, and studio content"
+            title="Restore from backup"
+            description="Upload a VEDA backup file to resume where you left off on any device"
+          />
+          <div className="flex flex-col items-end gap-1 flex-shrink-0">
+            <button
+              onClick={openFilePicker}
+              className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-veda-50 dark:bg-veda-900/20 text-veda-700 dark:text-veda-400 hover:bg-veda-100 dark:hover:bg-veda-900/30"
+            >
+              <Upload size={14} />
+              Restore
+            </button>
+            {restoreError && (
+              <span className="text-xs text-red-500 max-w-[200px] text-right">{restoreError}</span>
+            )}
+          </div>
+        </Row>
+      </Section>
+
+      {/* Export */}
+      <Section title="Export">
+        <Row>
+          <RowLabel
+            title="Study notes"
+            description="Download all your notes as a plain-text file"
+          />
+          <button
+            onClick={exportNotes}
+            disabled={notesStatus === 'loading'}
+            className={cn(
+              'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-shrink-0',
+              notesStatus === 'success'
+                ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
+                : notesStatus === 'error'
+                ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
+                : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'
+            )}
+          >
+            {notesStatus === 'success' ? <><CheckCircle size={14} /> Saved</>
+            : notesStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
+            : <><FileText size={14} /> Export notes</>}
+          </button>
+        </Row>
+
+        <Row>
+          <RowLabel
+            title="Formula sheet"
+            description="Open a printable HTML page with all topic formulas"
+          />
+          <button
+            onClick={exportFormulaSheet}
+            disabled={formulaStatus === 'loading'}
+            className={cn(
+              'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-shrink-0',
+              formulaStatus === 'success'
+                ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
+                : formulaStatus === 'error'
+                ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
+                : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'
+            )}
+          >
+            {formulaStatus === 'success' ? <><CheckCircle size={14} /> Opened</>
+            : formulaStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
+            : <><BookOpen size={14} /> Print formulas</>}
+          </button>
+        </Row>
+      </Section>
+
+      {/* Danger zone */}
+      <Section title="Danger Zone">
+        <Row>
+          <RowLabel
+            title="Clear all data"
+            description="Permanently delete all progress, notes, flashcards, planner, quiz history, and content studio data"
           />
           <button
             onClick={() => setShowConfirm(true)}
@@ -289,8 +709,7 @@ export function Settings() {
               ? 'Clearing…'
               : clearStatus === 'success'
               ? <><CheckCircle size={14} /> Cleared</>
-              : <><Trash2 size={14} /> Clear Data</>
-            }
+              : <><Trash2 size={14} /> Clear data</>}
           </button>
         </Row>
       </Section>
@@ -298,11 +717,11 @@ export function Settings() {
       {/* About */}
       <Section title="About">
         {[
-          { label: 'Platform', value: 'VEDA — Vital Education & Data Archive' },
+          { label: 'Platform',  value: 'VEDA — Vital Education & Data Archive' },
           { label: 'Organisation', value: 'Dhurta.Org · VEDA Association' },
-          { label: 'Focus', value: 'Engineering, Science & Competitive Exam Prep' },
-          { label: 'Storage', value: 'IndexedDB (local-only, no server)' },
-          { label: 'Version', value: 'Phase 10 Build' },
+          { label: 'Focus',     value: 'Engineering, Science & Competitive Exam Prep' },
+          { label: 'Storage',   value: 'IndexedDB (local-only, no server)' },
+          { label: 'Version',   value: 'Phase 22 Build' },
         ].map(({ label, value }) => (
           <Row key={label}>
             <span className="text-sm text-stone-500 dark:text-stone-400">{label}</span>
@@ -311,7 +730,7 @@ export function Settings() {
         ))}
         <div className="px-5 py-4 flex items-start gap-2 text-xs text-stone-400">
           <Info size={13} className="flex-shrink-0 mt-0.5" />
-          All your data is stored exclusively on this device. Exporting before clearing is recommended.
+          All data is stored on this device only. Use Full Backup regularly and Restore on any device to keep your progress in sync.
         </div>
       </Section>
     </div>
