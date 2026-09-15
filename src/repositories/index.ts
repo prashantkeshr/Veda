@@ -1,4 +1,4 @@
-import type { Subject, Topic, Resource, Course, Exam, LearningPath, Question, FilterOptions, DataProvider, RelationType } from '../models';
+import type { Subject, Topic, Resource, Course, Exam, LearningPath, Question, Board, Institution, Stream, Programme, FilterOptions, DataProvider, RelationType } from '../models';
 import subjectsData from '../data/subjects.json';
 import topicsData from '../data/topics.json';
 import resourcesData from '../data/resources.json';
@@ -6,6 +6,10 @@ import coursesData from '../data/courses.json';
 import examsData from '../data/exams.json';
 import learningPathsData from '../data/learning-paths.json';
 import questionsData from '../data/questions.json';
+import { boardsData } from '../data/boards';
+import { institutionsData } from '../data/institutions';
+import { streamsData } from '../data/streams';
+import { programmesData } from '../data/programmes';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -153,6 +157,48 @@ class QuestionRepository extends LocalRepository<Question> {
   }
 }
 
+class BoardRepository extends LocalRepository<Board> {
+  getByType(type: string): Board[] {
+    return this.items.filter(b => b.type === type);
+  }
+  getByState(stateCode: string): Board[] {
+    return this.items.filter(b => b.stateCode === stateCode);
+  }
+}
+
+class InstitutionRepository extends LocalRepository<Institution> {
+  getByCategory(category: string): Institution[] {
+    return this.items.filter(i => i.category === category);
+  }
+  getByState(state: string): Institution[] {
+    return this.items.filter(i => i.state === state);
+  }
+  getTopByNirf(n: number): Institution[] {
+    return this.items
+      .filter(i => i.nirfRank != null)
+      .sort((a, b) => (a.nirfRank ?? 999) - (b.nirfRank ?? 999))
+      .slice(0, n);
+  }
+}
+
+class StreamRepository extends LocalRepository<Stream> {
+  getByAcademicLevel(level: string): Stream[] {
+    return this.items.filter(s => s.academicLevels.includes(level as Stream['academicLevels'][number]));
+  }
+}
+
+class ProgrammeRepository extends LocalRepository<Programme> {
+  getByDegree(degree: string): Programme[] {
+    return this.items.filter(p => p.degree === degree);
+  }
+  getByStream(streamId: string): Programme[] {
+    return this.items.filter(p => p.streamId === streamId);
+  }
+  getByAcademicLevel(level: string): Programme[] {
+    return this.items.filter(p => p.academicLevel === level);
+  }
+}
+
 // ── Singleton instances ────────────────────────────────────────────────
 
 export const subjectRepo = new SubjectRepository(subjectsData as Subject[]);
@@ -162,3 +208,7 @@ export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
 export const learningPathRepo = new LearningPathRepository(learningPathsData as LearningPath[]);
 export const questionRepo = new QuestionRepository(questionsData as Question[]);
+export const boardRepo = new BoardRepository(boardsData);
+export const institutionRepo = new InstitutionRepository(institutionsData);
+export const streamRepo = new StreamRepository(streamsData);
+export const programmeRepo = new ProgrammeRepository(programmesData);

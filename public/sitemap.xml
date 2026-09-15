@@ -13,6 +13,111 @@
   </url>
 
   <!-- â”€â”€ Collection index pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <!-- Phase 34 platform index pages -->
+  <url>
+    <loc>https://veda.dhurta.org/boards</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/institutions</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/streams</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/programmes</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Board detail pages -->
+  <url><loc>https://veda.dhurta.org/boards/cbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/icse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/nios</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/ib</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/cambridge-caie</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/ap-bseap</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/bihar-bseb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/gujarat-gseb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/haryana-hbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/karnataka-kseab</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/kerala-dhse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/madhya-pradesh-mpbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/maharashtra-msbshse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/punjab-pseb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/rajasthan-rbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/tamilnadu-tnbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/telangana-bie</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/up-upmsp</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/west-bengal-wbbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/odisha-bseodisha</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/himachal-hpbose</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/jharkhand-jac</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/uttarakhand-ubse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/assam-seba</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/chhattisgarh-cgbse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/boards/goa-gbshse</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <!-- Institution detail pages -->
+  <url><loc>https://veda.dhurta.org/institutions/iit-madras</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-delhi</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-bombay</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-kanpur</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-kharagpur</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-roorkee</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-guwahati</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-hyderabad</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-ism-dhanbad</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-bhu-varanasi</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-trichy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-surathkal</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-warangal</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-calicut</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-rourkela</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/mnit-jaipur</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iisc-bangalore</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiser-pune</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiser-kolkata</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiser-mohali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/aiims-delhi</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nlsiu-bangalore</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nlu-delhi</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nalsar-hyderabad</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Stream detail pages -->
+  <url><loc>https://veda.dhurta.org/streams/science-pcm</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/science-pcb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/science-pcmb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/commerce</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/arts-humanities</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/medical</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/law</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/management</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/streams/pure-science</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Programme detail pages -->
+  <url><loc>https://veda.dhurta.org/programmes/btech</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/be</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/bsc</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/bcom</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/bba</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/ba</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/mbbs</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/ba-llb</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/bca</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/mtech</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/mba</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/msc</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/phd</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/llm</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/barch</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/programmes/mca</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://veda.dhurta.org/subjects</loc>
     <lastmod>2026-09-15</lastmod>

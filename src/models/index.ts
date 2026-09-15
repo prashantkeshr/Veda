@@ -1,10 +1,15 @@
 // ── Core enumerations ──────────────────────────────────────────────────
 
 export type AcademicLevel =
-  | 'primary' | 'secondary' | 'higher-secondary'
+  | 'primary' | 'middle' | 'secondary' | 'higher-secondary'
   | 'diploma' | 'undergraduate' | 'postgraduate'
   | 'doctoral' | 'professional' | 'vocational'
   | 'competitive-exam' | 'certification' | 'skill-development' | 'general';
+
+export type AcademicClassLevel =
+  | 'class-1' | 'class-2' | 'class-3' | 'class-4' | 'class-5'
+  | 'class-6' | 'class-7' | 'class-8' | 'class-9' | 'class-10'
+  | 'class-11' | 'class-12';
 
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced' | 'expert';
 
@@ -28,6 +33,16 @@ export type RelationType =
 export type InstitutionType =
   | 'university' | 'college' | 'school' | 'institute' | 'board' | 'council';
 
+export type InstitutionCategory =
+  | 'iit' | 'nit' | 'iisc' | 'iiser' | 'aiims' | 'nlu'
+  | 'central-university' | 'state-university' | 'deemed-university'
+  | 'private-university' | 'private-college' | 'autonomous' | 'school';
+
+export type BoardType = 'central' | 'state' | 'international' | 'open-school';
+
+export type DegreeType =
+  | 'bachelors' | 'masters' | 'doctoral' | 'diploma' | 'certificate' | 'integrated' | 'dual';
+
 export type ExamType =
   | 'entrance' | 'competitive' | 'board' | 'university' | 'professional' | 'certification';
 
@@ -41,6 +56,7 @@ export interface Subject {
   title: string;
   shortTitle: string;
   description: string;
+  guide?: string;
   academicLevels: AcademicLevel[];
   topicIds: string[];
   courseIds: string[];
@@ -60,6 +76,7 @@ export interface Topic {
   title: string;
   description: string;
   overview: string;
+  guide?: string;
   subjectIds: string[];
   courseIds: string[];
   examIds: string[];
@@ -83,6 +100,7 @@ export interface Resource {
   slug: string;
   title: string;
   description: string;
+  guide?: string;
   type: ResourceType;
   url?: string;
   thumbnail?: string;
@@ -128,6 +146,7 @@ export interface Course {
   title: string;
   shortTitle: string;
   description: string;
+  guide?: string;
   branchName?: string;
   academicLevel: AcademicLevel;
   durationYears: number;
@@ -147,6 +166,7 @@ export interface Exam {
   title: string;
   shortTitle: string;
   description: string;
+  guide?: string;
   type: ExamType;
   conductingBody: string;
   subjectIds: string[];
@@ -159,19 +179,91 @@ export interface Exam {
   updatedAt: string;
 }
 
+// ── Board ──────────────────────────────────────────────────────────────
+
+export interface Board {
+  id: string;
+  slug: string;
+  name: string;
+  shortName: string;
+  description: string;
+  guide: string;
+  type: BoardType;
+  state?: string;
+  stateCode?: string;
+  established?: number;
+  headquarters?: string;
+  classes: AcademicClassLevel[];
+  streams: string[];
+  website?: string;
+  tags: string[];
+  updatedAt: string;
+}
+
 // ── Institution ────────────────────────────────────────────────────────
 
 export interface Institution {
   id: string;
   slug: string;
   name: string;
-  shortName?: string;
+  shortName: string;
+  description: string;
+  guide: string;
   type: InstitutionType;
-  stateId?: string;
+  category: InstitutionCategory;
+  city?: string;
+  state?: string;
   countryId: string;
+  established?: number;
+  nirfRank?: number;
+  naacGrade?: string;
+  affiliatedBoardId?: string;
   courseIds: string[];
-  affiliatedBoard?: string;
+  programmeIds: string[];
+  streamIds: string[];
+  admissionExams?: string[];
   website?: string;
+  tags: string[];
+  updatedAt: string;
+}
+
+// ── Stream ─────────────────────────────────────────────────────────────
+
+export interface Stream {
+  id: string;
+  slug: string;
+  name: string;
+  shortName?: string;
+  description: string;
+  guide: string;
+  academicLevels: AcademicLevel[];
+  coreSubjects: string[];
+  programmeIds: string[];
+  boardIds: string[];
+  careers: string[];
+  tags: string[];
+  updatedAt: string;
+}
+
+// ── Programme ──────────────────────────────────────────────────────────
+
+export interface Programme {
+  id: string;
+  slug: string;
+  name: string;
+  shortName: string;
+  description: string;
+  guide: string;
+  degree: DegreeType;
+  durationYears: number;
+  streamId?: string;
+  academicLevel: AcademicLevel;
+  eligibility: string;
+  admissionExams?: string[];
+  coreSubjects: string[];
+  topInstitutionIds: string[];
+  careers: string[];
+  tags: string[];
   updatedAt: string;
 }
 
@@ -191,6 +283,7 @@ export interface LearningPath {
   slug: string;
   title: string;
   description: string;
+  guide?: string;
   steps: PathStep[];
   goalExamIds: string[];
   goalCourseIds: string[];
@@ -247,7 +340,9 @@ export interface DataProvider<T> {
 
 // ── Search ─────────────────────────────────────────────────────────────
 
-export type SearchEntityType = 'subject' | 'topic' | 'resource' | 'course' | 'exam' | 'learning-path';
+export type SearchEntityType =
+  | 'subject' | 'topic' | 'resource' | 'course' | 'exam' | 'learning-path'
+  | 'board' | 'institution' | 'stream' | 'programme';
 
 export interface SearchResult {
   id: string;
@@ -270,4 +365,8 @@ export interface SearchResults {
   courses: SearchResult[];
   exams: SearchResult[];
   learningPaths: SearchResult[];
+  boards: SearchResult[];
+  institutions: SearchResult[];
+  streams: SearchResult[];
+  programmes: SearchResult[];
 }

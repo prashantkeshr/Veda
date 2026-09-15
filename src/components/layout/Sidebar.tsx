@@ -3,6 +3,7 @@ import {
   Home, Search, BookOpen, Hash, GraduationCap,
   FileText, ClipboardList, Route, User, LayoutGrid,
   Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark, Scale, Zap, Info, Mail,
+  Building2, University, Layers as LayersIcon,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -10,9 +11,14 @@ const navItems = [
   { to: '/', icon: Home, label: 'Home', end: true },
   { to: '/search', icon: Search, label: 'Search' },
   { divider: true },
+  { to: '/boards', icon: Building2, label: 'Boards' },
+  { to: '/institutions', icon: University, label: 'Institutions' },
+  { to: '/streams', icon: LayersIcon, label: 'Streams' },
+  { to: '/programmes', icon: GraduationCap, label: 'Programmes' },
+  { divider: true },
   { to: '/subjects', icon: BookOpen, label: 'Subjects' },
   { to: '/topics', icon: Hash, label: 'Topics' },
-  { to: '/courses', icon: GraduationCap, label: 'Courses' },
+  { to: '/courses', icon: ClipboardList, label: 'Courses' },
   { to: '/resources', icon: FileText, label: 'Resources' },
   { to: '/exams', icon: ClipboardList, label: 'Exams' },
   { to: '/learning-paths', icon: Route, label: 'Learning Paths' },

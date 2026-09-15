@@ -44,6 +44,14 @@ const Planner          = lazy(() => import('../pages/Planner').then(m => ({ defa
 const Bookmarks        = lazy(() => import('../pages/Bookmarks').then(m => ({ default: m.Bookmarks })));
 const Comparison       = lazy(() => import('../pages/Comparison').then(m => ({ default: m.Comparison })));
 const Revision         = lazy(() => import('../pages/Revision').then(m => ({ default: m.Revision })));
+const Boards           = lazy(() => import('../pages/Boards').then(m => ({ default: m.Boards })));
+const BoardDetail      = lazy(() => import('../pages/BoardDetail').then(m => ({ default: m.BoardDetail })));
+const Institutions     = lazy(() => import('../pages/Institutions').then(m => ({ default: m.Institutions })));
+const InstitutionDetail = lazy(() => import('../pages/InstitutionDetail').then(m => ({ default: m.InstitutionDetail })));
+const Streams          = lazy(() => import('../pages/Streams').then(m => ({ default: m.Streams })));
+const StreamDetail     = lazy(() => import('../pages/StreamDetail').then(m => ({ default: m.StreamDetail })));
+const Programmes       = lazy(() => import('../pages/Programmes').then(m => ({ default: m.Programmes })));
+const ProgrammeDetail  = lazy(() => import('../pages/ProgrammeDetail').then(m => ({ default: m.ProgrammeDetail })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 const Legal            = lazy(() => import('../pages/Legal').then(m => ({ default: m.Legal })));
 const About            = lazy(() => import('../pages/About').then(m => ({ default: m.About })));
@@ -106,6 +114,14 @@ export function Router() {
         <Route path="bookmarks" element={<Suspense fallback={<PageLoader />}><Bookmarks /></Suspense>} />
         <Route path="compare" element={<Suspense fallback={<PageLoader />}><Comparison /></Suspense>} />
         <Route path="revision" element={<Suspense fallback={<PageLoader />}><Revision /></Suspense>} />
+        <Route path="boards" element={<Suspense fallback={<PageLoader />}><Boards /></Suspense>} />
+        <Route path="boards/:slug" element={<Suspense fallback={<PageLoader />}><BoardDetail /></Suspense>} />
+        <Route path="institutions" element={<Suspense fallback={<PageLoader />}><Institutions /></Suspense>} />
+        <Route path="institutions/:slug" element={<Suspense fallback={<PageLoader />}><InstitutionDetail /></Suspense>} />
+        <Route path="streams" element={<Suspense fallback={<PageLoader />}><Streams /></Suspense>} />
+        <Route path="streams/:slug" element={<Suspense fallback={<PageLoader />}><StreamDetail /></Suspense>} />
+        <Route path="programmes" element={<Suspense fallback={<PageLoader />}><Programmes /></Suspense>} />
+        <Route path="programmes/:slug" element={<Suspense fallback={<PageLoader />}><ProgrammeDetail /></Suspense>} />
         <Route path="legal"    element={<Suspense fallback={<PageLoader />}><Legal /></Suspense>} />
         <Route path="about"   element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
         <Route path="contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
