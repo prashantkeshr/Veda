@@ -27,6 +27,7 @@ const Achievements     = lazy(() => import('../pages/Achievements').then(m => ({
 const Settings         = lazy(() => import('../pages/Settings').then(m => ({ default: m.Settings })));
 const Flashcards       = lazy(() => import('../pages/Flashcards').then(m => ({ default: m.Flashcards })));
 const Notes            = lazy(() => import('../pages/Notes').then(m => ({ default: m.Notes })));
+const FormulaSheet     = lazy(() => import('../pages/FormulaSheet').then(m => ({ default: m.FormulaSheet })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -65,6 +66,7 @@ export function Router() {
         <Route path="settings" element={<Suspense fallback={<PageLoader />}><Settings /></Suspense>} />
         <Route path="flashcards" element={<Suspense fallback={<PageLoader />}><Flashcards /></Suspense>} />
         <Route path="notes" element={<Suspense fallback={<PageLoader />}><Notes /></Suspense>} />
+        <Route path="formula-sheet" element={<Suspense fallback={<PageLoader />}><FormulaSheet /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
