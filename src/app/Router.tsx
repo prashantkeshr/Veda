@@ -7,6 +7,7 @@ import { Spinner } from '../components/ui';
 const KendraLogin     = lazy(() => import('../pages/kendra/KendraLogin').then(m => ({ default: m.KendraLogin })));
 const KendraShell     = lazy(() => import('../pages/kendra/KendraShell').then(m => ({ default: m.KendraShell })));
 const KendraDashboard = lazy(() => import('../pages/kendra/KendraDashboard').then(m => ({ default: m.KendraDashboard })));
+const KendraEditor    = lazy(() => import('../pages/kendra/KendraEditor').then(m => ({ default: m.KendraEditor })));
 
 const Home             = lazy(() => import('../pages/Home').then(m => ({ default: m.Home })));
 const Subjects         = lazy(() => import('../pages/Subjects').then(m => ({ default: m.Subjects })));
@@ -92,6 +93,7 @@ export function Router() {
         <Route index element={<Suspense fallback={<PageLoader />}><KendraLogin /></Suspense>} />
         <Route element={<Suspense fallback={<PageLoader />}><KendraShell /></Suspense>}>
           <Route path="dashboard" element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
+          <Route path="editor"    element={<Suspense fallback={<PageLoader />}><KendraEditor /></Suspense>} />
         </Route>
       </Route>
 

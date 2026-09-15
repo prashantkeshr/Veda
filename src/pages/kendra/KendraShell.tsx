@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate, NavLink } from 'react-router-dom';
-import { LayoutDashboard, LogOut } from 'lucide-react';
+import { LayoutDashboard, LogOut, GitBranch } from 'lucide-react';
 
 const SESSION_KEY = 'vk-auth';
 
 const NAV = [
-  { to: '/veda-kendra/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/veda-kendra/dashboard', icon: LayoutDashboard, label: 'Dashboard'      },
+  { to: '/veda-kendra/editor',    icon: GitBranch,       label: 'Subject & Topics' },
   // Future phases add entries here
 ];
 
