@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Search, BookOpen, Hash, GraduationCap,
   FileText, ClipboardList, Route, User, LayoutGrid,
-  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark
+  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark, Scale
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -24,6 +24,7 @@ const navItems = [
   { to: '/quiz', icon: ClipboardCheck, label: 'Practice Quiz' },
   { to: '/flashcards', icon: Layers, label: 'Flashcards' },
   { to: '/formula-sheet', icon: Calculator, label: 'Formula Sheet' },
+  { to: '/compare', icon: Scale, label: 'Compare Topics' },
   { to: '/exam-readiness', icon: Target, label: 'Exam Readiness' },
   { to: '/insights', icon: BarChart2, label: 'Insights' },
   { to: '/achievements', icon: Trophy, label: 'Achievements' },

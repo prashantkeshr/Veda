@@ -32,6 +32,7 @@ const ExamReadiness    = lazy(() => import('../pages/ExamReadiness').then(m => (
 const TimerPage        = lazy(() => import('../pages/Timer').then(m => ({ default: m.Timer })));
 const Planner          = lazy(() => import('../pages/Planner').then(m => ({ default: m.Planner })));
 const Bookmarks        = lazy(() => import('../pages/Bookmarks').then(m => ({ default: m.Bookmarks })));
+const Comparison       = lazy(() => import('../pages/Comparison').then(m => ({ default: m.Comparison })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function PageLoader() {
@@ -75,6 +76,7 @@ export function Router() {
         <Route path="timer" element={<Suspense fallback={<PageLoader />}><TimerPage /></Suspense>} />
         <Route path="planner" element={<Suspense fallback={<PageLoader />}><Planner /></Suspense>} />
         <Route path="bookmarks" element={<Suspense fallback={<PageLoader />}><Bookmarks /></Suspense>} />
+        <Route path="compare" element={<Suspense fallback={<PageLoader />}><Comparison /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
     </Routes>
