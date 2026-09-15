@@ -6,6 +6,7 @@ import { Badge, SectionHeader } from '../components/ui';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
 import { useSEO } from '../hooks/useSEO';
 import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 
 export function ExamDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -43,7 +44,10 @@ export function ExamDetail() {
           <ClipboardList size={22} className="text-red-600 dark:text-red-400" />
         </div>
         <div className="flex-1">
-          <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{exam.title}</h1>
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{exam.title}</h1>
+            <ShareButton title={exam.title} className="flex-shrink-0" />
+          </div>
           <p className="text-stone-500 text-sm mt-1">{exam.conductingBody} · {exam.level}</p>
           <p className="text-stone-600 dark:text-stone-400 text-sm mt-2 leading-relaxed max-w-2xl">{exam.description}</p>
           <div className="flex flex-wrap gap-2 mt-3">

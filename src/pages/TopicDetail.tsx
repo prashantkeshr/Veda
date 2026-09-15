@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 import { Clock, Zap, BookOpen, ChevronRight, ArrowRight, Circle, CheckCircle } from 'lucide-react';
 import { topicRepo, subjectRepo, resourceRepo, questionRepo } from '../repositories';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
@@ -77,14 +78,16 @@ export function TopicDetail() {
             <h1 className="text-2xl lg:text-3xl font-bold text-stone-900 dark:text-stone-100">{topic.title}</h1>
             <p className="text-stone-500 dark:text-stone-400 mt-1 text-sm">{topic.description}</p>
           </div>
-          <BookmarkButton
-            entityId={topic.id}
-            type="topic"
-            slug={topic.slug}
-            title={topic.title}
-            size={18}
-            className="flex-shrink-0 mt-1"
-          />
+          <div className="flex items-center gap-2 flex-shrink-0 mt-1">
+            <ShareButton title={topic.title} />
+            <BookmarkButton
+              entityId={topic.id}
+              type="topic"
+              slug={topic.slug}
+              title={topic.title}
+              size={18}
+            />
+          </div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <DifficultyBadge level={topic.difficulty} />

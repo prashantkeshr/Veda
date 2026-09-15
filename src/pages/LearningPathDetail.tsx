@@ -7,6 +7,7 @@ import { formatMinutes } from '../utils/format';
 import { cn } from '../utils/cn';
 import { useSEO } from '../hooks/useSEO';
 import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 
 const stepTypeIcon: Record<string, typeof Hash> = {
   topic: Hash,
@@ -45,8 +46,11 @@ export function LearningPathDetail() {
         <div className="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center flex-shrink-0">
           <Route size={22} className="text-teal-600 dark:text-teal-400" />
         </div>
-        <div>
-          <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{path.title}</h1>
+        <div className="flex-1">
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{path.title}</h1>
+            <ShareButton title={path.title} className="flex-shrink-0" />
+          </div>
           <p className="text-stone-500 text-sm mt-1 leading-relaxed max-w-2xl">{path.description}</p>
           <div className="flex flex-wrap items-center gap-2 mt-3">
             <DifficultyBadge level={path.difficulty} />

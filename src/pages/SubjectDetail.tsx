@@ -1,6 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
+import { ShareButton } from '../components/ui/ShareButton';
 import { BookOpen, Hash, FileText, ClipboardList } from 'lucide-react';
 import { subjectRepo, topicRepo, resourceRepo, examRepo } from '../repositories';
 import { TopicCard } from '../components/knowledge/TopicCard';
@@ -39,8 +40,11 @@ export function SubjectDetail() {
         <div className="w-12 h-12 rounded-xl bg-veda-50 dark:bg-veda-900/30 flex items-center justify-center flex-shrink-0">
           <BookOpen size={22} className="text-veda-700 dark:text-veda-400" />
         </div>
-        <div>
-          <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{subject.title}</h1>
+        <div className="flex-1">
+          <div className="flex items-start justify-between gap-2">
+            <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">{subject.title}</h1>
+            <ShareButton title={subject.title} className="flex-shrink-0 mt-1" />
+          </div>
           <p className="text-stone-500 dark:text-stone-400 mt-1 text-sm leading-relaxed max-w-2xl">
             {subject.description}
           </p>

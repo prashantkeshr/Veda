@@ -5,6 +5,9 @@ import { Header } from './Header';
 import { BottomNav } from './BottomNav';
 import { SiteFooter } from './SiteFooter';
 import { InstallBanner } from '../ui/InstallBanner';
+import { ScrollToTop } from '../ui/ScrollToTop';
+import { ReadingProgress } from '../ui/ReadingProgress';
+import { OfflineBanner } from '../ui/OfflineBanner';
 import { OnboardingModal, useOnboarding } from '../onboarding/OnboardingModal';
 
 export function AppShell() {
@@ -46,6 +49,7 @@ export function AppShell() {
 
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         <Header onMenuOpen={() => setSidebarOpen(true)} />
+        <OfflineBanner />
         <InstallBanner />
 
         <main
@@ -61,6 +65,8 @@ export function AppShell() {
         </main>
       </div>
 
+      <ScrollToTop />
+      <ReadingProgress />
       <BottomNav />
       {showOnboarding && <OnboardingModal />}
     </div>
