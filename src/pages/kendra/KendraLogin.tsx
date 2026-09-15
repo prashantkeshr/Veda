@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Lock, Eye, EyeOff, ShieldCheck } from 'lucide-react';
 
 const SESSION_KEY = 'vk-auth';
-const DEFAULT_HASH = 'b171e4ad30c4b17020a1e2f1be4dd66ab7ffb0f45dfc849c5a7ba6ba0942bc83';
+const DEFAULT_HASH = '62dd5edc7f430999c567f1e9b4ca45af2e49f2f8dcda66519adfd51e74b1f197';
 const STORED_HASH = String(import.meta.env['VITE_KENDRA_HASH'] || DEFAULT_HASH);
 
 async function hashPasskey(passkey: string): Promise<string> {

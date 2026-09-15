@@ -6,8 +6,12 @@ import { Spinner } from '../components/ui';
 // ── Admin (Kendra) — not linked in student UI ──────────────────────────
 const KendraLogin     = lazy(() => import('../pages/kendra/KendraLogin').then(m => ({ default: m.KendraLogin })));
 const KendraShell     = lazy(() => import('../pages/kendra/KendraShell').then(m => ({ default: m.KendraShell })));
-const KendraDashboard = lazy(() => import('../pages/kendra/KendraDashboard').then(m => ({ default: m.KendraDashboard })));
-const KendraEditor    = lazy(() => import('../pages/kendra/KendraEditor').then(m => ({ default: m.KendraEditor })));
+const KendraDashboard  = lazy(() => import('../pages/kendra/KendraDashboard').then(m => ({ default: m.KendraDashboard })));
+const KendraEditor     = lazy(() => import('../pages/kendra/KendraEditor').then(m => ({ default: m.KendraEditor })));
+const KendraResources  = lazy(() => import('../pages/kendra/KendraResources').then(m => ({ default: m.KendraResources })));
+const KendraQuestions  = lazy(() => import('../pages/kendra/KendraQuestions').then(m => ({ default: m.KendraQuestions })));
+const KendraPublish    = lazy(() => import('../pages/kendra/KendraPublish').then(m => ({ default: m.KendraPublish })));
+const KendraCourses    = lazy(() => import('../pages/kendra/KendraCourses').then(m => ({ default: m.KendraCourses })));
 
 const Home             = lazy(() => import('../pages/Home').then(m => ({ default: m.Home })));
 const Subjects         = lazy(() => import('../pages/Subjects').then(m => ({ default: m.Subjects })));
@@ -92,8 +96,12 @@ export function Router() {
       <Route path="veda-kendra">
         <Route index element={<Suspense fallback={<PageLoader />}><KendraLogin /></Suspense>} />
         <Route element={<Suspense fallback={<PageLoader />}><KendraShell /></Suspense>}>
-          <Route path="dashboard" element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
-          <Route path="editor"    element={<Suspense fallback={<PageLoader />}><KendraEditor /></Suspense>} />
+          <Route path="dashboard"  element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
+          <Route path="editor"     element={<Suspense fallback={<PageLoader />}><KendraEditor /></Suspense>} />
+          <Route path="resources"  element={<Suspense fallback={<PageLoader />}><KendraResources /></Suspense>} />
+          <Route path="questions"  element={<Suspense fallback={<PageLoader />}><KendraQuestions /></Suspense>} />
+          <Route path="courses"    element={<Suspense fallback={<PageLoader />}><KendraCourses /></Suspense>} />
+          <Route path="publish"    element={<Suspense fallback={<PageLoader />}><KendraPublish /></Suspense>} />
         </Route>
       </Route>
 

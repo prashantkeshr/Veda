@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
 import { Outlet, useNavigate, NavLink } from 'react-router-dom';
-import { LayoutDashboard, LogOut, GitBranch } from 'lucide-react';
+import { LayoutDashboard, LogOut, GitBranch, FileStack, HelpCircle, UploadCloud, BookMarked } from 'lucide-react';
 
 const SESSION_KEY = 'vk-auth';
 
 const NAV = [
-  { to: '/veda-kendra/dashboard', icon: LayoutDashboard, label: 'Dashboard'      },
-  { to: '/veda-kendra/editor',    icon: GitBranch,       label: 'Subject & Topics' },
-  // Future phases add entries here
+  { to: '/veda-kendra/dashboard', icon: LayoutDashboard, label: 'Dashboard'        },
+  { to: '/veda-kendra/editor',    icon: GitBranch,       label: 'Subjects & Topics' },
+  { to: '/veda-kendra/resources', icon: FileStack,       label: 'Resources & Exams' },
+  { to: '/veda-kendra/questions', icon: HelpCircle,      label: 'Question Bank'     },
+  { to: '/veda-kendra/courses',   icon: BookMarked,      label: 'Courses & Paths'   },
+  { to: '/veda-kendra/publish',   icon: UploadCloud,     label: 'Publish'           },
 ];
 
 export function KendraShell() {
