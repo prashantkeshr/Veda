@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import {
   Home, Search, BookOpen, Hash, GraduationCap,
   FileText, ClipboardList, Route, User, LayoutGrid,
-  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark, Scale, Zap
+  Map, X, Code2, ClipboardCheck, BarChart2, Trophy, Settings2, Layers, StickyNote, Calculator, Target, Timer, CalendarDays, Bookmark, Scale, Zap, Info, Mail,
 } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
@@ -36,7 +36,9 @@ const navItems = [
   { to: '/content-studio', icon: LayoutGrid, label: 'Content Studio' },
   { to: '/api-explorer', icon: Code2, label: 'API Explorer' },
   { divider: true },
-  { to: '/legal', icon: Scale, label: 'Legal & Policies' },
+  { to: '/about',   icon: Info,  label: 'About VEDA'      },
+  { to: '/contact', icon: Mail,  label: 'Contact'         },
+  { to: '/legal',   icon: Scale, label: 'Legal & Policies'},
 ];
 
 interface SidebarProps {

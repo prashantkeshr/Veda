@@ -392,7 +392,19 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- ── Legal ──────────────────────────────────────────── -->
+  <!-- ── About / Contact / Legal ───────────────────────── -->
+  <url>
+    <loc>https://prashantkeshr.github.io/Veda/about</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://prashantkeshr.github.io/Veda/contact</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
   <url>
     <loc>https://prashantkeshr.github.io/Veda/legal</loc>
     <lastmod>2026-09-15</lastmod>

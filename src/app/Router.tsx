@@ -46,6 +46,8 @@ const Comparison       = lazy(() => import('../pages/Comparison').then(m => ({ d
 const Revision         = lazy(() => import('../pages/Revision').then(m => ({ default: m.Revision })));
 const NotFound         = lazy(() => import('../pages/NotFound').then(m => ({ default: m.NotFound })));
 const Legal            = lazy(() => import('../pages/Legal').then(m => ({ default: m.Legal })));
+const About            = lazy(() => import('../pages/About').then(m => ({ default: m.About })));
+const Contact          = lazy(() => import('../pages/Contact').then(m => ({ default: m.Contact })));
 
 function PageLoader() {
   return (
@@ -104,7 +106,9 @@ export function Router() {
         <Route path="bookmarks" element={<Suspense fallback={<PageLoader />}><Bookmarks /></Suspense>} />
         <Route path="compare" element={<Suspense fallback={<PageLoader />}><Comparison /></Suspense>} />
         <Route path="revision" element={<Suspense fallback={<PageLoader />}><Revision /></Suspense>} />
-        <Route path="legal" element={<Suspense fallback={<PageLoader />}><Legal /></Suspense>} />
+        <Route path="legal"    element={<Suspense fallback={<PageLoader />}><Legal /></Suspense>} />
+        <Route path="about"   element={<Suspense fallback={<PageLoader />}><About /></Suspense>} />
+        <Route path="contact" element={<Suspense fallback={<PageLoader />}><Contact /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
       </Route>
 

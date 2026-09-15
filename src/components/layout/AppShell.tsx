@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { BottomNav } from './BottomNav';
+import { SiteFooter } from './SiteFooter';
 import { InstallBanner } from '../ui/InstallBanner';
 import { OnboardingModal, useOnboarding } from '../onboarding/OnboardingModal';
 
@@ -55,6 +56,7 @@ export function AppShell() {
         >
           <div className="max-w-7xl mx-auto px-4 py-6 lg:px-8">
             <Outlet />
+            <SiteFooter />
           </div>
         </main>
       </div>
