@@ -7,6 +7,7 @@ import { TopicCard } from '../components/knowledge/TopicCard';
 import { SectionHeader, Card } from '../components/ui';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { getRecommendations } from '../services/recommendation.service';
+import { TodayFocus } from '../components/dashboard/TodayFocus';
 
 const quickLinks = [
   { to: '/subjects', icon: BookOpen, label: 'Subjects', color: 'bg-veda-50 text-veda-700 dark:bg-veda-900/30 dark:text-veda-400' },
@@ -79,6 +80,9 @@ export function Home() {
           )}
         </div>
       </div>
+
+      {/* Today's Focus — planner + flashcards + timer in one glance */}
+      <TodayFocus />
 
       {/* Continue studying — only shown when there are in-progress topics */}
       {inProgressTopics.length > 0 && (
