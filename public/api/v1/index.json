@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-09-15T00:25:26.379Z",
+  "endpoints": [
+    {
+      "entity": "subject",
+      "file": "subjects.json",
+      "count": 5,
+      "path": "/Veda/api/v1/subjects.json"
+    },
+    {
+      "entity": "topic",
+      "file": "topics.json",
+      "count": 21,
+      "path": "/Veda/api/v1/topics.json"
+    },
+    {
+      "entity": "resource",
+      "file": "resources.json",
+      "count": 18,
+      "path": "/Veda/api/v1/resources.json"
+    },
+    {
+      "entity": "question",
+      "file": "questions.json",
+      "count": 11,
+      "path": "/Veda/api/v1/questions.json"
+    },
+    {
+      "entity": "course",
+      "file": "courses.json",
+      "count": 4,
+      "path": "/Veda/api/v1/courses.json"
+    },
+    {
+      "entity": "exam",
+      "file": "exams.json",
+      "count": 5,
+      "path": "/Veda/api/v1/exams.json"
+    },
+    {
+      "entity": "learning-path",
+      "file": "learning-paths.json",
+      "count": 3,
+      "path": "/Veda/api/v1/learning-paths.json"
+    }
+  ]
+}

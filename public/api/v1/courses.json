@@ -1,0 +1,304 @@
+{
+  "$schema": "/Veda/api/v1/schema.json",
+  "version": "1.0.0",
+  "entity": "course",
+  "count": 4,
+  "generatedAt": "2026-09-15T00:25:26.376Z",
+  "data": [
+    {
+      "id": "veda-course-btech-me",
+      "slug": "btech-mechanical-engineering",
+      "title": "B.Tech Mechanical Engineering",
+      "shortTitle": "B.Tech ME",
+      "description": "Four-year undergraduate programme covering core mechanical engineering disciplines — thermodynamics, fluid mechanics, manufacturing, machine design, materials, dynamics, and control systems.",
+      "branchName": "Mechanical Engineering",
+      "academicLevel": "undergraduate",
+      "durationYears": 4,
+      "semesters": [
+        {
+          "number": 1,
+          "label": "Semester 1",
+          "subjectIds": [
+            "veda-subject-engg-maths",
+            "veda-subject-engg-physics"
+          ]
+        },
+        {
+          "number": 2,
+          "label": "Semester 2",
+          "subjectIds": [
+            "veda-subject-engg-maths",
+            "veda-subject-engg-physics"
+          ]
+        },
+        {
+          "number": 3,
+          "label": "Semester 3",
+          "subjectIds": [
+            "veda-subject-engg-thermo",
+            "veda-subject-som",
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 4,
+          "label": "Semester 4",
+          "subjectIds": [
+            "veda-subject-fluid-mech",
+            "veda-subject-engg-thermo",
+            "veda-subject-som"
+          ]
+        },
+        {
+          "number": 5,
+          "label": "Semester 5",
+          "subjectIds": [
+            "veda-subject-fluid-mech"
+          ]
+        },
+        {
+          "number": 6,
+          "label": "Semester 6",
+          "subjectIds": []
+        },
+        {
+          "number": 7,
+          "label": "Semester 7",
+          "subjectIds": []
+        },
+        {
+          "number": 8,
+          "label": "Semester 8",
+          "subjectIds": []
+        }
+      ],
+      "subjectIds": [
+        "veda-subject-engg-maths",
+        "veda-subject-engg-physics",
+        "veda-subject-engg-thermo",
+        "veda-subject-fluid-mech",
+        "veda-subject-som"
+      ],
+      "institutionIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-upsc-ese-me"
+      ],
+      "tags": [
+        "B.Tech",
+        "Mechanical Engineering",
+        "undergraduate",
+        "4 year"
+      ],
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-course-btech-ce",
+      "slug": "btech-civil-engineering",
+      "title": "B.Tech Civil Engineering",
+      "shortTitle": "B.Tech CE",
+      "description": "Four-year undergraduate programme in civil engineering — structural analysis, geotechnical engineering, fluid mechanics, transportation, surveying, and environmental engineering.",
+      "branchName": "Civil Engineering",
+      "academicLevel": "undergraduate",
+      "durationYears": 4,
+      "semesters": [
+        {
+          "number": 1,
+          "label": "Semester 1",
+          "subjectIds": [
+            "veda-subject-engg-maths",
+            "veda-subject-engg-physics"
+          ]
+        },
+        {
+          "number": 2,
+          "label": "Semester 2",
+          "subjectIds": [
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 3,
+          "label": "Semester 3",
+          "subjectIds": [
+            "veda-subject-som",
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 4,
+          "label": "Semester 4",
+          "subjectIds": [
+            "veda-subject-fluid-mech",
+            "veda-subject-som"
+          ]
+        },
+        {
+          "number": 5,
+          "label": "Semester 5",
+          "subjectIds": [
+            "veda-subject-fluid-mech"
+          ]
+        },
+        {
+          "number": 6,
+          "label": "Semester 6",
+          "subjectIds": []
+        },
+        {
+          "number": 7,
+          "label": "Semester 7",
+          "subjectIds": []
+        },
+        {
+          "number": 8,
+          "label": "Semester 8",
+          "subjectIds": []
+        }
+      ],
+      "subjectIds": [
+        "veda-subject-engg-maths",
+        "veda-subject-engg-physics",
+        "veda-subject-fluid-mech",
+        "veda-subject-som"
+      ],
+      "institutionIds": [],
+      "examIds": [
+        "veda-exam-gate-ce"
+      ],
+      "tags": [
+        "B.Tech",
+        "Civil Engineering",
+        "undergraduate",
+        "4 year"
+      ],
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-course-diploma-me",
+      "slug": "diploma-mechanical-engineering",
+      "title": "Diploma in Mechanical Engineering",
+      "shortTitle": "Diploma ME",
+      "description": "Three-year polytechnic diploma programme covering fundamental mechanical engineering subjects — workshop technology, thermodynamics, fluid mechanics, production technology, and industrial applications.",
+      "branchName": "Mechanical Engineering",
+      "academicLevel": "diploma",
+      "durationYears": 3,
+      "semesters": [
+        {
+          "number": 1,
+          "label": "Semester 1",
+          "subjectIds": [
+            "veda-subject-engg-physics",
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 2,
+          "label": "Semester 2",
+          "subjectIds": [
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 3,
+          "label": "Semester 3",
+          "subjectIds": [
+            "veda-subject-engg-thermo",
+            "veda-subject-som"
+          ]
+        },
+        {
+          "number": 4,
+          "label": "Semester 4",
+          "subjectIds": [
+            "veda-subject-fluid-mech",
+            "veda-subject-engg-thermo"
+          ]
+        },
+        {
+          "number": 5,
+          "label": "Semester 5",
+          "subjectIds": []
+        },
+        {
+          "number": 6,
+          "label": "Semester 6",
+          "subjectIds": []
+        }
+      ],
+      "subjectIds": [
+        "veda-subject-engg-maths",
+        "veda-subject-engg-physics",
+        "veda-subject-engg-thermo",
+        "veda-subject-fluid-mech",
+        "veda-subject-som"
+      ],
+      "institutionIds": [],
+      "examIds": [],
+      "tags": [
+        "Diploma",
+        "Mechanical Engineering",
+        "polytechnic",
+        "3 year"
+      ],
+      "updatedAt": "2026-07-15"
+    },
+    {
+      "id": "veda-course-gate-me-prep",
+      "slug": "gate-mechanical-engineering-preparation",
+      "title": "GATE Mechanical Engineering Preparation",
+      "shortTitle": "GATE ME Prep",
+      "description": "Comprehensive preparation track for GATE Mechanical Engineering — covering all 23 subjects in the official GATE ME syllabus with structured topic-by-topic resources, previous year questions, and practice tests.",
+      "branchName": "Mechanical Engineering",
+      "academicLevel": "competitive-exam",
+      "durationYears": 1,
+      "semesters": [
+        {
+          "number": 1,
+          "label": "Phase 1 — Engineering Mathematics",
+          "subjectIds": [
+            "veda-subject-engg-maths"
+          ]
+        },
+        {
+          "number": 2,
+          "label": "Phase 2 — Thermodynamics & Heat Transfer",
+          "subjectIds": [
+            "veda-subject-engg-thermo"
+          ]
+        },
+        {
+          "number": 3,
+          "label": "Phase 3 — Fluid Mechanics & Turbo Machinery",
+          "subjectIds": [
+            "veda-subject-fluid-mech"
+          ]
+        },
+        {
+          "number": 4,
+          "label": "Phase 4 — Strength of Materials & Machine Design",
+          "subjectIds": [
+            "veda-subject-som"
+          ]
+        }
+      ],
+      "subjectIds": [
+        "veda-subject-engg-maths",
+        "veda-subject-engg-thermo",
+        "veda-subject-fluid-mech",
+        "veda-subject-som"
+      ],
+      "institutionIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "tags": [
+        "GATE",
+        "Mechanical Engineering",
+        "preparation",
+        "competitive exam"
+      ],
+      "updatedAt": "2026-09-01"
+    }
+  ]
+}

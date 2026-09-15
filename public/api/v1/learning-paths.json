@@ -1,0 +1,413 @@
+{
+  "$schema": "/Veda/api/v1/schema.json",
+  "version": "1.0.0",
+  "entity": "learning-path",
+  "count": 3,
+  "generatedAt": "2026-09-15T00:25:26.378Z",
+  "data": [
+    {
+      "id": "veda-lp-gate-me-complete",
+      "slug": "gate-mechanical-engineering-complete-preparation",
+      "title": "Complete GATE ME Preparation Path",
+      "description": "A structured 6-month preparation path for GATE Mechanical Engineering — starting from Engineering Mathematics through all core mechanical subjects, ending with full-length mock tests.",
+      "steps": [
+        {
+          "order": 1,
+          "type": "milestone",
+          "refId": "phase-1-maths",
+          "label": "Phase 1: Engineering Mathematics",
+          "estimatedMinutes": 2400
+        },
+        {
+          "order": 2,
+          "type": "topic",
+          "refId": "veda-topic-linear-algebra",
+          "label": "Linear Algebra & Matrices",
+          "estimatedMinutes": 210
+        },
+        {
+          "order": 3,
+          "type": "topic",
+          "refId": "veda-topic-differential-calculus",
+          "label": "Differential Calculus",
+          "estimatedMinutes": 240
+        },
+        {
+          "order": 4,
+          "type": "topic",
+          "refId": "veda-topic-integral-calculus",
+          "label": "Integral Calculus",
+          "estimatedMinutes": 300
+        },
+        {
+          "order": 5,
+          "type": "topic",
+          "refId": "veda-topic-differential-equations",
+          "label": "Ordinary Differential Equations",
+          "estimatedMinutes": 270
+        },
+        {
+          "order": 6,
+          "type": "topic",
+          "refId": "veda-topic-probability-statistics",
+          "label": "Probability & Statistics",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 7,
+          "type": "topic",
+          "refId": "veda-topic-numerical-methods",
+          "label": "Numerical Methods",
+          "estimatedMinutes": 200
+        },
+        {
+          "order": 8,
+          "type": "resource",
+          "refId": "veda-resource-gate-me-maths-pyq-2024",
+          "label": "Solve GATE ME 2024 Mathematics PYQ",
+          "estimatedMinutes": 120
+        },
+        {
+          "order": 9,
+          "type": "milestone",
+          "refId": "phase-2-thermo",
+          "label": "Phase 2: Thermodynamics & Heat Transfer",
+          "estimatedMinutes": 2000
+        },
+        {
+          "order": 10,
+          "type": "topic",
+          "refId": "veda-topic-thermo-systems-properties",
+          "label": "Thermodynamic Systems & Properties",
+          "estimatedMinutes": 120
+        },
+        {
+          "order": 11,
+          "type": "topic",
+          "refId": "veda-topic-first-law",
+          "label": "First Law of Thermodynamics",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 12,
+          "type": "topic",
+          "refId": "veda-topic-second-law-entropy",
+          "label": "Second Law & Entropy",
+          "estimatedMinutes": 240
+        },
+        {
+          "order": 13,
+          "type": "topic",
+          "refId": "veda-topic-thermo-cycles",
+          "label": "Rankine & Vapour Power Cycles",
+          "estimatedMinutes": 210
+        },
+        {
+          "order": 14,
+          "type": "topic",
+          "refId": "veda-topic-gas-power-cycles",
+          "label": "Gas Power Cycles — Otto, Diesel & Dual",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 15,
+          "type": "topic",
+          "refId": "veda-topic-refrigeration-ac",
+          "label": "Refrigeration & Air Conditioning",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 16,
+          "type": "resource",
+          "refId": "veda-resource-thermo-pyq-2024",
+          "label": "Solve GATE ME 2024 Thermodynamics PYQ",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 17,
+          "type": "milestone",
+          "refId": "phase-3-fluid",
+          "label": "Phase 3: Fluid Mechanics",
+          "estimatedMinutes": 1600
+        },
+        {
+          "order": 18,
+          "type": "topic",
+          "refId": "veda-topic-fluid-properties",
+          "label": "Fluid Properties & Classification",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 19,
+          "type": "topic",
+          "refId": "veda-topic-fluid-statics",
+          "label": "Fluid Statics",
+          "estimatedMinutes": 150
+        },
+        {
+          "order": 20,
+          "type": "topic",
+          "refId": "veda-topic-bernoulli-equation",
+          "label": "Bernoulli & Flow Kinematics",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 21,
+          "type": "topic",
+          "refId": "veda-topic-pipe-flow",
+          "label": "Pipe Flow & Head Losses",
+          "estimatedMinutes": 200
+        },
+        {
+          "order": 22,
+          "type": "resource",
+          "refId": "veda-resource-fluid-mech-pyq-2024",
+          "label": "Solve GATE ME 2024 Fluid Mechanics PYQ",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 23,
+          "type": "milestone",
+          "refId": "phase-4-som",
+          "label": "Phase 4: Strength of Materials",
+          "estimatedMinutes": 1400
+        },
+        {
+          "order": 24,
+          "type": "topic",
+          "refId": "veda-topic-stress-strain",
+          "label": "Stress, Strain & Elastic Constants",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 25,
+          "type": "topic",
+          "refId": "veda-topic-bending-shear",
+          "label": "Bending Moment & Shear Force",
+          "estimatedMinutes": 210
+        }
+      ],
+      "goalExamIds": [
+        "veda-exam-gate-me"
+      ],
+      "goalCourseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "totalMinutes": 9600,
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "tags": [
+        "GATE ME",
+        "complete preparation",
+        "6 months",
+        "structured"
+      ],
+      "createdAt": "2026-01-01",
+      "updatedAt": "2026-09-01"
+    },
+    {
+      "id": "veda-lp-thermo-mastery",
+      "slug": "thermodynamics-mastery-path",
+      "title": "Thermodynamics Mastery Path",
+      "description": "Deep-dive into Engineering Thermodynamics — from foundational concepts through advanced cycles. Perfect for GATE ME aspirants wanting to score 100% in thermodynamics, or B.Tech Semester 3 students.",
+      "steps": [
+        {
+          "order": 1,
+          "type": "topic",
+          "refId": "veda-topic-thermo-systems-properties",
+          "label": "Systems, Properties & Zeroth Law",
+          "estimatedMinutes": 120
+        },
+        {
+          "order": 2,
+          "type": "resource",
+          "refId": "veda-resource-thermo-notes-comprehensive",
+          "label": "Read Comprehensive Notes (Chapters 1–2)",
+          "estimatedMinutes": 60,
+          "isOptional": true
+        },
+        {
+          "order": 3,
+          "type": "topic",
+          "refId": "veda-topic-first-law",
+          "label": "First Law — Closed & Open Systems",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 4,
+          "type": "resource",
+          "refId": "veda-resource-first-law-notes",
+          "label": "First Law Study Notes",
+          "estimatedMinutes": 60
+        },
+        {
+          "order": 5,
+          "type": "topic",
+          "refId": "veda-topic-second-law-entropy",
+          "label": "Second Law & Entropy",
+          "estimatedMinutes": 240
+        },
+        {
+          "order": 6,
+          "type": "resource",
+          "refId": "veda-resource-second-law-video",
+          "label": "Watch: Second Law Concept Lecture (NPTEL)",
+          "estimatedMinutes": 45
+        },
+        {
+          "order": 7,
+          "type": "resource",
+          "refId": "veda-resource-second-law-formula-sheet",
+          "label": "Review Formula Sheet",
+          "estimatedMinutes": 15
+        },
+        {
+          "order": 8,
+          "type": "quiz",
+          "refId": "veda-quiz-thermo-laws",
+          "label": "Quiz: Laws of Thermodynamics",
+          "estimatedMinutes": 30
+        },
+        {
+          "order": 9,
+          "type": "topic",
+          "refId": "veda-topic-thermo-cycles",
+          "label": "Rankine & Vapour Power Cycles",
+          "estimatedMinutes": 210
+        },
+        {
+          "order": 10,
+          "type": "topic",
+          "refId": "veda-topic-gas-power-cycles",
+          "label": "Gas Power Cycles",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 11,
+          "type": "topic",
+          "refId": "veda-topic-refrigeration-ac",
+          "label": "Refrigeration & AC",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 12,
+          "type": "resource",
+          "refId": "veda-resource-thermo-pyq-2023",
+          "label": "GATE ME 2023 Thermodynamics PYQ",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 13,
+          "type": "resource",
+          "refId": "veda-resource-thermo-pyq-2024",
+          "label": "GATE ME 2024 Thermodynamics PYQ",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 14,
+          "type": "milestone",
+          "refId": "mastery-complete",
+          "label": "Thermodynamics Mastery Complete",
+          "estimatedMinutes": 0
+        }
+      ],
+      "goalExamIds": [
+        "veda-exam-gate-me",
+        "veda-exam-upsc-ese-me"
+      ],
+      "goalCourseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "totalMinutes": 1500,
+      "difficulty": "advanced",
+      "academicLevel": "undergraduate",
+      "tags": [
+        "thermodynamics",
+        "mastery",
+        "GATE ME",
+        "in-depth"
+      ],
+      "createdAt": "2026-03-01",
+      "updatedAt": "2026-09-01"
+    },
+    {
+      "id": "veda-lp-fluid-mech-essentials",
+      "slug": "fluid-mechanics-essentials",
+      "title": "Fluid Mechanics Essentials",
+      "description": "A focused 25-hour path through the core fluid mechanics topics most tested in GATE ME and CE — from fluid properties through pipe flow analysis.",
+      "steps": [
+        {
+          "order": 1,
+          "type": "topic",
+          "refId": "veda-topic-fluid-properties",
+          "label": "Fluid Properties & Classification",
+          "estimatedMinutes": 90
+        },
+        {
+          "order": 2,
+          "type": "topic",
+          "refId": "veda-topic-fluid-statics",
+          "label": "Fluid Statics",
+          "estimatedMinutes": 150
+        },
+        {
+          "order": 3,
+          "type": "topic",
+          "refId": "veda-topic-bernoulli-equation",
+          "label": "Bernoulli's Theorem & Applications",
+          "estimatedMinutes": 180
+        },
+        {
+          "order": 4,
+          "type": "resource",
+          "refId": "veda-resource-bernoulli-practice",
+          "label": "50 Practice Problems on Bernoulli",
+          "estimatedMinutes": 120
+        },
+        {
+          "order": 5,
+          "type": "topic",
+          "refId": "veda-topic-pipe-flow",
+          "label": "Pipe Flow & Head Losses",
+          "estimatedMinutes": 200
+        },
+        {
+          "order": 6,
+          "type": "resource",
+          "refId": "veda-resource-fluid-mech-notes",
+          "label": "Complete Fluid Mechanics Notes",
+          "estimatedMinutes": 90,
+          "isOptional": true
+        },
+        {
+          "order": 7,
+          "type": "resource",
+          "refId": "veda-resource-fluid-mech-pyq-2024",
+          "label": "GATE ME 2024 Fluid Mechanics PYQ",
+          "estimatedMinutes": 90
+        }
+      ],
+      "goalExamIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce"
+      ],
+      "goalCourseIds": [
+        "veda-course-btech-me",
+        "veda-course-btech-ce"
+      ],
+      "totalMinutes": 920,
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "tags": [
+        "fluid mechanics",
+        "essentials",
+        "GATE",
+        "pipe flow",
+        "Bernoulli"
+      ],
+      "createdAt": "2026-04-01",
+      "updatedAt": "2026-08-15"
+    }
+  ]
+}

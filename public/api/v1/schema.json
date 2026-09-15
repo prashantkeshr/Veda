@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://prashantkeshr.github.io/Veda/api/v1/schema.json",
+  "title": "VEDA Knowledge Schema",
+  "description": "JSON Schema for all entity types in the VEDA knowledge platform by Dhurta.Org.",
+  "version": "1.0.0",
+  "license": "CC BY-SA 4.0",
+  "definitions": {
+    "Difficulty": {
+      "type": "string",
+      "enum": ["beginner", "intermediate", "advanced", "expert"],
+      "description": "Relative difficulty level of a topic, resource, or question."
+    },
+    "AcademicLevel": {
+      "type": "string",
+      "enum": [
+        "primary", "secondary", "higher-secondary", "diploma",
+        "undergraduate", "postgraduate", "doctoral", "professional",
+        "vocational", "competitive-exam", "certification", "skill-development", "general"
+      ]
+    },
+    "ResourceType": {
+      "type": "string",
+      "enum": [
+        "pdf", "doc", "ppt", "xls", "image", "text", "markdown",
+        "article", "website", "video", "audio",
+        "question-paper", "notes", "syllabus", "assignment",
+        "practice-set", "mock-test", "notification", "reference"
+      ]
+    },
+    "VerificationStatus": {
+      "type": "string",
+      "enum": ["official", "verified", "trusted", "community", "unverified", "needs-review", "outdated"]
+    },
+    "ContentStatus": {
+      "type": "string",
+      "enum": ["draft", "in-review", "approved", "published", "needs-update", "archived"]
+    },
+    "ExamType": {
+      "type": "string",
+      "enum": ["entrance", "competitive", "board", "university", "professional", "certification"]
+    },
+    "QuestionType": {
+      "type": "string",
+      "enum": ["mcq", "numerical", "short-answer", "true-false"]
+    },
+    "Subject": {
+      "type": "object",
+      "required": ["id", "slug", "title", "shortTitle", "description", "academicLevels", "topicIds", "courseIds", "examIds", "relatedSubjectIds", "tags", "updatedAt"],
+      "properties": {
+        "id":                 { "type": "string", "pattern": "^veda-subject-", "description": "Stable ID, format: veda-subject-{slug}" },
+        "slug":               { "type": "string", "description": "URL-safe identifier" },
+        "title":              { "type": "string" },
+        "shortTitle":         { "type": "string", "description": "Abbreviated title for compact UI" },
+        "description":        { "type": "string" },
+        "academicLevels":     { "type": "array", "items": { "$ref": "#/definitions/AcademicLevel" } },
+        "topicIds":           { "type": "array", "items": { "type": "string" } },
+        "courseIds":          { "type": "array", "items": { "type": "string" } },
+        "examIds":            { "type": "array", "items": { "type": "string" } },
+        "relatedSubjectIds":  { "type": "array", "items": { "type": "string" } },
+        "tags":               { "type": "array", "items": { "type": "string" } },
+        "icon":               { "type": "string" },
+        "color":              { "type": "string" },
+        "updatedAt":          { "type": "string", "format": "date" }
+      }
+    },
+    "Topic": {
+      "type": "object",
+      "required": ["id", "slug", "title", "description", "overview", "subjectIds", "courseIds", "examIds", "prerequisiteIds", "relatedIds", "leadToIds", "keyConcepts", "estimatedMinutes", "difficulty", "academicLevel", "examRelevance", "tags", "updatedAt"],
+      "properties": {
+        "id":                  { "type": "string", "pattern": "^veda-topic-", "description": "Stable ID, format: veda-topic-{slug}" },
+        "slug":                { "type": "string" },
+        "title":               { "type": "string" },
+        "description":         { "type": "string", "description": "1–2 sentence summary" },
+        "overview":            { "type": "string", "description": "Full paragraph overview" },
+        "subjectIds":          { "type": "array", "items": { "type": "string" } },
+        "courseIds":           { "type": "array", "items": { "type": "string" } },
+        "examIds":             { "type": "array", "items": { "type": "string" } },
+        "prerequisiteIds":     { "type": "array", "items": { "type": "string" }, "description": "Topics that must be studied first" },
+        "relatedIds":          { "type": "array", "items": { "type": "string" } },
+        "leadToIds":           { "type": "array", "items": { "type": "string" }, "description": "Topics this naturally leads to" },
+        "keyConcepts":         { "type": "array", "items": { "type": "string" } },
+        "formulaHighlights":   { "type": "array", "items": { "type": "string" } },
+        "estimatedMinutes":    { "type": "integer", "minimum": 10 },
+        "difficulty":          { "$ref": "#/definitions/Difficulty" },
+        "academicLevel":       { "$ref": "#/definitions/AcademicLevel" },
+        "examRelevance":       { "type": "array", "items": { "type": "string" } },
+        "tags":                { "type": "array", "items": { "type": "string" } },
+        "updatedAt":           { "type": "string", "format": "date" }
+      }
+    },
+    "Resource": {
+      "type": "object",
+      "required": ["id", "slug", "title", "description", "type", "subjectIds", "topicIds", "language", "tags", "difficulty", "academicLevel", "verificationStatus", "contentStatus", "createdAt", "updatedAt"],
+      "properties": {
+        "id":                    { "type": "string", "pattern": "^veda-resource-" },
+        "slug":                  { "type": "string" },
+        "title":                 { "type": "string" },
+        "description":           { "type": "string" },
+        "type":                  { "$ref": "#/definitions/ResourceType" },
+        "url":                   { "type": "string", "format": "uri" },
+        "subjectIds":            { "type": "array", "items": { "type": "string" } },
+        "topicIds":              { "type": "array", "items": { "type": "string" } },
+        "language":              { "type": "string" },
+        "difficulty":            { "$ref": "#/definitions/Difficulty" },
+        "academicLevel":         { "$ref": "#/definitions/AcademicLevel" },
+        "verificationStatus":    { "$ref": "#/definitions/VerificationStatus" },
+        "contentStatus":         { "$ref": "#/definitions/ContentStatus" },
+        "author":                { "type": "string" },
+        "source":                { "type": "string" },
+        "year":                  { "type": "integer" },
+        "pages":                 { "type": "integer" },
+        "durationMinutes":       { "type": "integer" },
+        "tags":                  { "type": "array", "items": { "type": "string" } },
+        "createdAt":             { "type": "string", "format": "date" },
+        "updatedAt":             { "type": "string", "format": "date" }
+      }
+    },
+    "Question": {
+      "type": "object",
+      "required": ["id", "slug", "text", "type", "explanation", "topicIds", "subjectIds", "examIds", "difficulty", "tags"],
+      "properties": {
+        "id":            { "type": "string", "pattern": "^veda-question-" },
+        "slug":          { "type": "string" },
+        "text":          { "type": "string" },
+        "type":          { "$ref": "#/definitions/QuestionType" },
+        "options":       { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 4, "description": "Required for MCQ" },
+        "correctIndex":  { "type": "integer", "minimum": 0, "maximum": 3, "description": "0-based index into options (MCQ)" },
+        "correctAnswer": { "type": "string", "description": "For non-MCQ types" },
+        "explanation":   { "type": "string" },
+        "topicIds":      { "type": "array", "items": { "type": "string" } },
+        "subjectIds":    { "type": "array", "items": { "type": "string" } },
+        "examIds":       { "type": "array", "items": { "type": "string" } },
+        "difficulty":    { "$ref": "#/definitions/Difficulty" },
+        "year":          { "type": "integer" },
+        "source":        { "type": "string" },
+        "tags":          { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "Course": {
+      "type": "object",
+      "required": ["id", "slug", "title", "shortTitle", "description", "academicLevel", "durationYears", "semesters", "subjectIds", "tags", "updatedAt"],
+      "properties": {
+        "id":            { "type": "string", "pattern": "^veda-course-" },
+        "slug":          { "type": "string" },
+        "title":         { "type": "string" },
+        "shortTitle":    { "type": "string" },
+        "description":   { "type": "string" },
+        "branchName":    { "type": "string" },
+        "academicLevel": { "$ref": "#/definitions/AcademicLevel" },
+        "durationYears": { "type": "number" },
+        "semesters":     {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "number":     { "type": "integer" },
+              "label":      { "type": "string" },
+              "subjectIds": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        },
+        "subjectIds":    { "type": "array", "items": { "type": "string" } },
+        "tags":          { "type": "array", "items": { "type": "string" } },
+        "updatedAt":     { "type": "string", "format": "date" }
+      }
+    },
+    "Exam": {
+      "type": "object",
+      "required": ["id", "slug", "title", "shortTitle", "description", "type", "conductingBody", "subjectIds", "topicIds", "level", "syllabus", "tags", "updatedAt"],
+      "properties": {
+        "id":            { "type": "string", "pattern": "^veda-exam-" },
+        "slug":          { "type": "string" },
+        "title":         { "type": "string" },
+        "shortTitle":    { "type": "string" },
+        "description":   { "type": "string" },
+        "type":          { "$ref": "#/definitions/ExamType" },
+        "conductingBody": { "type": "string" },
+        "subjectIds":    { "type": "array", "items": { "type": "string" } },
+        "topicIds":      { "type": "array", "items": { "type": "string" } },
+        "level":         { "type": "string" },
+        "eligibility":   { "type": "string" },
+        "syllabus":      { "type": "array", "items": { "type": "string" } },
+        "websiteUrl":    { "type": "string", "format": "uri" },
+        "tags":          { "type": "array", "items": { "type": "string" } },
+        "updatedAt":     { "type": "string", "format": "date" }
+      }
+    },
+    "LearningPath": {
+      "type": "object",
+      "required": ["id", "slug", "title", "description", "steps", "goalExamIds", "goalCourseIds", "totalMinutes", "difficulty", "academicLevel", "tags", "createdAt", "updatedAt"],
+      "properties": {
+        "id":             { "type": "string", "pattern": "^veda-path-" },
+        "slug":           { "type": "string" },
+        "title":          { "type": "string" },
+        "description":    { "type": "string" },
+        "steps":          {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "order":            { "type": "integer" },
+              "type":             { "type": "string", "enum": ["topic", "resource", "quiz", "milestone"] },
+              "refId":            { "type": "string" },
+              "label":            { "type": "string" },
+              "estimatedMinutes": { "type": "integer" },
+              "isOptional":       { "type": "boolean" }
+            }
+          }
+        },
+        "goalExamIds":    { "type": "array", "items": { "type": "string" } },
+        "goalCourseIds":  { "type": "array", "items": { "type": "string" } },
+        "totalMinutes":   { "type": "integer" },
+        "difficulty":     { "$ref": "#/definitions/Difficulty" },
+        "academicLevel":  { "$ref": "#/definitions/AcademicLevel" },
+        "tags":           { "type": "array", "items": { "type": "string" } },
+        "createdAt":      { "type": "string", "format": "date" },
+        "updatedAt":      { "type": "string", "format": "date" }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "description": "Wrapper envelope for all VEDA API responses.",
+      "required": ["$schema", "version", "entity", "count", "generatedAt", "data"],
+      "properties": {
+        "$schema":      { "type": "string", "format": "uri" },
+        "version":      { "type": "string" },
+        "entity":       { "type": "string" },
+        "count":        { "type": "integer" },
+        "generatedAt":  { "type": "string", "format": "date-time" },
+        "data":         { "type": "array" }
+      }
+    }
+  }
+}

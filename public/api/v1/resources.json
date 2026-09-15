@@ -1,0 +1,877 @@
+{
+  "$schema": "/Veda/api/v1/schema.json",
+  "version": "1.0.0",
+  "entity": "resource",
+  "count": 18,
+  "generatedAt": "2026-09-15T00:25:26.373Z",
+  "data": [
+    {
+      "id": "veda-resource-thermo-notes-comprehensive",
+      "slug": "engineering-thermodynamics-comprehensive-notes",
+      "title": "Engineering Thermodynamics — Complete Notes",
+      "description": "Comprehensive hand-written and typed notes covering the full GATE ME Thermodynamics syllabus: systems, laws, cycles, psychrometry, and refrigeration. Includes solved examples for each concept.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-thermo-notes",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-thermo-systems-properties",
+        "veda-topic-first-law",
+        "veda-topic-second-law-entropy",
+        "veda-topic-thermo-cycles"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-upsc-ese-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "thermodynamics",
+        "complete notes",
+        "GATE ME",
+        "all topics"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "Prof. R. K. Rajput",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-pyq-2024",
+        "veda-resource-second-law-video"
+      ],
+      "prerequisiteIds": [],
+      "pages": 120,
+      "createdAt": "2026-01-10",
+      "updatedAt": "2026-08-10",
+      "seoTitle": "Engineering Thermodynamics Complete Notes — GATE ME",
+      "seoDescription": "Comprehensive thermodynamics notes for GATE ME and B.Tech covering all laws, cycles, and numerical examples."
+    },
+    {
+      "id": "veda-resource-second-law-video",
+      "slug": "second-law-entropy-explained-video",
+      "title": "Second Law & Entropy — Concept Explained (Video)",
+      "description": "A 45-minute lecture covering the Kelvin-Planck and Clausius statements, Carnot cycle derivation, entropy as a property, and irreversibility with real-world examples from engineering practice.",
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=example-second-law",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-second-law-entropy"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "second law",
+        "entropy",
+        "Carnot",
+        "video lecture",
+        "GATE ME"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "NPTEL — IIT Madras",
+      "source": "NPTEL",
+      "provider": "YouTube",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-notes-comprehensive",
+        "veda-resource-second-law-formula-sheet"
+      ],
+      "prerequisiteIds": [
+        "veda-resource-first-law-notes"
+      ],
+      "durationMinutes": 45,
+      "createdAt": "2025-06-01",
+      "updatedAt": "2026-07-15",
+      "seoTitle": "Second Law of Thermodynamics & Entropy — NPTEL Video Lecture",
+      "seoDescription": "45-min NPTEL lecture on Second Law, Carnot cycle, and entropy for GATE ME and B.Tech students."
+    },
+    {
+      "id": "veda-resource-second-law-formula-sheet",
+      "slug": "second-law-entropy-formula-sheet",
+      "title": "Second Law & Entropy — Formula Sheet",
+      "description": "Compact one-page reference card with all key formulae: Carnot efficiency, COP expressions, Clausius inequality, entropy change for ideal gas, and exergy definitions.",
+      "type": "pdf",
+      "url": "https://drive.google.com/file/d/example-formula-sheet",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-second-law-entropy",
+        "veda-topic-thermo-cycles",
+        "veda-topic-refrigeration-ac"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-upsc-ese-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "formula sheet",
+        "second law",
+        "entropy",
+        "Carnot",
+        "quick reference"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "source": "VEDA",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-second-law-video",
+        "veda-resource-thermo-notes-comprehensive"
+      ],
+      "prerequisiteIds": [],
+      "pages": 2,
+      "createdAt": "2026-03-01",
+      "updatedAt": "2026-08-20",
+      "seoTitle": "Second Law & Entropy Formula Sheet — GATE ME Quick Reference",
+      "seoDescription": "One-page formula card for Second Law of Thermodynamics — Carnot efficiency, entropy change, COP, exergy."
+    },
+    {
+      "id": "veda-resource-thermo-pyq-2024",
+      "slug": "gate-me-thermodynamics-pyq-2024",
+      "title": "GATE ME 2024 — Thermodynamics Previous Year Questions",
+      "description": "Complete set of thermodynamics questions from GATE ME 2024 with detailed solutions. Covers First Law, Second Law, Rankine cycle, Brayton cycle, and refrigeration problems.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-gate-2024-thermo",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-first-law",
+        "veda-topic-second-law-entropy",
+        "veda-topic-thermo-cycles",
+        "veda-topic-gas-power-cycles"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "GATE ME 2024",
+        "PYQ",
+        "thermodynamics",
+        "solved",
+        "previous year"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "GATE 2024 Official Paper",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-pyq-2023",
+        "veda-resource-thermo-notes-comprehensive"
+      ],
+      "prerequisiteIds": [],
+      "year": 2024,
+      "pages": 18,
+      "createdAt": "2024-02-20",
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-resource-thermo-pyq-2023",
+      "slug": "gate-me-thermodynamics-pyq-2023",
+      "title": "GATE ME 2023 — Thermodynamics Previous Year Questions",
+      "description": "All thermodynamics questions from GATE ME 2023 with step-by-step solutions and topic-wise breakdown.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-gate-2023-thermo",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-first-law",
+        "veda-topic-second-law-entropy",
+        "veda-topic-thermo-cycles"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "GATE ME 2023",
+        "PYQ",
+        "thermodynamics",
+        "solved"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "GATE 2023 Official Paper",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-pyq-2024"
+      ],
+      "prerequisiteIds": [],
+      "year": 2023,
+      "pages": 16,
+      "createdAt": "2023-02-18",
+      "updatedAt": "2026-07-01"
+    },
+    {
+      "id": "veda-resource-first-law-notes",
+      "slug": "first-law-thermodynamics-notes",
+      "title": "First Law of Thermodynamics — Study Notes",
+      "description": "Detailed notes on the First Law for closed and open systems, with derivations, solved examples for non-flow and steady-flow processes, and GATE-pattern problems.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-first-law-notes",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-first-law"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "first law",
+        "energy conservation",
+        "SFEE",
+        "internal energy",
+        "notes"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-notes-comprehensive",
+        "veda-resource-second-law-video"
+      ],
+      "prerequisiteIds": [],
+      "pages": 28,
+      "createdAt": "2026-02-01",
+      "updatedAt": "2026-08-12"
+    },
+    {
+      "id": "veda-resource-gate-me-maths-notes",
+      "slug": "gate-me-engineering-mathematics-notes",
+      "title": "GATE ME Engineering Mathematics — Complete Notes",
+      "description": "Chapter-wise notes for the full GATE Engineering Mathematics syllabus: calculus, linear algebra, ODEs, probability, complex variables, and numerical methods with GATE-style problems after each chapter.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-engg-maths-notes",
+      "subjectIds": [
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-differential-calculus",
+        "veda-topic-integral-calculus",
+        "veda-topic-linear-algebra",
+        "veda-topic-differential-equations",
+        "veda-topic-probability-statistics",
+        "veda-topic-numerical-methods"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "engineering mathematics",
+        "GATE",
+        "complete notes",
+        "calculus",
+        "linear algebra"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "Erwin Kreyszig (reference)",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-gate-me-maths-pyq-2024"
+      ],
+      "prerequisiteIds": [],
+      "pages": 200,
+      "createdAt": "2026-01-15",
+      "updatedAt": "2026-09-01"
+    },
+    {
+      "id": "veda-resource-gate-me-maths-pyq-2024",
+      "slug": "gate-me-engineering-mathematics-pyq-2024",
+      "title": "GATE ME 2024 — Engineering Mathematics PYQ with Solutions",
+      "description": "All engineering mathematics questions from GATE ME 2024, with detailed solutions. Topics: limits, eigen values, ODEs, probability, and numerical methods.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-gate-2024-maths",
+      "subjectIds": [
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-differential-calculus",
+        "veda-topic-linear-algebra",
+        "veda-topic-differential-equations",
+        "veda-topic-probability-statistics"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "GATE ME 2024",
+        "mathematics",
+        "PYQ",
+        "solved"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "GATE 2024 Official Paper",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-gate-me-maths-notes"
+      ],
+      "prerequisiteIds": [],
+      "year": 2024,
+      "pages": 12,
+      "createdAt": "2024-02-20",
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-resource-fluid-mech-notes",
+      "slug": "fluid-mechanics-complete-notes",
+      "title": "Fluid Mechanics — Complete Notes for GATE ME/CE",
+      "description": "Comprehensive notes covering fluid properties, statics, kinematics, Bernoulli, pipe flow, dimensional analysis, boundary layers, and turbomachinery — relevant for both GATE ME and GATE CE.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-fluid-notes",
+      "subjectIds": [
+        "veda-subject-fluid-mech"
+      ],
+      "topicIds": [
+        "veda-topic-fluid-properties",
+        "veda-topic-fluid-statics",
+        "veda-topic-bernoulli-equation",
+        "veda-topic-pipe-flow",
+        "veda-topic-turbomachinery"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-btech-ce",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce",
+        "veda-exam-upsc-ese-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "fluid mechanics",
+        "complete notes",
+        "GATE ME",
+        "GATE CE",
+        "Bernoulli",
+        "pipe flow"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "R. K. Bansal",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-fluid-mech-pyq-2024",
+        "veda-resource-bernoulli-practice"
+      ],
+      "prerequisiteIds": [],
+      "pages": 160,
+      "createdAt": "2026-02-01",
+      "updatedAt": "2026-08-15"
+    },
+    {
+      "id": "veda-resource-fluid-mech-pyq-2024",
+      "slug": "gate-me-fluid-mechanics-pyq-2024",
+      "title": "GATE ME 2024 — Fluid Mechanics PYQ with Solutions",
+      "description": "Complete fluid mechanics questions from GATE ME 2024 with detailed solutions. Covers pipe flow, Bernoulli, dimensional analysis, and turbomachinery.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-gate-2024-fluid",
+      "subjectIds": [
+        "veda-subject-fluid-mech"
+      ],
+      "topicIds": [
+        "veda-topic-bernoulli-equation",
+        "veda-topic-pipe-flow",
+        "veda-topic-fluid-statics"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "GATE ME 2024",
+        "fluid mechanics",
+        "PYQ",
+        "solved"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "GATE 2024 Official Paper",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-fluid-mech-notes"
+      ],
+      "prerequisiteIds": [],
+      "year": 2024,
+      "pages": 14,
+      "createdAt": "2024-02-20",
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-resource-bernoulli-practice",
+      "slug": "bernoulli-theorem-practice-problems",
+      "title": "Bernoulli's Theorem — 50 Practice Problems",
+      "description": "A curated set of 50 practice problems on Bernoulli's theorem — Venturimeter, orifice, pitot tube, and combined flow problems — with step-by-step solutions and difficulty ratings.",
+      "type": "practice-set",
+      "url": "https://drive.google.com/file/d/example-bernoulli-practice",
+      "subjectIds": [
+        "veda-subject-fluid-mech"
+      ],
+      "topicIds": [
+        "veda-topic-bernoulli-equation"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "Bernoulli",
+        "practice problems",
+        "Venturimeter",
+        "orifice",
+        "fluid mechanics"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "source": "VEDA",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-fluid-mech-notes"
+      ],
+      "prerequisiteIds": [],
+      "pages": 40,
+      "createdAt": "2026-04-01",
+      "updatedAt": "2026-08-10"
+    },
+    {
+      "id": "veda-resource-som-notes",
+      "slug": "strength-of-materials-complete-notes",
+      "title": "Strength of Materials — Complete Notes",
+      "description": "Complete SOM notes covering stress-strain, elastic constants, bending, shear, deflection, torsion, thin-walled vessels, columns, and strain energy — with solved GATE-level examples.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-som-notes",
+      "subjectIds": [
+        "veda-subject-som"
+      ],
+      "topicIds": [
+        "veda-topic-stress-strain",
+        "veda-topic-bending-shear",
+        "veda-topic-beam-deflection",
+        "veda-topic-torsion",
+        "veda-topic-columns-buckling"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-btech-ce",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce",
+        "veda-exam-upsc-ese-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "SOM",
+        "strength of materials",
+        "stress",
+        "bending",
+        "GATE"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "S. S. Rattan",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-som-pyq-2024"
+      ],
+      "prerequisiteIds": [],
+      "pages": 180,
+      "createdAt": "2026-01-20",
+      "updatedAt": "2026-08-02"
+    },
+    {
+      "id": "veda-resource-som-pyq-2024",
+      "slug": "gate-me-som-pyq-2024",
+      "title": "GATE ME 2024 — Strength of Materials PYQ",
+      "description": "All SOM questions from GATE ME 2024 with complete solutions. Includes problems on bending stress, shear force diagrams, deflection, and column buckling.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-gate-2024-som",
+      "subjectIds": [
+        "veda-subject-som"
+      ],
+      "topicIds": [
+        "veda-topic-stress-strain",
+        "veda-topic-bending-shear",
+        "veda-topic-beam-deflection"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "GATE ME 2024",
+        "SOM",
+        "PYQ",
+        "solved"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "GATE 2024 Official Paper",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-som-notes"
+      ],
+      "prerequisiteIds": [],
+      "year": 2024,
+      "pages": 10,
+      "createdAt": "2024-02-20",
+      "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-resource-nptel-thermo-playlist",
+      "slug": "nptel-engineering-thermodynamics-iit-kgp",
+      "title": "NPTEL — Engineering Thermodynamics (IIT Kharagpur)",
+      "description": "Full 40-lecture NPTEL course on Engineering Thermodynamics by Prof. P. K. Nag, IIT Kharagpur. Covers systems, laws, cycles, and applications at university depth.",
+      "type": "video",
+      "url": "https://www.youtube.com/playlist?list=example-nptel-thermo-kgp",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-thermo-systems-properties",
+        "veda-topic-first-law",
+        "veda-topic-second-law-entropy",
+        "veda-topic-thermo-cycles",
+        "veda-topic-refrigeration-ac"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "NPTEL",
+        "thermodynamics",
+        "IIT Kharagpur",
+        "video course",
+        "P. K. Nag"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "author": "Prof. P. K. Nag",
+      "source": "NPTEL / IIT Kharagpur",
+      "provider": "YouTube / NPTEL",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-notes-comprehensive"
+      ],
+      "prerequisiteIds": [],
+      "durationMinutes": 2400,
+      "createdAt": "2020-01-01",
+      "updatedAt": "2026-06-01"
+    },
+    {
+      "id": "veda-resource-jee-mechanics-notes",
+      "slug": "jee-mechanics-and-kinematics-notes",
+      "title": "JEE Physics — Mechanics & Kinematics Notes",
+      "description": "Structured notes for JEE Main and Advanced Mechanics: kinematics, Newton's laws, work-energy, momentum, rotational motion, and gravitation. Includes solved JEE problems from 2015–2024.",
+      "type": "notes",
+      "url": "https://drive.google.com/file/d/example-jee-mechanics",
+      "subjectIds": [
+        "veda-subject-engg-physics"
+      ],
+      "topicIds": [
+        "veda-topic-mechanics-kinematics"
+      ],
+      "courseIds": [
+        "veda-course-btech-me"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-jee-main",
+        "veda-exam-jee-advanced"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "JEE",
+        "mechanics",
+        "kinematics",
+        "Newton's laws",
+        "physics"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "higher-secondary",
+      "source": "Standard Reference",
+      "provider": "VEDA Archive",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-jee-mechanics-pyq"
+      ],
+      "prerequisiteIds": [],
+      "pages": 80,
+      "createdAt": "2026-03-01",
+      "updatedAt": "2026-08-15"
+    },
+    {
+      "id": "veda-resource-jee-mechanics-pyq",
+      "slug": "jee-main-mechanics-pyq-2024",
+      "title": "JEE Main 2024 — Physics Mechanics PYQ (All Sessions)",
+      "description": "All JEE Main 2024 mechanics questions across all sessions with detailed solutions. Includes NEET crossover questions and difficulty analysis.",
+      "type": "question-paper",
+      "url": "https://drive.google.com/file/d/example-jee-2024-mechanics",
+      "subjectIds": [
+        "veda-subject-engg-physics"
+      ],
+      "topicIds": [
+        "veda-topic-mechanics-kinematics",
+        "veda-topic-waves-oscillations"
+      ],
+      "courseIds": [],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-jee-main"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "JEE Main 2024",
+        "physics",
+        "mechanics",
+        "PYQ"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "competitive-exam",
+      "source": "NTA Official",
+      "provider": "VEDA Archive",
+      "verificationStatus": "official",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-jee-mechanics-notes"
+      ],
+      "prerequisiteIds": [],
+      "year": 2024,
+      "pages": 22,
+      "createdAt": "2024-04-15",
+      "updatedAt": "2026-08-15"
+    },
+    {
+      "id": "veda-resource-linear-algebra-video",
+      "slug": "linear-algebra-gate-video-series",
+      "title": "Linear Algebra for GATE — Video Series",
+      "description": "8-part video series covering matrices, rank, eigen values/vectors, and linear systems — with GATE-style problems worked out step by step in each video.",
+      "type": "video",
+      "url": "https://www.youtube.com/playlist?list=example-linear-algebra-gate",
+      "subjectIds": [
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-linear-algebra"
+      ],
+      "courseIds": [
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-gate-ce"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "linear algebra",
+        "matrices",
+        "eigenvalues",
+        "GATE",
+        "video"
+      ],
+      "difficulty": "intermediate",
+      "academicLevel": "undergraduate",
+      "source": "MADE Easy / Gate Academy",
+      "provider": "YouTube",
+      "verificationStatus": "trusted",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-gate-me-maths-notes"
+      ],
+      "prerequisiteIds": [],
+      "durationMinutes": 320,
+      "createdAt": "2025-01-01",
+      "updatedAt": "2026-07-20"
+    },
+    {
+      "id": "veda-resource-rankine-cycle-article",
+      "slug": "rankine-cycle-complete-guide",
+      "title": "Rankine Cycle — Complete Guide with T-s Diagrams",
+      "description": "In-depth article explaining the Rankine cycle from first principles — T-s and h-s diagram construction, thermal efficiency calculation, and the impact of reheat and regeneration with numerical examples.",
+      "type": "article",
+      "url": "https://veda.dhurta.org/articles/rankine-cycle",
+      "subjectIds": [
+        "veda-subject-engg-thermo"
+      ],
+      "topicIds": [
+        "veda-topic-thermo-cycles"
+      ],
+      "courseIds": [
+        "veda-course-btech-me",
+        "veda-course-gate-me-prep"
+      ],
+      "branchIds": [],
+      "semesterIds": [],
+      "examIds": [
+        "veda-exam-gate-me",
+        "veda-exam-upsc-ese-me"
+      ],
+      "institutionIds": [],
+      "language": "English",
+      "tags": [
+        "Rankine cycle",
+        "steam power",
+        "T-s diagram",
+        "efficiency",
+        "article"
+      ],
+      "difficulty": "advanced",
+      "academicLevel": "undergraduate",
+      "source": "VEDA",
+      "provider": "VEDA",
+      "verificationStatus": "verified",
+      "contentStatus": "published",
+      "relatedResourceIds": [
+        "veda-resource-thermo-notes-comprehensive",
+        "veda-resource-thermo-pyq-2024"
+      ],
+      "prerequisiteIds": [],
+      "createdAt": "2026-05-10",
+      "updatedAt": "2026-08-20"
+    }
+  ]
+}
