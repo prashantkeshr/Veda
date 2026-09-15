@@ -1,412 +1,412 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- ── Core pages ─────────────────────────────────────── -->
+  <!-- â”€â”€ Core pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/</loc>
+    <loc>https://veda.dhurta.org/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ── Collection index pages ─────────────────────────── -->
+  <!-- â”€â”€ Collection index pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects</loc>
+    <loc>https://veda.dhurta.org/subjects</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics</loc>
+    <loc>https://veda.dhurta.org/topics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/courses</loc>
+    <loc>https://veda.dhurta.org/courses</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/resources</loc>
+    <loc>https://veda.dhurta.org/resources</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams</loc>
+    <loc>https://veda.dhurta.org/exams</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/learning-paths</loc>
+    <loc>https://veda.dhurta.org/learning-paths</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ── Subject detail pages ───────────────────────────── -->
+  <!-- â”€â”€ Subject detail pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects/engineering-mathematics</loc>
+    <loc>https://veda.dhurta.org/subjects/engineering-mathematics</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects/engineering-thermodynamics</loc>
+    <loc>https://veda.dhurta.org/subjects/engineering-thermodynamics</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects/fluid-mechanics</loc>
+    <loc>https://veda.dhurta.org/subjects/fluid-mechanics</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects/strength-of-materials</loc>
+    <loc>https://veda.dhurta.org/subjects/strength-of-materials</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/subjects/engineering-physics</loc>
+    <loc>https://veda.dhurta.org/subjects/engineering-physics</loc>
     <lastmod>2026-08-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- ── Topic detail pages ─────────────────────────────── -->
+  <!-- â”€â”€ Topic detail pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/differential-calculus</loc>
+    <loc>https://veda.dhurta.org/topics/differential-calculus</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/integral-calculus</loc>
+    <loc>https://veda.dhurta.org/topics/integral-calculus</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/linear-algebra</loc>
+    <loc>https://veda.dhurta.org/topics/linear-algebra</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/differential-equations</loc>
+    <loc>https://veda.dhurta.org/topics/differential-equations</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/probability-and-statistics</loc>
+    <loc>https://veda.dhurta.org/topics/probability-and-statistics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/numerical-methods</loc>
+    <loc>https://veda.dhurta.org/topics/numerical-methods</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/complex-variables</loc>
+    <loc>https://veda.dhurta.org/topics/complex-variables</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/thermodynamic-systems-and-properties</loc>
+    <loc>https://veda.dhurta.org/topics/thermodynamic-systems-and-properties</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/first-law-of-thermodynamics</loc>
+    <loc>https://veda.dhurta.org/topics/first-law-of-thermodynamics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/second-law-and-entropy</loc>
+    <loc>https://veda.dhurta.org/topics/second-law-and-entropy</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/thermodynamic-cycles</loc>
+    <loc>https://veda.dhurta.org/topics/thermodynamic-cycles</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/gas-power-cycles</loc>
+    <loc>https://veda.dhurta.org/topics/gas-power-cycles</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/refrigeration-and-air-conditioning</loc>
+    <loc>https://veda.dhurta.org/topics/refrigeration-and-air-conditioning</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/introduction-to-heat-transfer</loc>
+    <loc>https://veda.dhurta.org/topics/introduction-to-heat-transfer</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/fluid-properties-and-classification</loc>
+    <loc>https://veda.dhurta.org/topics/fluid-properties-and-classification</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/fluid-statics</loc>
+    <loc>https://veda.dhurta.org/topics/fluid-statics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/bernoulli-equation-and-flow-kinematics</loc>
+    <loc>https://veda.dhurta.org/topics/bernoulli-equation-and-flow-kinematics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/pipe-flow-and-head-losses</loc>
+    <loc>https://veda.dhurta.org/topics/pipe-flow-and-head-losses</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/stress-strain-and-elastic-constants</loc>
+    <loc>https://veda.dhurta.org/topics/stress-strain-and-elastic-constants</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/bending-moment-and-shear-force</loc>
+    <loc>https://veda.dhurta.org/topics/bending-moment-and-shear-force</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/topics/mechanics-and-kinematics</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ── Course detail pages ────────────────────────────── -->
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/courses/btech-mechanical-engineering</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/courses/btech-civil-engineering</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/courses/diploma-mechanical-engineering</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/courses/gate-mechanical-engineering-preparation</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── Exam detail pages ──────────────────────────────── -->
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams/gate-mechanical-engineering</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams/gate-civil-engineering</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams/jee-main</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams/jee-advanced</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://prashantkeshr.github.io/Veda/exams/upsc-engineering-services-mechanical</loc>
+    <loc>https://veda.dhurta.org/topics/mechanics-and-kinematics</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- ── Learning Path detail pages ────────────────────── -->
+  <!-- â”€â”€ Course detail pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/learning-paths/gate-mechanical-engineering-complete-preparation</loc>
+    <loc>https://veda.dhurta.org/courses/btech-mechanical-engineering</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/courses/btech-civil-engineering</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/courses/diploma-mechanical-engineering</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/courses/gate-mechanical-engineering-preparation</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- â”€â”€ Exam detail pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <url>
+    <loc>https://veda.dhurta.org/exams/gate-mechanical-engineering</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/learning-paths/thermodynamics-mastery-path</loc>
+    <loc>https://veda.dhurta.org/exams/gate-civil-engineering</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/learning-paths/fluid-mechanics-essentials</loc>
+    <loc>https://veda.dhurta.org/exams/jee-main</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/exams/jee-advanced</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/exams/upsc-engineering-services-mechanical</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- ── Tool & feature pages ───────────────────────────── -->
+  <!-- â”€â”€ Learning Path detail pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/search</loc>
+    <loc>https://veda.dhurta.org/learning-paths/gate-mechanical-engineering-complete-preparation</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/learning-paths/thermodynamics-mastery-path</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://veda.dhurta.org/learning-paths/fluid-mechanics-essentials</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- â”€â”€ Tool & feature pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <url>
+    <loc>https://veda.dhurta.org/search</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/quiz</loc>
+    <loc>https://veda.dhurta.org/quiz</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/formula-sheet</loc>
+    <loc>https://veda.dhurta.org/formula-sheet</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/knowledge-map</loc>
+    <loc>https://veda.dhurta.org/knowledge-map</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/flashcards</loc>
+    <loc>https://veda.dhurta.org/flashcards</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/revision</loc>
+    <loc>https://veda.dhurta.org/revision</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/exam-readiness</loc>
+    <loc>https://veda.dhurta.org/exam-readiness</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/my-learning</loc>
+    <loc>https://veda.dhurta.org/my-learning</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/notes</loc>
+    <loc>https://veda.dhurta.org/notes</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/planner</loc>
+    <loc>https://veda.dhurta.org/planner</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/timer</loc>
+    <loc>https://veda.dhurta.org/timer</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/compare</loc>
+    <loc>https://veda.dhurta.org/compare</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/insights</loc>
+    <loc>https://veda.dhurta.org/insights</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/achievements</loc>
+    <loc>https://veda.dhurta.org/achievements</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/bookmarks</loc>
+    <loc>https://veda.dhurta.org/bookmarks</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/content-studio</loc>
+    <loc>https://veda.dhurta.org/content-studio</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/api-explorer</loc>
+    <loc>https://veda.dhurta.org/api-explorer</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-  <!-- ── About / Contact / Legal ───────────────────────── -->
+  <!-- â”€â”€ About / Contact / Legal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/about</loc>
+    <loc>https://veda.dhurta.org/about</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/contact</loc>
+    <loc>https://veda.dhurta.org/contact</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://prashantkeshr.github.io/Veda/legal</loc>
+    <loc>https://veda.dhurta.org/legal</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -415,3 +415,4 @@
   <!-- NOTE: /veda-kendra (admin CMS) intentionally excluded -->
 
 </urlset>
+

@@ -7,7 +7,7 @@ export function SiteFooter() {
 
         {/* Brand */}
         <div className="flex items-center gap-2.5">
-          <img src="/Veda/veda-logo-sm.png" alt="VEDA" className="w-7 h-7 rounded-lg object-cover flex-shrink-0" />
+          <img src="/veda-logo-sm.png" alt="VEDA" className="w-7 h-7 rounded-lg object-cover flex-shrink-0" />
           <div>
             <div className="text-xs font-semibold text-stone-700 dark:text-stone-400 leading-tight">
               VEDA — Vital Education &amp; Data Archive

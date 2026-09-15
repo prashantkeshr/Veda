@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-export const LD_BASE = 'https://prashantkeshr.github.io/Veda';
+export const LD_BASE = 'https://veda.dhurta.org';
 
 export const LD_PROVIDER = {
   '@type': 'Organization',

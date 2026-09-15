@@ -11,7 +11,7 @@ import {
 import { Card, SectionHeader, Badge } from '../components/ui';
 import { cn } from '../utils/cn';
 
-const BASE = 'https://prashantkeshr.github.io/Veda/api/v1';
+const BASE = 'https://veda.dhurta.org/api/v1';
 const SCHEMA_URL = `${BASE}/schema.json`;
 
 interface Endpoint {
@@ -273,7 +273,7 @@ export function ApiExplorer() {
               <li>GitHub Pages serves all files with <code className={codeCls}>Access-Control-Allow-Origin: *</code> — CORS works from any origin.</li>
               <li>Data is regenerated on every push to the repository via the <code className={codeCls}>prebuild</code> script.</li>
               <li>Stable IDs use the format <code className={codeCls}>veda-&#123;type&#125;-&#123;slug&#125;</code> — safe to cache permanently.</li>
-              <li>To contribute data, use the <a href="/Veda/content-studio" className="text-veda-700 dark:text-veda-400 hover:underline">Content Studio</a> to create drafts and export merged JSON.</li>
+              <li>To contribute data, use the <a href="/content-studio" className="text-veda-700 dark:text-veda-400 hover:underline">Content Studio</a> to create drafts and export merged JSON.</li>
             </ul>
           </Card>
 

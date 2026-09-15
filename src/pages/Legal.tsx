@@ -64,7 +64,7 @@ export function Legal() {
             <h2>Terms of Use</h2>
             <p>
               By accessing or using the VEDA platform at{' '}
-              <a href="https://prashantkeshr.github.io/Veda/">https://prashantkeshr.github.io/Veda/</a>{' '}
+              <a href="https://veda.dhurta.org/">https://veda.dhurta.org/</a>{' '}
               (the "Platform"), you agree to these Terms of Use. If you do not agree, please discontinue use immediately.
             </p>
 

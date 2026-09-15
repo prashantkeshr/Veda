@@ -72,7 +72,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         <div className="flex items-center justify-between h-16 px-4 border-b border-stone-200 dark:border-stone-800">
           <NavLink to="/" className="flex items-center gap-2.5" onClick={onClose}>
             <img
-              src="/Veda/veda-logo-sm.png"
+              src="/veda-logo-sm.png"
               alt="VEDA"
               className="w-8 h-8 rounded-lg object-cover flex-shrink-0"
             />

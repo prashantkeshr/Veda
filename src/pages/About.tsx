@@ -69,7 +69,7 @@ export function About() {
       <section className="text-center pt-4">
         <div className="flex justify-center mb-6">
           <img
-            src="/Veda/veda-logo.png"
+            src="/veda-logo.png"
             alt="VEDA"
             className="w-24 h-24 rounded-3xl object-cover shadow-lg"
           />
@@ -180,7 +180,7 @@ export function About() {
 
       {/* ── Organisation ──────────────────────────────────────────────── */}
       <section className="bg-stone-900 dark:bg-stone-900 rounded-2xl p-8 text-center border border-stone-800">
-        <img src="/Veda/veda-logo.png" alt="VEDA" className="w-14 h-14 rounded-2xl mx-auto mb-4 object-cover" />
+        <img src="/veda-logo.png" alt="VEDA" className="w-14 h-14 rounded-2xl mx-auto mb-4 object-cover" />
         <h2 className="text-lg font-bold text-stone-100 mb-1">Virtual Education Development Association</h2>
         <p className="text-sm text-stone-400 mb-4">An educational initiative of Dhurta.Org</p>
         <p className="text-sm text-stone-500 leading-relaxed max-w-md mx-auto">

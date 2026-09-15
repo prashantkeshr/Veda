@@ -42,7 +42,7 @@ export class ErrorBoundary extends Component<Props, State> {
             Try again
           </button>
           <button
-            onClick={() => { window.location.href = '/Veda/'; }}
+            onClick={() => { window.location.href = '/'; }}
             className="px-4 py-2 text-sm rounded-md border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
           >
             Go home

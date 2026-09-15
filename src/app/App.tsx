@@ -7,7 +7,7 @@ import { ErrorBoundary } from '../components/ui/ErrorBoundary';
 export function App() {
   return (
     <ErrorBoundary>
-      <BrowserRouter basename="/Veda/">
+      <BrowserRouter basename="/">
         <ThemeProvider>
           <UserDataProvider>
             <ErrorBoundary>

@@ -4,14 +4,14 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: '/Veda/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      base: '/Veda/',
-      scope: '/Veda/',
+      base: '/',
+      scope: '/',
       includeAssets: ['favicon.svg', 'icon.svg', 'veda-logo.png', 'veda-logo-sm.png', 'veda-logo.svg'],
       manifest: {
         name: 'VEDA — Vital Education & Data Archive',
@@ -20,23 +20,23 @@ export default defineConfig({
         theme_color: '#7e14ff',
         background_color: '#0c0a09',
         display: 'standalone',
-        scope: '/Veda/',
-        start_url: '/Veda/',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
-            src: '/Veda/veda-logo.png',
+            src: '/veda-logo.png',
             sizes: '979x979',
             type: 'image/png',
             purpose: 'any',
           },
           {
-            src: '/Veda/veda-logo.png',
+            src: '/veda-logo.png',
             sizes: '979x979',
             type: 'image/png',
             purpose: 'maskable',
           },
           {
-            src: '/Veda/icon.svg',
+            src: '/icon.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any',
@@ -45,7 +45,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,json,woff2}'],
-        navigateFallback: '/Veda/index.html',
+        navigateFallback: '/index.html',
         navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
