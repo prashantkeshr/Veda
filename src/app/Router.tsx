@@ -57,6 +57,20 @@ function PageLoader() {
 export function Router() {
   return (
     <Routes>
+      {/* ── Kendra CMS — must come first so path="*" in AppShell doesn't swallow it */}
+      <Route path="veda-kendra">
+        <Route index element={<Suspense fallback={<PageLoader />}><KendraLogin /></Suspense>} />
+        <Route element={<Suspense fallback={<PageLoader />}><KendraShell /></Suspense>}>
+          <Route path="dashboard"  element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
+          <Route path="editor"     element={<Suspense fallback={<PageLoader />}><KendraEditor /></Suspense>} />
+          <Route path="resources"  element={<Suspense fallback={<PageLoader />}><KendraResources /></Suspense>} />
+          <Route path="questions"  element={<Suspense fallback={<PageLoader />}><KendraQuestions /></Suspense>} />
+          <Route path="courses"    element={<Suspense fallback={<PageLoader />}><KendraCourses /></Suspense>} />
+          <Route path="publish"    element={<Suspense fallback={<PageLoader />}><KendraPublish /></Suspense>} />
+        </Route>
+      </Route>
+
+      {/* ── Student routes with AppShell layout ────────────────────── */}
       <Route element={<AppShell />}>
         <Route index element={<Suspense fallback={<PageLoader />}><Home /></Suspense>} />
         <Route path="subjects" element={<Suspense fallback={<PageLoader />}><Subjects /></Suspense>} />
@@ -90,19 +104,6 @@ export function Router() {
         <Route path="compare" element={<Suspense fallback={<PageLoader />}><Comparison /></Suspense>} />
         <Route path="revision" element={<Suspense fallback={<PageLoader />}><Revision /></Suspense>} />
         <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
-      </Route>
-
-      {/* ── Kendra CMS — hidden management route ───────────────────── */}
-      <Route path="veda-kendra">
-        <Route index element={<Suspense fallback={<PageLoader />}><KendraLogin /></Suspense>} />
-        <Route element={<Suspense fallback={<PageLoader />}><KendraShell /></Suspense>}>
-          <Route path="dashboard"  element={<Suspense fallback={<PageLoader />}><KendraDashboard /></Suspense>} />
-          <Route path="editor"     element={<Suspense fallback={<PageLoader />}><KendraEditor /></Suspense>} />
-          <Route path="resources"  element={<Suspense fallback={<PageLoader />}><KendraResources /></Suspense>} />
-          <Route path="questions"  element={<Suspense fallback={<PageLoader />}><KendraQuestions /></Suspense>} />
-          <Route path="courses"    element={<Suspense fallback={<PageLoader />}><KendraCourses /></Suspense>} />
-          <Route path="publish"    element={<Suspense fallback={<PageLoader />}><KendraPublish /></Suspense>} />
-        </Route>
       </Route>
 
     </Routes>
