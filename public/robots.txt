@@ -1,4 +1,12 @@
 User-agent: *
-Allow: /
+Allow: /Veda/
+Disallow: /Veda/veda-kendra
+Disallow: /Veda/veda-kendra/
+Disallow: /Veda/api/
+
+# Keep admin CMS private
+User-agent: Googlebot
+Disallow: /Veda/veda-kendra
+Disallow: /Veda/veda-kendra/
 
 Sitemap: https://prashantkeshr.github.io/Veda/sitemap.xml

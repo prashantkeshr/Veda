@@ -2,35 +2,121 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Veda/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1B4082" />
+    <meta name="theme-color" content="#7e14ff" />
 
-    <!-- PWA / iOS -->
+    <!-- ── Favicon & Icons ──────────────────────────────── -->
+    <link rel="icon" type="image/png" href="/Veda/veda-logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/Veda/favicon.svg" />
+    <link rel="apple-touch-icon" href="/Veda/veda-logo.png" />
+    <link rel="mask-icon" href="/Veda/favicon.svg" color="#7e14ff" />
+
+    <!-- ── PWA / iOS ─────────────────────────────────────── -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="VEDA" />
-    <link rel="apple-touch-icon" href="/Veda/icon.svg" />
 
-    <!-- Fonts -->
+    <!-- ── Fonts ─────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-    <!-- Primary SEO -->
-    <title>VEDA — Vital Education & Data Archive</title>
-    <meta name="description" content="A connected knowledge platform for engineering, science, and competitive exam preparation." />
-    <meta name="keywords" content="GATE, engineering, thermodynamics, fluid mechanics, mathematics, competitive exam, VEDA, Dhurta" />
+    <!-- ── Primary SEO ───────────────────────────────────── -->
+    <title>VEDA — Vital Education &amp; Data Archive</title>
+    <meta name="description" content="VEDA is a free, connected knowledge platform for engineering, science and competitive exam preparation — covering GATE, JEE, UPSC-ESE, B.Tech and Diploma programmes. By the Virtual Education Development Association, an initiative of Dhurta.Org." />
+    <meta name="keywords" content="GATE preparation, JEE, UPSC ESE, engineering mathematics, thermodynamics, fluid mechanics, strength of materials, VEDA, Dhurta, competitive exam, B.Tech, free study material" />
+    <meta name="author" content="Virtual Education Development Association — Dhurta.Org" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://prashantkeshr.github.io/Veda/" />
 
-    <!-- Open Graph -->
+    <!-- ── Open Graph ────────────────────────────────────── -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://prashantkeshr.github.io/Veda/" />
-    <meta property="og:title" content="VEDA — Vital Education & Data Archive" />
-    <meta property="og:description" content="A connected knowledge platform for engineering, science, and competitive exam preparation." />
-    <meta property="og:image" content="https://prashantkeshr.github.io/Veda/icon.svg" />
+    <meta property="og:title" content="VEDA — Vital Education &amp; Data Archive" />
+    <meta property="og:description" content="Free connected knowledge platform for GATE, JEE, UPSC-ESE and engineering degree preparation. Topics, courses, practice quizzes, learning paths — all in one place." />
+    <meta property="og:image" content="https://prashantkeshr.github.io/Veda/veda-logo.png" />
+    <meta property="og:image:alt" content="VEDA — Vital Education & Data Archive logo" />
+    <meta property="og:image:width" content="979" />
+    <meta property="og:image:height" content="979" />
     <meta property="og:site_name" content="VEDA by Dhurta.Org" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- ── Twitter / X Card ──────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VEDA — Vital Education &amp; Data Archive" />
+    <meta name="twitter:description" content="Free knowledge platform for GATE, JEE, UPSC-ESE and engineering degree prep — by the Virtual Education Development Association, Dhurta.Org." />
+    <meta name="twitter:image" content="https://prashantkeshr.github.io/Veda/veda-logo.png" />
+    <meta name="twitter:image:alt" content="VEDA — Vital Education & Data Archive" />
+
+    <!-- ── JSON-LD Structured Data ───────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://prashantkeshr.github.io/Veda/#organization",
+          "name": "Virtual Education Development Association",
+          "alternateName": "VEDA",
+          "description": "An educational initiative of Dhurta.Org providing free, structured learning resources for engineering and competitive exam aspirants.",
+          "url": "https://prashantkeshr.github.io/Veda/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://prashantkeshr.github.io/Veda/veda-logo.png",
+            "width": 979,
+            "height": 979
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contact@dhurta.org",
+            "contactType": "customer support",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "sameAs": ["https://dhurta.org"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://prashantkeshr.github.io/Veda/#website",
+          "url": "https://prashantkeshr.github.io/Veda/",
+          "name": "VEDA — Vital Education & Data Archive",
+          "description": "Free connected knowledge platform for GATE, JEE, UPSC-ESE and engineering degree preparation.",
+          "publisher": {
+            "@id": "https://prashantkeshr.github.io/Veda/#organization"
+          },
+          "inLanguage": "en-IN",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://prashantkeshr.github.io/Veda/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "https://prashantkeshr.github.io/Veda/#eduorg",
+          "name": "VEDA — Vital Education & Data Archive",
+          "description": "Free engineering and competitive exam knowledge platform covering GATE, JEE, UPSC-ESE, B.Tech and Diploma topics.",
+          "url": "https://prashantkeshr.github.io/Veda/",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Dhurta.Org"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "VEDA Learning Resources",
+            "itemListElement": [
+              { "@type": "Course", "name": "GATE Mechanical Engineering Preparation", "url": "https://prashantkeshr.github.io/Veda/courses/gate-mechanical-engineering-preparation" },
+              { "@type": "Course", "name": "B.Tech Mechanical Engineering", "url": "https://prashantkeshr.github.io/Veda/courses/btech-mechanical-engineering" },
+              { "@type": "Course", "name": "B.Tech Civil Engineering", "url": "https://prashantkeshr.github.io/Veda/courses/btech-civil-engineering" }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 
     <script>
       // SPA redirect for GitHub Pages

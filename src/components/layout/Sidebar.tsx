@@ -35,6 +35,8 @@ const navItems = [
   { to: '/knowledge-map', icon: Map, label: 'Knowledge Map' },
   { to: '/content-studio', icon: LayoutGrid, label: 'Content Studio' },
   { to: '/api-explorer', icon: Code2, label: 'API Explorer' },
+  { divider: true },
+  { to: '/legal', icon: Scale, label: 'Legal & Policies' },
 ];
 
 interface SidebarProps {
@@ -67,12 +69,14 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         {/* Logo */}
         <div className="flex items-center justify-between h-16 px-4 border-b border-stone-200 dark:border-stone-800">
           <NavLink to="/" className="flex items-center gap-2.5" onClick={onClose}>
-            <div className="w-8 h-8 rounded-lg bg-veda-700 dark:bg-veda-500 flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-sm">V</span>
-            </div>
+            <img
+              src="/Veda/veda-logo.png"
+              alt="VEDA"
+              className="w-8 h-8 rounded-lg object-cover flex-shrink-0"
+            />
             <div>
               <div className="font-bold text-stone-900 dark:text-stone-100 text-sm leading-tight">VEDA</div>
-              <div className="text-xs text-stone-500 dark:text-stone-500 leading-tight">Knowledge Platform</div>
+              <div className="text-xs text-stone-500 dark:text-stone-500 leading-tight">Vital Education &amp; Data Archive</div>
             </div>
           </NavLink>
           <button
@@ -116,8 +120,10 @@ export function Sidebar({ open, onClose }: SidebarProps) {
         {/* Footer */}
         <div className="p-4 border-t border-stone-100 dark:border-stone-800">
           <div className="text-xs text-stone-400 dark:text-stone-600">
-            <div className="font-semibold text-stone-500 dark:text-stone-500">VEDA</div>
-            <div>Dhurta.Org · VEDA Association</div>
+            <div className="font-semibold text-stone-500 dark:text-stone-500">Virtual Education Development Association</div>
+            <div className="mt-0.5">An initiative of Dhurta.Org</div>
+            <a href="mailto:contact@dhurta.org" className="mt-1 block text-veda-600 dark:text-veda-500 hover:underline">contact@dhurta.org</a>
+            <div className="mt-1">&copy; 2024–2026 Dhurta.Org</div>
           </div>
         </div>
       </aside>

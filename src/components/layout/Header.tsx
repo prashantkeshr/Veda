@@ -83,9 +83,11 @@ export function Header({ onMenuOpen }: HeaderProps) {
           to="/"
           className="lg:hidden ml-1 flex items-center gap-1.5 font-bold text-veda-700 dark:text-veda-400 text-sm"
         >
-          <div className="w-6 h-6 rounded bg-veda-700 dark:bg-veda-500 flex items-center justify-center">
-            <span className="text-white text-xs font-bold">V</span>
-          </div>
+          <img
+            src="/Veda/veda-logo.png"
+            alt="VEDA"
+            className="w-7 h-7 rounded object-cover"
+          />
         </Link>
       </div>
     </header>
