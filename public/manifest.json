@@ -1,0 +1,63 @@
+{
+  "name": "VEDA — Vital Education & Data Archive",
+  "short_name": "VEDA",
+  "description": "India's universal educational knowledge layer — every board, institution, stream, programme, subject and exam in one place.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0c0a09",
+  "theme_color": "#7e14ff",
+  "lang": "en-IN",
+  "scope": "/",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/veda-logo-sm.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "/veda-logo.png",
+      "type": "image/png",
+      "sizes": "979x979",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search VEDA knowledge base",
+      "url": "/search",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Boards",
+      "short_name": "Boards",
+      "description": "All school boards in India",
+      "url": "/boards",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Institutions",
+      "short_name": "Colleges",
+      "description": "IITs, NITs and top institutions",
+      "url": "/institutions",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}
