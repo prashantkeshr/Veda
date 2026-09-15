@@ -4,7 +4,7 @@ import { BookOpen, Hash, GraduationCap, FileText, ClipboardList, Route, ArrowRig
 import { subjectRepo, topicRepo, resourceRepo, examRepo } from '../repositories';
 import { SubjectCard } from '../components/knowledge/SubjectCard';
 import { TopicCard } from '../components/knowledge/TopicCard';
-import { SectionHeader, Card, Badge } from '../components/ui';
+import { SectionHeader, Card } from '../components/ui';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { getRecommendations } from '../services/recommendation.service';
 

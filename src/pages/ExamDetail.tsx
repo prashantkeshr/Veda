@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { ClipboardList, ExternalLink, BookOpen } from 'lucide-react';
-import { examRepo, subjectRepo, topicRepo, resourceRepo, learningPathRepo } from '../repositories';
+import { examRepo, subjectRepo, resourceRepo, learningPathRepo } from '../repositories';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { Badge, SectionHeader } from '../components/ui';
 import { ResourceCard } from '../components/knowledge/ResourceCard';

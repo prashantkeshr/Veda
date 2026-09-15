@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useSEO } from '../hooks/useSEO';
 import {
   LayoutGrid, BookOpen, HelpCircle, Download, Plus, Search,
-  Pencil, Trash2, AlertTriangle, CheckCircle, ChevronDown, ChevronRight,
+  Pencil, Trash2, AlertTriangle, CheckCircle,
 } from 'lucide-react';
 import { studioDB, type DraftTopic, type DraftQuestion } from '../db/studio';
 import {
@@ -10,14 +10,11 @@ import {
 } from '../repositories';
 import { TopicEditor } from '../components/studio/TopicEditor';
 import { QuestionEditor } from '../components/studio/QuestionEditor';
-import { Button, Badge, Card, Spinner } from '../components/ui';
+import { Button, Card, Spinner } from '../components/ui';
 import { cn } from '../utils/cn';
 
 type Tab = 'overview' | 'topics' | 'questions' | 'export';
 
-function slugify(s: string): string {
-  return s.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s_]+/g, '-').replace(/^-+|-+$/g, '');
-}
 
 export function ContentStudio() {
   useSEO('Content Studio', 'Create, edit, and export topics and questions for the VEDA knowledge platform.');

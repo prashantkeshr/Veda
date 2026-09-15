@@ -2,13 +2,12 @@ import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import {
   BookOpen, Hash, FileText, GraduationCap, ClipboardList, Route,
-  CheckCircle, Clock, Bookmark, BarChart2, Trophy, ChevronRight,
+  CheckCircle, Clock, Bookmark, Trophy, ChevronRight,
 } from 'lucide-react';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { topicRepo } from '../repositories';
 import { TopicCard } from '../components/knowledge/TopicCard';
-import { Badge, EmptyState, SectionHeader } from '../components/ui';
-import { ProgressBadge } from '../components/ui/ProgressBadge';
+import { EmptyState, SectionHeader } from '../components/ui';
 import { cn } from '../utils/cn';
 
 const entityPath: Record<string, string> = {

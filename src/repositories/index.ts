@@ -10,7 +10,8 @@ import questionsData from '../data/questions.json';
 // ── Generic local repository ───────────────────────────────────────────
 
 class LocalRepository<T extends { id: string; slug: string; tags?: string[] }> implements DataProvider<T> {
-  constructor(private items: T[]) {}
+  protected items: T[];
+  constructor(items: T[]) { this.items = items; }
 
   getById(id: string): T | undefined {
     return this.items.find(i => i.id === id);
@@ -52,25 +53,25 @@ class LocalRepository<T extends { id: string; slug: string; tags?: string[] }> i
 
 class SubjectRepository extends LocalRepository<Subject> {
   getByTopicId(topicId: string): Subject[] {
-    return (this as unknown as { items: Subject[] }).items.filter(s => s.topicIds.includes(topicId));
+    return this.items.filter(s => s.topicIds.includes(topicId));
   }
   getByCourseId(courseId: string): Subject[] {
-    return (this as unknown as { items: Subject[] }).items.filter(s => s.courseIds.includes(courseId));
+    return this.items.filter(s => s.courseIds.includes(courseId));
   }
   getByExamId(examId: string): Subject[] {
-    return (this as unknown as { items: Subject[] }).items.filter(s => s.examIds.includes(examId));
+    return this.items.filter(s => s.examIds.includes(examId));
   }
   filterByLevel(level: string): Subject[] {
-    return (this as unknown as { items: Subject[] }).items.filter(s => s.academicLevels.includes(level as Subject['academicLevels'][number]));
+    return this.items.filter(s => s.academicLevels.includes(level as Subject['academicLevels'][number]));
   }
 }
 
 class TopicRepository extends LocalRepository<Topic> {
   getBySubjectId(subjectId: string): Topic[] {
-    return (this as unknown as { items: Topic[] }).items.filter(t => t.subjectIds.includes(subjectId));
+    return this.items.filter(t => t.subjectIds.includes(subjectId));
   }
   getByExamId(examId: string): Topic[] {
-    return (this as unknown as { items: Topic[] }).items.filter(t => t.examIds.includes(examId));
+    return this.items.filter(t => t.examIds.includes(examId));
   }
   getPrerequisites(topicId: string): Topic[] {
     const topic = this.getById(topicId);
@@ -91,64 +92,64 @@ class TopicRepository extends LocalRepository<Topic> {
 
 class ResourceRepository extends LocalRepository<Resource> {
   getBySubjectId(subjectId: string): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.subjectIds.includes(subjectId));
+    return this.items.filter(r => r.subjectIds.includes(subjectId));
   }
   getByTopicId(topicId: string): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.topicIds.includes(topicId));
+    return this.items.filter(r => r.topicIds.includes(topicId));
   }
   getByExamId(examId: string): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.examIds.includes(examId));
+    return this.items.filter(r => r.examIds.includes(examId));
   }
   getByCourseId(courseId: string): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.courseIds.includes(courseId));
+    return this.items.filter(r => r.courseIds.includes(courseId));
   }
   getByType(type: string): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.type === type);
+    return this.items.filter(r => r.type === type);
   }
   getPublished(): Resource[] {
-    return (this as unknown as { items: Resource[] }).items.filter(r => r.contentStatus === 'published');
+    return this.items.filter(r => r.contentStatus === 'published');
   }
 }
 
 class CourseRepository extends LocalRepository<Course> {
   getBySubjectId(subjectId: string): Course[] {
-    return (this as unknown as { items: Course[] }).items.filter(c => c.subjectIds.includes(subjectId));
+    return this.items.filter(c => c.subjectIds.includes(subjectId));
   }
   getByExamId(examId: string): Course[] {
-    return (this as unknown as { items: Course[] }).items.filter(c => c.examIds.includes(examId));
+    return this.items.filter(c => c.examIds.includes(examId));
   }
   filterByLevel(level: string): Course[] {
-    return (this as unknown as { items: Course[] }).items.filter(c => c.academicLevel === level);
+    return this.items.filter(c => c.academicLevel === level);
   }
 }
 
 class ExamRepository extends LocalRepository<Exam> {
   getBySubjectId(subjectId: string): Exam[] {
-    return (this as unknown as { items: Exam[] }).items.filter(e => e.subjectIds.includes(subjectId));
+    return this.items.filter(e => e.subjectIds.includes(subjectId));
   }
   getByType(type: string): Exam[] {
-    return (this as unknown as { items: Exam[] }).items.filter(e => e.type === type);
+    return this.items.filter(e => e.type === type);
   }
 }
 
 class LearningPathRepository extends LocalRepository<LearningPath> {
   getByExamId(examId: string): LearningPath[] {
-    return (this as unknown as { items: LearningPath[] }).items.filter(lp => lp.goalExamIds.includes(examId));
+    return this.items.filter(lp => lp.goalExamIds.includes(examId));
   }
   getByCourseId(courseId: string): LearningPath[] {
-    return (this as unknown as { items: LearningPath[] }).items.filter(lp => lp.goalCourseIds.includes(courseId));
+    return this.items.filter(lp => lp.goalCourseIds.includes(courseId));
   }
 }
 
 class QuestionRepository extends LocalRepository<Question> {
   getByTopicId(topicId: string): Question[] {
-    return (this as unknown as { items: Question[] }).items.filter(q => q.topicIds.includes(topicId));
+    return this.items.filter(q => q.topicIds.includes(topicId));
   }
   getByExamId(examId: string): Question[] {
-    return (this as unknown as { items: Question[] }).items.filter(q => q.examIds.includes(examId));
+    return this.items.filter(q => q.examIds.includes(examId));
   }
   getBySubjectId(subjectId: string): Question[] {
-    return (this as unknown as { items: Question[] }).items.filter(q => q.subjectIds.includes(subjectId));
+    return this.items.filter(q => q.subjectIds.includes(subjectId));
   }
 }
 
