@@ -17,7 +17,8 @@ function toSlug(s: string) {
 }
 
 const ACADEMIC_LEVELS: AcademicLevel[] = [
-  'school','undergraduate','postgraduate','doctorate','professional','any',
+  'primary','higher-secondary','diploma','undergraduate','postgraduate',
+  'doctoral','professional','competitive-exam','general',
 ];
 const DIFFICULTIES: Difficulty[] = ['beginner','intermediate','advanced','expert'];
 const STEP_TYPES: PathStep['type'][] = ['topic','resource','quiz','milestone'];

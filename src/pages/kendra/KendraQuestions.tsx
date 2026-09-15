@@ -607,7 +607,7 @@ function QuestionForm({ question, topics, subjects, exams, onChange, onDelete }:
       {/* Topic assignments */}
       <AssignPanel
         label="Topics"
-        items={topics.map(t => ({ id: t.id, label: t.shortTitle || t.title }))}
+        items={topics.map(t => ({ id: t.id, label: t.title }))}
         selected={question.topicIds}
         onToggle={id => toggleId('topicIds', id)}
       />
