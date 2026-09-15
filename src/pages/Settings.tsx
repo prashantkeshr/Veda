@@ -13,7 +13,7 @@ import { topicRepo } from '../repositories';
 import {
   Settings2, Sun, Moon, Monitor, Download, Smartphone,
   Database, Trash2, CheckCircle, AlertTriangle, Info,
-  Upload, FileText, BookOpen, X,
+  Upload, FileText, BookOpen, X, Share2, ChevronDown,
 } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -262,6 +262,115 @@ function RestoreModal({ backup, onClose, onDone }: {
   );
 }
 
+// ── How-to guide (collapsible) ────────────────────────────────────────────
+
+function HowToGuide() {
+  const [open, setOpen] = useState(false);
+
+  const steps = [
+    {
+      num: '1',
+      title: 'Take a backup',
+      body: (
+        <>
+          Click <strong>Backup</strong> — a file named{' '}
+          <code className="px-1 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-[11px]">
+            veda-backup-YYYY-MM-DD.json
+          </code>{' '}
+          is saved to your Downloads folder. It contains all your progress, notes,
+          flashcards, planner entries, quiz history, and target exam preference.
+        </>
+      ),
+    },
+    {
+      num: '2',
+      title: 'Share or transfer the file',
+      body: (
+        <>
+          <span className="font-medium">On mobile</span> — tap <strong>Share</strong> to
+          send the file instantly via WhatsApp, email, Google Drive, AirDrop, Nearby
+          Share, or any app your OS offers.
+          <br />
+          <span className="font-medium">On desktop</span> — upload the file to Google Drive,
+          Dropbox, OneDrive, or email it to yourself. The file is plain JSON — safe to
+          keep anywhere, no sensitive personal data.
+        </>
+      ),
+    },
+    {
+      num: '3',
+      title: 'Restore on another device',
+      body: (
+        <>
+          Open VEDA on the new device, go to <strong>Settings → Backup &amp; Restore →
+          Restore</strong>, and pick the backup file. Choose:
+          <ul className="mt-1.5 space-y-1 list-none">
+            <li>
+              <span className="font-medium text-veda-700 dark:text-veda-400">Merge</span>
+              {' '}— adds backup data on top of existing data. Safe for a first restore.
+            </li>
+            <li>
+              <span className="font-medium text-amber-600 dark:text-amber-400">Replace all</span>
+              {' '}— wipes current data, then restores. Use this for a full device switch.
+            </li>
+          </ul>
+          The page reloads automatically once the restore is complete.
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="border-t border-stone-100 dark:border-stone-800">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-5 py-4 text-left group"
+        aria-expanded={open}
+      >
+        <div className="flex items-center gap-2">
+          <Info size={14} className="text-veda-600 dark:text-veda-400 flex-shrink-0" />
+          <span className="text-sm font-medium text-stone-700 dark:text-stone-300">
+            How to sync your data across devices
+          </span>
+        </div>
+        <ChevronDown
+          size={15}
+          className={cn(
+            'text-stone-400 transition-transform duration-200 flex-shrink-0',
+            open && 'rotate-180',
+          )}
+        />
+      </button>
+
+      {open && (
+        <div className="px-5 pb-5 space-y-4">
+          {steps.map(s => (
+            <div key={s.num} className="flex gap-3">
+              <div className="w-6 h-6 rounded-full bg-veda-100 dark:bg-veda-900/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-xs font-bold text-veda-700 dark:text-veda-400">{s.num}</span>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-stone-800 dark:text-stone-200 mb-1">
+                  {s.title}
+                </p>
+                <p className="text-xs text-stone-500 dark:text-stone-400 leading-relaxed">
+                  {s.body}
+                </p>
+              </div>
+            </div>
+          ))}
+
+          <div className="flex items-start gap-2 px-3 py-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/10 text-amber-700 dark:text-amber-400 text-xs">
+            <AlertTriangle size={13} className="mt-0.5 flex-shrink-0" />
+            Back up before clearing data or switching devices — VEDA stores everything
+            locally and there is no automatic cloud sync.
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Main page ─────────────────────────────────────────────────────────────
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -273,6 +382,7 @@ export function Settings() {
   const { quizAttempts, bookmarks, progressMap } = useUserData();
 
   const [backupStatus,   setBackupStatus]   = useState<Status>('idle');
+  const [shareStatus,    setShareStatus]    = useState<Status>('idle');
   const [clearStatus,    setClearStatus]    = useState<Status>('idle');
   const [notesStatus,    setNotesStatus]    = useState<Status>('idle');
   const [formulaStatus,  setFormulaStatus]  = useState<Status>('idle');
@@ -282,51 +392,60 @@ export function Settings() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const canWebShare = typeof navigator !== 'undefined'
+    && typeof navigator.share === 'function'
+    && typeof navigator.canShare === 'function';
+
   const themes = [
     { key: 'light'  as const, icon: Sun,     label: 'Light'  },
     { key: 'system' as const, icon: Monitor, label: 'System' },
     { key: 'dark'   as const, icon: Moon,    label: 'Dark'   },
   ];
 
-  // ── Full backup export ─────────────────────────────────────────────────
+  // ── Shared backup builder ─────────────────────────────────────────────
+
+  async function buildBackupFile(): Promise<{ file: File; filename: string }> {
+    const [progress, bmarks, attempts, sessions, cards, notes, study, plans] = await Promise.all([
+      getAllProgress(),
+      getAllBookmarks(),
+      getAllQuizAttempts(),
+      assessmentsDB.getAllSessions(),
+      flashcardsDB.getAll(),
+      notesDB.getAll(),
+      studySessionsDB.getAll(),
+      plannerDB.getAll(),
+    ]);
+    let targetExam = '';
+    try { targetExam = localStorage.getItem('veda-target-exam') ?? ''; } catch {}
+    const data = {
+      exportedAt:    new Date().toISOString(),
+      version:       '2.0',
+      platform:      'VEDA — Vital Education & Data Archive',
+      progress,
+      bookmarks:     bmarks,
+      quizAttempts:  attempts,
+      quizSessions:  sessions,
+      flashcards:    cards,
+      notes,
+      studySessions: study,
+      plannerDays:   plans,
+      preferences:   { targetExam },
+    };
+    const filename = `veda-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    const file = new File([JSON.stringify(data, null, 2)], filename, { type: 'application/json' });
+    return { file, filename };
+  }
+
+  // ── Full backup download ──────────────────────────────────────────────
 
   async function exportFullBackup() {
     setBackupStatus('loading');
     try {
-      const [progress, bmarks, attempts, sessions, cards, notes, study, plans] = await Promise.all([
-        getAllProgress(),
-        getAllBookmarks(),
-        getAllQuizAttempts(),
-        assessmentsDB.getAllSessions(),
-        flashcardsDB.getAll(),
-        notesDB.getAll(),
-        studySessionsDB.getAll(),
-        plannerDB.getAll(),
-      ]);
-
-      let targetExam = '';
-      try { targetExam = localStorage.getItem('veda-target-exam') ?? ''; } catch {}
-
-      const data = {
-        exportedAt:    new Date().toISOString(),
-        version:       '2.0',
-        platform:      'VEDA — Vital Education & Data Archive',
-        progress,
-        bookmarks:     bmarks,
-        quizAttempts:  attempts,
-        quizSessions:  sessions,
-        flashcards:    cards,
-        notes,
-        studySessions: study,
-        plannerDays:   plans,
-        preferences:   { targetExam },
-      };
-
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
+      const { file, filename } = await buildBackupFile();
+      const url = URL.createObjectURL(file);
+      const a   = document.createElement('a');
       a.href     = url;
-      a.download = `veda-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = filename;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -336,6 +455,44 @@ export function Settings() {
     } catch {
       setBackupStatus('error');
       setTimeout(() => setBackupStatus('idle'), 3000);
+    }
+  }
+
+  // ── Share backup via Web Share API ────────────────────────────────────
+
+  async function shareBackup() {
+    setShareStatus('loading');
+    try {
+      const { file, filename } = await buildBackupFile();
+
+      if (canWebShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: 'VEDA Backup',
+          text:  `My VEDA learning backup — ${filename}`,
+        });
+        setShareStatus('success');
+      } else {
+        // Fallback: download
+        const url = URL.createObjectURL(file);
+        const a   = document.createElement('a');
+        a.href     = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        setShareStatus('success');
+      }
+      setTimeout(() => setShareStatus('idle'), 3000);
+    } catch (e) {
+      // User cancelled the share sheet — not an error
+      if (e instanceof Error && e.name === 'AbortError') {
+        setShareStatus('idle');
+      } else {
+        setShareStatus('error');
+        setTimeout(() => setShareStatus('idle'), 3000);
+      }
     }
   }
 
@@ -599,24 +756,47 @@ ${body}
         <Row>
           <RowLabel
             title="Full backup"
-            description="Downloads all progress, notes, flashcards, planner, and preferences as a single JSON file"
+            description="Download or share all your data as a single JSON file — progress, notes, flashcards, planner, quiz history, and preferences"
           />
-          <button
-            onClick={exportFullBackup}
-            disabled={backupStatus === 'loading'}
-            className={cn(
-              'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex-shrink-0',
-              backupStatus === 'success'
-                ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
-                : backupStatus === 'error'
-                ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
-                : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700'
-            )}
-          >
-            {backupStatus === 'success' ? <><CheckCircle size={14} /> Saved</>
-            : backupStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
-            : <><Database size={14} /> Backup</>}
-          </button>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Share button — shown when Web Share API supports files, else always shown as fallback */}
+            <button
+              onClick={shareBackup}
+              disabled={shareStatus === 'loading'}
+              title={canWebShare ? 'Share via your device\'s share sheet' : 'Share (downloads file)'}
+              className={cn(
+                'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                shareStatus === 'success'
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
+                  : shareStatus === 'error'
+                  ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
+                  : 'bg-veda-50 dark:bg-veda-900/20 text-veda-700 dark:text-veda-400 hover:bg-veda-100 dark:hover:bg-veda-900/30',
+              )}
+            >
+              {shareStatus === 'success' ? <><CheckCircle size={14} /> Shared</>
+              : shareStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
+              : <><Share2 size={14} /> Share</>}
+            </button>
+
+            {/* Download button */}
+            <button
+              onClick={exportFullBackup}
+              disabled={backupStatus === 'loading'}
+              title="Download backup file"
+              className={cn(
+                'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                backupStatus === 'success'
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400'
+                  : backupStatus === 'error'
+                  ? 'bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-400'
+                  : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-200 dark:hover:bg-stone-700',
+              )}
+            >
+              {backupStatus === 'success' ? <><CheckCircle size={14} /> Saved</>
+              : backupStatus === 'error'  ? <><AlertTriangle size={14} /> Failed</>
+              : <><Database size={14} /> Backup</>}
+            </button>
+          </div>
         </Row>
 
         <Row>
@@ -637,6 +817,8 @@ ${body}
             )}
           </div>
         </Row>
+
+        <HowToGuide />
       </Section>
 
       {/* Export */}
