@@ -10,6 +10,8 @@ import { boardsData } from '../data/boards';
 import { institutionsData } from '../data/institutions';
 import { streamsData } from '../data/streams';
 import { programmesData } from '../data/programmes';
+import { cbseSubjectsData } from '../data/cbse-subjects';
+import { cbseTopicsData } from '../data/cbse-topics';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -201,8 +203,8 @@ class ProgrammeRepository extends LocalRepository<Programme> {
 
 // ── Singleton instances ────────────────────────────────────────────────
 
-export const subjectRepo = new SubjectRepository(subjectsData as Subject[]);
-export const topicRepo = new TopicRepository(topicsData as Topic[]);
+export const subjectRepo = new SubjectRepository([...(subjectsData as Subject[]), ...cbseSubjectsData]);
+export const topicRepo = new TopicRepository([...(topicsData as Topic[]), ...cbseTopicsData]);
 export const resourceRepo = new ResourceRepository(resourcesData as Resource[]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
