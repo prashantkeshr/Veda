@@ -92,7 +92,7 @@ export const cbse9to10TopicsData: Topic[] = [
       'Magnetic field lines around a straight conductor and solenoid',
       "Fleming's Left-hand Rule (motor) and Right-hand Rule (generator)",
       'Electric motor (DC) working principle',
-      'Electromagnetic induction: Faraday's law, AC vs DC',
+      'Electromagnetic induction: Faraday\'s law, AC vs DC',
     ],
     formulaHighlights: [
       'V = IR (Ohm\'s Law)',
