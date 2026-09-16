@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "veda-exam-gate-me",
     "slug": "gate-mechanical-engineering",
@@ -320,6 +320,24 @@
     "syllabus": ["Physics: Class 11 & 12 NCERT syllabus", "Chemistry: Class 11 & 12 NCERT syllabus", "Biology: Class 11 & 12 NCERT Botany + Zoology"],
     "tags": ["NEET", "MBBS", "medical", "entrance", "national", "Class 12"],
     "websiteUrl": "https://neet.nta.nic.in",
+    "updatedAt": "2026-09-16"
+  }
+,
+  {
+    "id": "veda-exam-cbse-board",
+    "slug": "cbse-board-exam",
+    "title": "CBSE Board Examination",
+    "shortTitle": "CBSE Board",
+    "description": "Central Board of Secondary Education annual board examinations. Class 10 (Secondary School Certificate) and Class 12 (Senior Secondary Certificate) are the major certificate examinations taken by millions of students across India.",
+    "type": "board",
+    "conductingBody": "Central Board of Secondary Education (CBSE)",
+    "subjectIds": ["veda-subject-cbse-9-10-science", "veda-subject-cbse-9-10-mathematics", "veda-subject-cbse-9-10-social-science", "veda-subject-cbse-9-10-english", "veda-subject-cbse-9-10-hindi", "veda-subject-cbse-9-10-it"],
+    "topicIds": [],
+    "level": "national",
+    "eligibility": "Students enrolled in CBSE-affiliated schools for Classes 9-12",
+    "syllabus": ["NCERT prescribed curriculum for respective classes", "CBSE annual curriculum document"],
+    "tags": ["CBSE", "board exam", "Class 9", "Class 10", "Class 12", "secondary", "higher-secondary"],
+    "websiteUrl": "https://cbse.gov.in",
     "updatedAt": "2026-09-16"
   }
 ]

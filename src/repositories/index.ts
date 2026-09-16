@@ -36,6 +36,10 @@ import { bscChemistryTopicsData } from '../data/ug-bsc-chemistry-topics';
 import { bcaTopicsData } from '../data/ug-bca-topics';
 import { bcomTopicsData } from '../data/ug-bcom-topics';
 import { baEconomicsTopicsData } from '../data/ug-ba-economics-topics';
+import { cbse9to10SubjectsData } from '../data/cbse-9-10-subjects';
+import { cbse9to10TopicsData } from '../data/cbse-9-10-topics';
+import { ncertResourcesData } from '../data/resources-ncert';
+import { freePlatformResourcesData } from '../data/resources-free-platforms';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -242,6 +246,7 @@ export const subjectRepo = new SubjectRepository([
   ...bcaSubjectsData,
   ...bcomSubjectsData,
   ...baEconomicsSubjectsData,
+  ...cbse9to10SubjectsData,
 ]);
 export const topicRepo = new TopicRepository([
   ...(topicsData as Topic[]),
@@ -258,8 +263,13 @@ export const topicRepo = new TopicRepository([
   ...bcaTopicsData,
   ...bcomTopicsData,
   ...baEconomicsTopicsData,
+  ...cbse9to10TopicsData,
 ]);
-export const resourceRepo = new ResourceRepository(resourcesData as Resource[]);
+export const resourceRepo = new ResourceRepository([
+  ...(resourcesData as Resource[]),
+  ...ncertResourcesData,
+  ...freePlatformResourcesData,
+]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
 export const learningPathRepo = new LearningPathRepository(learningPathsData as LearningPath[]);

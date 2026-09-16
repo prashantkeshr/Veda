@@ -1267,5 +1267,75 @@
   <url><loc>https://veda.dhurta.org/topics/ba-economics-hypothesis-testing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veda.dhurta.org/topics/ba-economics-panel-data-time-series</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
 
+  <!-- Phase 38: CBSE Class 9-10 Subjects (6) -->
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-science</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-mathematics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-social-science</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-english</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-hindi</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cbse-class-9-10-it</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
+  <!-- Phase 38: CBSE Class 9-10 Topics (18) -->
+  <url><loc>https://veda.dhurta.org/topics/cbse-science-matter-atoms</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-science-life-processes</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-science-electricity-magnetism</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-maths-number-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-maths-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-maths-geometry-trigonometry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-social-science-history</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-social-science-geography</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-social-science-civics-economics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-english-prose-comprehension</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-english-grammar-writing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-english-literature-poetry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-hindi-prose</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-hindi-grammar</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-hindi-poetry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-it-computer-basics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-it-office-tools</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cbse-it-internet-web</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Resource Phase R-1: NCERT Textbook Resources (18) -->
+  <url><loc>https://veda.dhurta.org/resources/ncert-science-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-mathematics-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-social-science-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-english-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-hindi-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-science-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-mathematics-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-social-science-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-english-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-hindi-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-physics-class-11-part1</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-physics-class-11-part2</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-physics-class-12-part1</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-physics-class-12-part2</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-chemistry-class-11-part1</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-chemistry-class-11-part2</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-chemistry-class-12-part1</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-chemistry-class-12-part2</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-mathematics-class-11</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-mathematics-class-12-part1</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/ncert-mathematics-class-12-part2</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+
+  <!-- Resource Phase R-1: Free Platform Resources (13) -->
+  <url><loc>https://veda.dhurta.org/resources/nptel-computer-networks</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-data-structures-algorithms</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-database-management-systems</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-classical-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-quantum-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-real-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-abstract-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/nptel-organic-chemistry</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/swayam-financial-accounting</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/swayam-microeconomics</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/swayam-programming-with-python</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/diksha-cbse-science-class-9</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/diksha-cbse-mathematics-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/khan-academy-cbse-maths-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/khan-academy-cbse-science-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/khan-academy-linear-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/resources/khan-academy-probability-statistics</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+
 </urlset>
 
