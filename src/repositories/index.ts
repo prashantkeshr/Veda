@@ -24,6 +24,18 @@ import { eceTopicsData } from '../data/engg-ece-topics';
 import { chemTopicsData } from '../data/engg-chem-topics';
 import { aeTopicsData } from '../data/engg-ae-topics';
 import { btTopicsData } from '../data/engg-bt-topics';
+import { bscPhysicsSubjectsData } from '../data/ug-bsc-physics-subjects';
+import { bscMathsSubjectsData } from '../data/ug-bsc-maths-subjects';
+import { bscChemistrySubjectsData } from '../data/ug-bsc-chemistry-subjects';
+import { bcaSubjectsData } from '../data/ug-bca-subjects';
+import { bcomSubjectsData } from '../data/ug-bcom-subjects';
+import { baEconomicsSubjectsData } from '../data/ug-ba-economics-subjects';
+import { bscPhysicsTopicsData } from '../data/ug-bsc-physics-topics';
+import { bscMathsTopicsData } from '../data/ug-bsc-maths-topics';
+import { bscChemistryTopicsData } from '../data/ug-bsc-chemistry-topics';
+import { bcaTopicsData } from '../data/ug-bca-topics';
+import { bcomTopicsData } from '../data/ug-bcom-topics';
+import { baEconomicsTopicsData } from '../data/ug-ba-economics-topics';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -224,6 +236,12 @@ export const subjectRepo = new SubjectRepository([
   ...chemSubjectsData,
   ...aeSubjectsData,
   ...btSubjectsData,
+  ...bscPhysicsSubjectsData,
+  ...bscMathsSubjectsData,
+  ...bscChemistrySubjectsData,
+  ...bcaSubjectsData,
+  ...bcomSubjectsData,
+  ...baEconomicsSubjectsData,
 ]);
 export const topicRepo = new TopicRepository([
   ...(topicsData as Topic[]),
@@ -234,6 +252,12 @@ export const topicRepo = new TopicRepository([
   ...chemTopicsData,
   ...aeTopicsData,
   ...btTopicsData,
+  ...bscPhysicsTopicsData,
+  ...bscMathsTopicsData,
+  ...bscChemistryTopicsData,
+  ...bcaTopicsData,
+  ...bcomTopicsData,
+  ...baEconomicsTopicsData,
 ]);
 export const resourceRepo = new ResourceRepository(resourcesData as Resource[]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);

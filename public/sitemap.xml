@@ -1119,5 +1119,153 @@
   <url><loc>https://veda.dhurta.org/topics/bt-bioinformatics-databases</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://veda.dhurta.org/topics/bt-bioinformatics-ml</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
 
+  <!-- Phase 37: B.Sc Physics Subjects (5) -->
+  <url><loc>https://veda.dhurta.org/subjects/bsc-physics-classical-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-physics-electromagnetic-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-physics-quantum-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-physics-statistical-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-physics-optics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: B.Sc Physics Topics (15) -->
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-lagrangian-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-hamiltonian-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-central-force-problem</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-maxwell-equations</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-em-waves-radiation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-boundary-value-problems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-schrodinger-equation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-angular-momentum-hydrogen</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-perturbation-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-statistical-ensembles</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-quantum-statistics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-thermodynamic-potentials</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-interference</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-diffraction</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-physics-lasers-holography</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 37: B.Sc Maths Subjects (5) -->
+  <url><loc>https://veda.dhurta.org/subjects/bsc-maths-real-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-maths-abstract-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-maths-linear-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-maths-calculus</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-maths-probability-statistics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: B.Sc Maths Topics (15) -->
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-sequences-series</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-continuity-differentiability</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-riemann-integration</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-group-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-rings-fields</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-isomorphism-theorems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-vector-spaces</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-eigenvalues-diagonalisation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-inner-product-spaces</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-vector-calculus</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-ordinary-differential-equations</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-partial-differential-equations</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-probability-distributions</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-expectation-variance</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-maths-statistical-inference</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 37: B.Sc Chemistry Subjects (4) -->
+  <url><loc>https://veda.dhurta.org/subjects/bsc-chemistry-physical</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-chemistry-organic</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-chemistry-inorganic</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bsc-chemistry-spectroscopy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: B.Sc Chemistry Topics (12) -->
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-quantum-chemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-thermodynamics-kinetics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-electrochemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-reaction-mechanisms</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-stereochemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-named-reactions-synthesis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-coordination-chemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-crystal-field-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-organometallic-chemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-nmr-spectroscopy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-ir-mass-spectrometry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bsc-chemistry-analytical-chemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 37: BCA Subjects (6) -->
+  <url><loc>https://veda.dhurta.org/subjects/bca-programming-fundamentals</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bca-data-structures</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bca-database-management</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bca-web-technologies</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bca-computer-networks</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bca-software-engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: BCA Topics (18) -->
+  <url><loc>https://veda.dhurta.org/topics/bca-c-programming</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-python-oop</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-problem-solving-algorithms</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-trees-graphs</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-sorting-hashing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-algorithm-complexity</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-sql-relational-model</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-database-normalisation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-database-transactions</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-html-css</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-javascript-dom</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-react-nodejs</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-osi-tcpip-models</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-ip-addressing-routing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-network-security</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-sdlc-agile</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-uml-design-patterns</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bca-software-testing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 37: B.Com Subjects (6) -->
+  <url><loc>https://veda.dhurta.org/subjects/bcom-financial-accounting</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bcom-cost-accounting</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bcom-taxation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bcom-corporate-law</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bcom-business-management</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/bcom-business-economics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: B.Com Topics (18) -->
+  <url><loc>https://veda.dhurta.org/topics/bcom-journal-ledger-brs</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-final-accounts-partnership</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-company-accounts</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-marginal-costing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-standard-costing-variance</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-process-costing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-income-tax-computation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-tds-advance-tax</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-gst</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-contract-law</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-companies-act</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-negotiable-instruments</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-management-functions</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-hrm</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-strategic-management</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-demand-supply-market-structures</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-macro-monetary-policy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bcom-indian-economy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 37: BA Economics Subjects (5) -->
+  <url><loc>https://veda.dhurta.org/subjects/ba-economics-microeconomics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ba-economics-macroeconomics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ba-economics-development</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ba-economics-international</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ba-economics-statistics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 37: BA Economics Topics (15) -->
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-consumer-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-market-structures</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-welfare-externalities</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-national-income</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-is-lm-model</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-monetary-fiscal-policy</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-poverty-inequality</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-indian-planning</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-agriculture-india</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-trade-theories</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-balance-of-payments</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-exchange-rate</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-ols-regression</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-hypothesis-testing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ba-economics-panel-data-time-series</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
 </urlset>
 
