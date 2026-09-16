@@ -3,6 +3,7 @@ import { ThemeProvider } from './providers/ThemeProvider';
 import { UserDataProvider } from './providers/UserDataProvider';
 import { Router } from './Router';
 import { ErrorBoundary } from '../components/ui/ErrorBoundary';
+import { PWAUpdatePrompt } from '../components/ui/PWAUpdatePrompt';
 
 export function App() {
   return (
@@ -16,6 +17,7 @@ export function App() {
           </UserDataProvider>
         </ThemeProvider>
       </BrowserRouter>
+      <PWAUpdatePrompt />
     </ErrorBoundary>
   );
 }
