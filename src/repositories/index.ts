@@ -12,6 +12,18 @@ import { streamsData } from '../data/streams';
 import { programmesData } from '../data/programmes';
 import { cbseSubjectsData } from '../data/cbse-subjects';
 import { cbseTopicsData } from '../data/cbse-topics';
+import { csSubjectsData } from '../data/engg-cs-subjects';
+import { eeSubjectsData } from '../data/engg-ee-subjects';
+import { eceSubjectsData } from '../data/engg-ece-subjects';
+import { chemSubjectsData } from '../data/engg-chem-subjects';
+import { aeSubjectsData } from '../data/engg-ae-subjects';
+import { btSubjectsData } from '../data/engg-bt-subjects';
+import { csTopicsData } from '../data/engg-cs-topics';
+import { eeTopicsData } from '../data/engg-ee-topics';
+import { eceTopicsData } from '../data/engg-ece-topics';
+import { chemTopicsData } from '../data/engg-chem-topics';
+import { aeTopicsData } from '../data/engg-ae-topics';
+import { btTopicsData } from '../data/engg-bt-topics';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -203,8 +215,26 @@ class ProgrammeRepository extends LocalRepository<Programme> {
 
 // ── Singleton instances ────────────────────────────────────────────────
 
-export const subjectRepo = new SubjectRepository([...(subjectsData as Subject[]), ...cbseSubjectsData]);
-export const topicRepo = new TopicRepository([...(topicsData as Topic[]), ...cbseTopicsData]);
+export const subjectRepo = new SubjectRepository([
+  ...(subjectsData as Subject[]),
+  ...cbseSubjectsData,
+  ...csSubjectsData,
+  ...eeSubjectsData,
+  ...eceSubjectsData,
+  ...chemSubjectsData,
+  ...aeSubjectsData,
+  ...btSubjectsData,
+]);
+export const topicRepo = new TopicRepository([
+  ...(topicsData as Topic[]),
+  ...cbseTopicsData,
+  ...csTopicsData,
+  ...eeTopicsData,
+  ...eceTopicsData,
+  ...chemTopicsData,
+  ...aeTopicsData,
+  ...btTopicsData,
+]);
 export const resourceRepo = new ResourceRepository(resourcesData as Resource[]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);

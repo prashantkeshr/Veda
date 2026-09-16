@@ -943,5 +943,181 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Phase 36: Engineering CS/IT Subjects (8) -->
+  <url><loc>https://veda.dhurta.org/subjects/cs-data-structures-algorithms</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-operating-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-database-management-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-computer-networks</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-theory-of-computation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-digital-logic-computer-organisation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-compiler-design</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/cs-software-engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: CS/IT Topics (32) -->
+  <url><loc>https://veda.dhurta.org/topics/cs-arrays-linked-lists</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-trees-graphs</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-sorting-searching</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-dynamic-programming</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-os-processes-threads</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-os-cpu-scheduling</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-os-memory-management</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-os-file-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-db-relational-model</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-db-sql</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-db-normalization</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-db-transactions-concurrency</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-net-osi-model</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-net-tcp-ip</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-net-routing-switching</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-net-security</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-toc-automata</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-toc-context-free-grammars</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-toc-turing-machines</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-toc-complexity-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-dl-boolean-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-dl-combinational-circuits</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-dl-sequential-circuits</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-dl-cpu-architecture</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-cd-lexical-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-cd-parsing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-cd-semantic-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-cd-code-generation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-se-sdlc-models</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-se-agile-scrum</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-se-software-testing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/cs-se-design-patterns</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 36: Engineering EE Subjects (6) -->
+  <url><loc>https://veda.dhurta.org/subjects/ee-circuit-theory-network-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ee-electrical-machines</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ee-power-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ee-control-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ee-signals-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ee-power-electronics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: EE Topics (24) -->
+  <url><loc>https://veda.dhurta.org/topics/ee-circuit-network-theorems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-circuit-ac-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-circuit-resonance</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-circuit-two-port-networks</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-machines-dc</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-machines-transformers</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-machines-induction-motor</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-machines-synchronous</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-power-transmission</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-power-faults</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-power-protection</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-power-load-flow</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-control-modelling</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-control-stability</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-control-frequency-response</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-control-compensation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-signals-classification</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-signals-fourier</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-signals-laplace</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-signals-z-transform</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-pe-rectifiers</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-pe-dc-dc-converters</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-pe-inverters</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ee-pe-drives</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 36: Engineering ECE Subjects (6) -->
+  <url><loc>https://veda.dhurta.org/subjects/ece-analog-circuits</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ece-digital-electronics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ece-communications-engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ece-electromagnetic-theory</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ece-vlsi-design</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/ece-microprocessors-embedded</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: ECE Topics (24) -->
+  <url><loc>https://veda.dhurta.org/topics/ece-analog-diodes-rectifiers</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-analog-bjt</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-analog-mosfet</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-analog-opamp</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-digital-logic-gates</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-digital-combinational</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-digital-sequential</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-digital-memories</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-comms-analog-modulation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-comms-digital-modulation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-comms-noise</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-comms-multiplexing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-em-static-fields</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-em-waves</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-em-transmission-lines</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-em-antennas</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-vlsi-cmos-gates</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-vlsi-logic-families</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-vlsi-layout</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-vlsi-timing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-microprocessors-8085</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-microprocessors-8086</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-microprocessors-arm</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ece-microprocessors-embedded-systems</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 36: Chemical Engineering Subjects (5) -->
+  <url><loc>https://veda.dhurta.org/subjects/chem-chemical-thermodynamics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/chem-mass-transfer</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/chem-chemical-reaction-engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/chem-process-control</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/chem-process-industries</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: Chemical Engineering Topics (15) -->
+  <url><loc>https://veda.dhurta.org/topics/chem-thermo-pvt-equations-of-state</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-thermo-phase-equilibria</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-thermo-reaction-equilibrium</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-mass-transfer-diffusion</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-mass-transfer-absorption</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-mass-transfer-distillation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cre-ideal-reactors</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cre-non-ideal-reactors</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cre-catalysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-process-control-feedback</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-process-control-pid</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-process-control-advanced</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cpi-petroleum-refining</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cpi-fertilizers</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/chem-cpi-polymers</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 36: Aerospace Engineering Subjects (4) -->
+  <url><loc>https://veda.dhurta.org/subjects/aerospace-aerodynamics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/aerospace-aircraft-structures</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/aerospace-propulsion</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/aerospace-flight-mechanics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: Aerospace Topics (12) -->
+  <url><loc>https://veda.dhurta.org/topics/ae-aerodynamics-fundamentals</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-aerodynamics-thin-airfoil-wing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-aerodynamics-compressible</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-structures-stress-analysis</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-structures-vibrations-aeroelasticity</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-structures-composite-materials</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-propulsion-gas-turbine</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-propulsion-rocket</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-propulsion-turbomachinery</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-flight-mechanics-stability</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-flight-mechanics-performance</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/ae-flight-mechanics-control</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- Phase 36: Biotechnology Subjects (4) -->
+  <url><loc>https://veda.dhurta.org/subjects/biotech-biochemistry</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/biotech-molecular-genetics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/biotech-bioprocess-engineering</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/subjects/biotech-bioinformatics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Phase 36: Biotechnology Topics (12) -->
+  <url><loc>https://veda.dhurta.org/topics/bt-biochemistry-metabolism</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-biochemistry-enzyme-kinetics</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-biochemistry-biomolecules</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-genetics-dna-replication</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-genetics-transcription-translation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-genetics-recombinant-dna</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioprocess-fermentation</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioprocess-bioreactor-design</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioprocess-downstream-processing</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioinformatics-sequence-alignment</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioinformatics-databases</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://veda.dhurta.org/topics/bt-bioinformatics-ml</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
 </urlset>
 
