@@ -12,13 +12,13 @@
   "categories": ["education", "productivity"],
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/veda-logo.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any"
     },
     {
-      "src": "/icon.svg",
+      "src": "/veda-logo.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "maskable"
@@ -33,7 +33,7 @@
       "src": "/veda-logo.png",
       "type": "image/png",
       "sizes": "979x979",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [],
@@ -43,21 +43,21 @@
       "short_name": "Search",
       "description": "Search VEDA knowledge base",
       "url": "/search",
-      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+      "icons": [{ "src": "/veda-logo.png", "sizes": "979x979", "type": "image/png" }]
     },
     {
       "name": "Boards",
       "short_name": "Boards",
       "description": "All school boards in India",
       "url": "/boards",
-      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+      "icons": [{ "src": "/veda-logo.png", "sizes": "979x979", "type": "image/png" }]
     },
     {
       "name": "Institutions",
       "short_name": "Colleges",
       "description": "IITs, NITs and top institutions",
       "url": "/institutions",
-      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+      "icons": [{ "src": "/veda-logo.png", "sizes": "979x979", "type": "image/png" }]
     }
   ]
 }
