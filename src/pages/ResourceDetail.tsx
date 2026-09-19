@@ -1,9 +1,20 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { ExternalLink, FileText, Clock, BookOpen } from 'lucide-react';
+import { ExternalLink, FileText, Clock, BookOpen, Play } from 'lucide-react';
 import { resourceRepo, subjectRepo, topicRepo } from '../repositories';
 import { Breadcrumb } from '../components/layout/Breadcrumb';
 import { Badge, ResourceTypeBadge, VerificationBadge, DifficultyBadge, Button } from '../components/ui';
 import { formatMinutes, formatPages } from '../utils/format';
+
+function getYouTubeEmbed(url: string): string | null {
+  const watchM = url.match(/youtube\.com\/watch\?(?:.*&)?v=([^&]+)/);
+  if (watchM) return `https://www.youtube.com/embed/${watchM[1]}?rel=0`;
+  const shortM = url.match(/youtu\.be\/([^?]+)/);
+  if (shortM) return `https://www.youtube.com/embed/${shortM[1]}?rel=0`;
+  const listM = url.match(/youtube\.com\/playlist\?(?:.*&)?list=([^&]+)/);
+  if (listM) return `https://www.youtube.com/embed/videoseries?list=${listM[1]}&rel=0`;
+  if (url.includes('youtube.com/embed/')) return url;
+  return null;
+}
 
 export function ResourceDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -50,13 +61,31 @@ export function ResourceDetail() {
           {resource.provider && <span>Provider: {resource.provider}</span>}
         </div>
 
-        {resource.url && (
-          <a href={resource.url} target="_blank" rel="noopener noreferrer">
-            <Button variant="primary" className="gap-2">
-              <ExternalLink size={14} /> Open Resource
-            </Button>
-          </a>
-        )}
+        {resource.url && (() => {
+          const embedUrl = getYouTubeEmbed(resource.url);
+          return embedUrl ? (
+            <div className="mt-2">
+              <div className="relative w-full rounded-lg overflow-hidden bg-black" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  src={embedUrl}
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={resource.title}
+                />
+              </div>
+              <a href={resource.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-3 text-xs text-stone-400 hover:text-veda-600 transition-colors">
+                <Play size={12} /> Open on YouTube
+              </a>
+            </div>
+          ) : (
+            <a href={resource.url} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" className="gap-2">
+                <ExternalLink size={14} /> Open Resource
+              </Button>
+            </a>
+          );
+        })()}
       </div>
 
       {/* Subjects */}

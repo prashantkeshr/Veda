@@ -42,6 +42,8 @@ import { cbse9to10SubjectsData } from '../data/cbse-9-10-subjects';
 import { cbse9to10TopicsData } from '../data/cbse-9-10-topics';
 import { ncertResourcesData } from '../data/resources-ncert';
 import { freePlatformResourcesData } from '../data/resources-free-platforms';
+import { questionsExpandedData } from '../data/questions-expanded';
+import { resourcesTopicsData } from '../data/resources-topics';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -271,11 +273,15 @@ export const resourceRepo = new ResourceRepository([
   ...(resourcesData as Resource[]),
   ...ncertResourcesData,
   ...freePlatformResourcesData,
+  ...resourcesTopicsData,
 ]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
 export const learningPathRepo = new LearningPathRepository(learningPathsData as LearningPath[]);
-export const questionRepo = new QuestionRepository(questionsData as Question[]);
+export const questionRepo = new QuestionRepository([
+  ...(questionsData as Question[]),
+  ...questionsExpandedData,
+]);
 export const boardRepo = new BoardRepository(boardsData);
 export const institutionRepo = new InstitutionRepository([
   ...institutionsData,
