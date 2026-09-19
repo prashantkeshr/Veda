@@ -44,6 +44,11 @@ import { ncertResourcesData } from '../data/resources-ncert';
 import { freePlatformResourcesData } from '../data/resources-free-platforms';
 import { questionsExpandedData } from '../data/questions-expanded';
 import { resourcesTopicsData } from '../data/resources-topics';
+import { resourcesEnggMathsData } from '../data/resources-engg-maths';
+import { resourcesEnggThermoData } from '../data/resources-engg-thermo';
+import { resourcesFluidMechData } from '../data/resources-fluid-mech';
+import { resourcesSomData } from '../data/resources-som';
+import { resourcesPhysicsData } from '../data/resources-physics';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -274,6 +279,11 @@ export const resourceRepo = new ResourceRepository([
   ...ncertResourcesData,
   ...freePlatformResourcesData,
   ...resourcesTopicsData,
+  ...resourcesEnggMathsData,
+  ...resourcesEnggThermoData,
+  ...resourcesFluidMechData,
+  ...resourcesSomData,
+  ...resourcesPhysicsData,
 ]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
