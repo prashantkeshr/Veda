@@ -30,7 +30,7 @@ if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 const index = { version: VERSION, generatedAt: '', endpoints: [] };
 
 for (const { file, entity } of ENTITIES) {
-  const raw = JSON.parse(readFileSync(join(srcDir, file), 'utf-8'));
+  const raw = JSON.parse(readFileSync(join(srcDir, file), 'utf-8').replace(/^﻿/, ''));
   const envelope = {
     $schema: SCHEMA_URL,
     version: VERSION,

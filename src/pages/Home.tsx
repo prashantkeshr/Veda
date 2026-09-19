@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import { BookOpen, Hash, GraduationCap, FileText, ClipboardList, Route, ArrowRight, Zap, Sparkles, Map, RotateCcw, Bookmark, Building2, University, Layers } from 'lucide-react';
-import { subjectRepo, topicRepo, resourceRepo, examRepo, boardRepo, institutionRepo, streamRepo, programmeRepo } from '../repositories';
+import { subjectRepo, topicRepo, examRepo, boardRepo, institutionRepo, streamRepo, programmeRepo } from '../repositories';
 import { SubjectCard } from '../components/knowledge/SubjectCard';
 import { TopicCard } from '../components/knowledge/TopicCard';
 import { SectionHeader, Card } from '../components/ui';
@@ -46,7 +46,6 @@ export function Home() {
   const { progressMap, bookmarks, quizAttempts, ready } = useUserData();
   const subjects = subjectRepo.getAll({ limit: 4 });
   const totalTopics = topicRepo.count();
-  const totalResources = resourceRepo.count();
   const totalExams = examRepo.count();
   const totalBoards = boardRepo.count();
   const totalInstitutions = institutionRepo.count();

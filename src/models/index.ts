@@ -15,7 +15,7 @@ export type Difficulty = 'beginner' | 'intermediate' | 'advanced' | 'expert';
 
 export type ResourceType =
   | 'pdf' | 'doc' | 'ppt' | 'xls' | 'image' | 'text' | 'markdown'
-  | 'article' | 'website' | 'video' | 'audio'
+  | 'article' | 'website' | 'video' | 'audio' | 'course'
   | 'question-paper' | 'notes' | 'syllabus' | 'assignment'
   | 'practice-set' | 'mock-test' | 'notification' | 'reference';
 
@@ -41,7 +41,7 @@ export type InstitutionCategory =
 export type BoardType = 'central' | 'state' | 'international' | 'open-school';
 
 export type DegreeType =
-  | 'bachelors' | 'masters' | 'doctoral' | 'diploma' | 'certificate' | 'integrated' | 'dual';
+  | 'bachelors' | 'masters' | 'doctoral' | 'diploma' | 'certificate' | 'integrated' | 'dual' | 'professional';
 
 export type ExamType =
   | 'entrance' | 'competitive' | 'board' | 'university' | 'professional' | 'certification';
