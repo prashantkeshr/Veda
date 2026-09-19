@@ -1367,6 +1367,32 @@
   <!-- Phase 39: More NLUs -->
   <url><loc>https://veda.dhurta.org/institutions/nliu-bhopal</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://veda.dhurta.org/institutions/hnlu-raipur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <!-- Phase 40: BITS campuses -->
+  <url><loc>https://veda.dhurta.org/institutions/bits-pilani</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/bits-goa</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/bits-hyderabad</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <!-- Phase 40: Top deemed/private universities -->
+  <url><loc>https://veda.dhurta.org/institutions/vit-vellore</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/manipal-institute-of-technology</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/thapar-institute</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 40: IIITs -->
+  <url><loc>https://veda.dhurta.org/institutions/iiit-hyderabad</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiit-delhi</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiit-allahabad</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 40: State engineering colleges -->
+  <url><loc>https://veda.dhurta.org/institutions/jadavpur-university</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/dtu-delhi</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/coep-pune</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/anna-university</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <!-- Phase 40: Medical -->
+  <url><loc>https://veda.dhurta.org/institutions/cmc-vellore</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/jipmer-puducherry</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <!-- Phase 40: Non-IIM management -->
+  <url><loc>https://veda.dhurta.org/institutions/xlri-jamshedpur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/mdi-gurugram</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/spjimr-mumbai</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 40: Central university -->
+  <url><loc>https://veda.dhurta.org/institutions/banaras-hindu-university</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
 
 </urlset>
 

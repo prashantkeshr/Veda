@@ -9,6 +9,7 @@ import questionsData from '../data/questions.json';
 import { boardsData } from '../data/boards';
 import { institutionsData } from '../data/institutions';
 import { institutionsPhase39Data } from '../data/institutions-phase39';
+import { institutionsPhase40Data } from '../data/institutions-phase40';
 import { streamsData } from '../data/streams';
 import { programmesData } from '../data/programmes';
 import { cbseSubjectsData } from '../data/cbse-subjects';
@@ -279,6 +280,7 @@ export const boardRepo = new BoardRepository(boardsData);
 export const institutionRepo = new InstitutionRepository([
   ...institutionsData,
   ...institutionsPhase39Data,
+  ...institutionsPhase40Data,
 ]);
 export const streamRepo = new StreamRepository(streamsData);
 export const programmeRepo = new ProgrammeRepository(programmesData);
