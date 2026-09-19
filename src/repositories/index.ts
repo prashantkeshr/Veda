@@ -8,6 +8,7 @@ import learningPathsData from '../data/learning-paths.json';
 import questionsData from '../data/questions.json';
 import { boardsData } from '../data/boards';
 import { institutionsData } from '../data/institutions';
+import { institutionsPhase39Data } from '../data/institutions-phase39';
 import { streamsData } from '../data/streams';
 import { programmesData } from '../data/programmes';
 import { cbseSubjectsData } from '../data/cbse-subjects';
@@ -275,6 +276,9 @@ export const examRepo = new ExamRepository(examsData as Exam[]);
 export const learningPathRepo = new LearningPathRepository(learningPathsData as LearningPath[]);
 export const questionRepo = new QuestionRepository(questionsData as Question[]);
 export const boardRepo = new BoardRepository(boardsData);
-export const institutionRepo = new InstitutionRepository(institutionsData);
+export const institutionRepo = new InstitutionRepository([
+  ...institutionsData,
+  ...institutionsPhase39Data,
+]);
 export const streamRepo = new StreamRepository(streamsData);
 export const programmeRepo = new ProgrammeRepository(programmesData);

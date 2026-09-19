@@ -1336,6 +1336,37 @@
   <url><loc>https://veda.dhurta.org/resources/khan-academy-cbse-science-class-10</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veda.dhurta.org/resources/khan-academy-linear-algebra</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
   <url><loc>https://veda.dhurta.org/resources/khan-academy-probability-statistics</loc><lastmod>2026-09-16</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 39: IIMs -->
+  <url><loc>https://veda.dhurta.org/institutions/iim-ahmedabad</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iim-bangalore</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iim-calcutta</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iim-lucknow</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iim-kozhikode</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iim-indore</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 39: More IITs -->
+  <url><loc>https://veda.dhurta.org/institutions/iit-bhubaneswar</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-gandhinagar</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-indore</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-jodhpur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iit-patna</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 39: Central Universities -->
+  <url><loc>https://veda.dhurta.org/institutions/jnu-delhi</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/university-of-delhi</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/hyderabad-central-university</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 39: More NITs -->
+  <url><loc>https://veda.dhurta.org/institutions/nit-durgapur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/mnnit-allahabad</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-kurukshetra</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/nit-silchar</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <!-- Phase 39: Regional AIIMS -->
+  <url><loc>https://veda.dhurta.org/institutions/aiims-bhopal</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/aiims-jodhpur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <!-- Phase 39: More IISERs -->
+  <url><loc>https://veda.dhurta.org/institutions/iiser-bhopal</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/iiser-tirupati</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <!-- Phase 39: More NLUs -->
+  <url><loc>https://veda.dhurta.org/institutions/nliu-bhopal</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veda.dhurta.org/institutions/hnlu-raipur</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
 </urlset>
 
