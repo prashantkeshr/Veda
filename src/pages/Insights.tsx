@@ -254,9 +254,13 @@ export function Insights() {
   const [sessionsLoaded, setSessionsLoaded] = useState(false);
 
   useEffect(() => {
+    let cancelled = false;
+    const fallback = setTimeout(() => { if (!cancelled) setSessionsLoaded(true); }, 2000);
     assessmentsDB.getAllSessions()
-      .then(s => { setSessions(s); setSessionsLoaded(true); })
-      .catch(() => setSessionsLoaded(true));
+      .then(s => { if (!cancelled) { setSessions(s); setSessionsLoaded(true); } })
+      .catch(() => { if (!cancelled) setSessionsLoaded(true); })
+      .finally(() => clearTimeout(fallback));
+    return () => { cancelled = true; clearTimeout(fallback); };
   }, []);
 
   if (!ready || !sessionsLoaded) {

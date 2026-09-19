@@ -1,198 +1,147 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
-import { Circle, Clock, CheckCircle, Map } from 'lucide-react';
+import { Circle, Clock, CheckCircle, Map as MapIcon, ChevronDown } from 'lucide-react';
 import { useUserData } from '../app/providers/UserDataProvider';
 import { useTheme } from '../app/providers/ThemeProvider';
+import { subjectRepo, topicRepo } from '../repositories';
+import type { Topic } from '../models';
 
-type SubjectKey = 'maths' | 'thermo' | 'fluid' | 'som' | 'physics';
 type ProgressStatus = 'not-started' | 'in-progress' | 'completed';
 
-interface NodeDef {
-  id: string;
-  slug: string;
-  title: string;
-  subject: SubjectKey;
-  x: number;
-  y: number;
+const NW = 158;
+const NH = 40;
+const HGAP = 50;
+const VGAP = 14;
+const PAD = 10;
+
+function computeLayout(topics: Topic[]): Map<string, { x: number; y: number }> {
+  if (topics.length === 0) return new Map();
+  const inSubject = new Set(topics.map(t => t.id));
+  const levels = new Map<string, number>();
+  const computing = new Set<string>();
+
+  function getLevel(id: string): number {
+    if (levels.has(id)) return levels.get(id)!;
+    if (computing.has(id)) return 0;
+    computing.add(id);
+    const topic = topics.find(t => t.id === id);
+    if (!topic) { levels.set(id, 0); return 0; }
+    const prereqLevels = topic.prerequisiteIds
+      .filter(pid => inSubject.has(pid))
+      .map(pid => getLevel(pid));
+    const level = prereqLevels.length > 0 ? Math.max(...prereqLevels) + 1 : 0;
+    computing.delete(id);
+    levels.set(id, level);
+    return level;
+  }
+  topics.forEach(t => getLevel(t.id));
+
+  const byLevel = new Map<number, string[]>();
+  for (const [id, level] of levels) {
+    const arr = byLevel.get(level) ?? [];
+    arr.push(id);
+    byLevel.set(level, arr);
+  }
+
+  const positions = new Map<string, { x: number; y: number }>();
+  for (const [level, ids] of byLevel) {
+    ids.forEach((id, i) => {
+      positions.set(id, {
+        x: PAD + level * (NW + HGAP),
+        y: PAD + i * (NH + VGAP),
+      });
+    });
+  }
+  return positions;
 }
 
-const NW = 140;
-const NH = 36;
-
-const NODES: NodeDef[] = [
-  // Engineering Mathematics
-  { id: 'veda-topic-differential-calculus',    slug: 'differential-calculus',                  title: 'Differential Calculus',  subject: 'maths',   x: 110, y: 18  },
-  { id: 'veda-topic-integral-calculus',        slug: 'integral-calculus',                      title: 'Integral Calculus',      subject: 'maths',   x: 295, y: 18  },
-  { id: 'veda-topic-linear-algebra',           slug: 'linear-algebra',                         title: 'Linear Algebra',         subject: 'maths',   x: 110, y: 68  },
-  { id: 'veda-topic-probability-statistics',   slug: 'probability-and-statistics',             title: 'Probability & Stats',    subject: 'maths',   x: 110, y: 118 },
-  { id: 'veda-topic-differential-equations',   slug: 'differential-equations',                 title: 'Differential Equations', subject: 'maths',   x: 480, y: 18  },
-  { id: 'veda-topic-numerical-methods',        slug: 'numerical-methods',                      title: 'Numerical Methods',      subject: 'maths',   x: 480, y: 68  },
-  { id: 'veda-topic-complex-variables',        slug: 'complex-variables',                      title: 'Complex Variables',      subject: 'maths',   x: 480, y: 118 },
-  // Engineering Thermodynamics
-  { id: 'veda-topic-thermo-systems-properties', slug: 'thermodynamic-systems-and-properties', title: 'Systems & Properties',  subject: 'thermo',  x: 110, y: 190 },
-  { id: 'veda-topic-first-law',                slug: 'first-law-of-thermodynamics',            title: 'First Law',              subject: 'thermo',  x: 295, y: 190 },
-  { id: 'veda-topic-second-law-entropy',       slug: 'second-law-and-entropy',                 title: 'Second Law & Entropy',   subject: 'thermo',  x: 480, y: 190 },
-  { id: 'veda-topic-heat-transfer-intro',      slug: 'introduction-to-heat-transfer',          title: 'Heat Transfer Intro',    subject: 'thermo',  x: 480, y: 240 },
-  { id: 'veda-topic-gas-power-cycles',         slug: 'gas-power-cycles',                       title: 'Gas Power Cycles',       subject: 'thermo',  x: 480, y: 290 },
-  { id: 'veda-topic-thermo-cycles',            slug: 'thermodynamic-cycles',                   title: 'Vapour Power Cycles',    subject: 'thermo',  x: 665, y: 190 },
-  { id: 'veda-topic-refrigeration-ac',         slug: 'refrigeration-and-air-conditioning',     title: 'Refrigeration & AC',     subject: 'thermo',  x: 665, y: 240 },
-  // Fluid Mechanics
-  { id: 'veda-topic-fluid-properties',         slug: 'fluid-properties-and-classification',   title: 'Fluid Properties',       subject: 'fluid',   x: 110, y: 360 },
-  { id: 'veda-topic-fluid-statics',            slug: 'fluid-statics',                          title: 'Fluid Statics',          subject: 'fluid',   x: 295, y: 360 },
-  { id: 'veda-topic-bernoulli-equation',       slug: 'bernoulli-equation-and-flow-kinematics', title: 'Bernoulli Equation',     subject: 'fluid',   x: 480, y: 360 },
-  { id: 'veda-topic-pipe-flow',                slug: 'pipe-flow-and-head-losses',              title: 'Pipe Flow & Losses',     subject: 'fluid',   x: 665, y: 360 },
-  // Strength of Materials
-  { id: 'veda-topic-stress-strain',            slug: 'stress-strain-and-elastic-constants',   title: 'Stress & Strain',        subject: 'som',     x: 110, y: 425 },
-  { id: 'veda-topic-bending-shear',            slug: 'bending-moment-and-shear-force',         title: 'Bending & Shear',        subject: 'som',     x: 295, y: 425 },
-  // Engineering Physics
-  { id: 'veda-topic-mechanics-kinematics',     slug: 'mechanics-and-kinematics',              title: 'Mechanics & Kinematics', subject: 'physics', x: 110, y: 490 },
-];
-
-const nodeMap = Object.fromEntries(NODES.map(n => [n.id, n]));
-
-const EDGES: Array<{ from: string; to: string }> = [
-  { from: 'veda-topic-differential-calculus',   to: 'veda-topic-integral-calculus' },
-  { from: 'veda-topic-differential-calculus',   to: 'veda-topic-numerical-methods' },
-  { from: 'veda-topic-integral-calculus',       to: 'veda-topic-differential-equations' },
-  { from: 'veda-topic-linear-algebra',          to: 'veda-topic-numerical-methods' },
-  { from: 'veda-topic-differential-equations',  to: 'veda-topic-numerical-methods' },
-  { from: 'veda-topic-thermo-systems-properties', to: 'veda-topic-first-law' },
-  { from: 'veda-topic-thermo-systems-properties', to: 'veda-topic-second-law-entropy' },
-  { from: 'veda-topic-first-law',               to: 'veda-topic-second-law-entropy' },
-  { from: 'veda-topic-first-law',               to: 'veda-topic-thermo-cycles' },
-  { from: 'veda-topic-first-law',               to: 'veda-topic-heat-transfer-intro' },
-  { from: 'veda-topic-second-law-entropy',      to: 'veda-topic-thermo-cycles' },
-  { from: 'veda-topic-second-law-entropy',      to: 'veda-topic-refrigeration-ac' },
-  { from: 'veda-topic-fluid-properties',        to: 'veda-topic-fluid-statics' },
-  { from: 'veda-topic-fluid-statics',           to: 'veda-topic-bernoulli-equation' },
-  { from: 'veda-topic-bernoulli-equation',      to: 'veda-topic-pipe-flow' },
-  { from: 'veda-topic-stress-strain',           to: 'veda-topic-bending-shear' },
-];
-
-const BANDS: Array<{ id: SubjectKey; label: string; y1: number; y2: number }> = [
-  { id: 'maths',   label: 'Engineering Mathematics',     y1: 7,   y2: 165 },
-  { id: 'thermo',  label: 'Engineering Thermodynamics',  y1: 177, y2: 342 },
-  { id: 'fluid',   label: 'Fluid Mechanics',             y1: 348, y2: 409 },
-  { id: 'som',     label: 'Strength of Materials',       y1: 414, y2: 474 },
-  { id: 'physics', label: 'Engineering Physics',         y1: 479, y2: 538 },
-];
-
-const TOTAL_W = 825;
-const TOTAL_H = 545;
-
-type ColorScheme = {
-  band: string; stroke: string; nodeText: string; label: string;
-};
-
-const LIGHT: Record<SubjectKey, ColorScheme> = {
-  maths:   { band: '#eff6ff', stroke: '#3b82f6', nodeText: '#1e40af', label: '#93c5fd' },
-  thermo:  { band: '#fffbeb', stroke: '#d97706', nodeText: '#78350f', label: '#fcd34d' },
-  fluid:   { band: '#ecfdf5', stroke: '#059669', nodeText: '#065f46', label: '#6ee7b7' },
-  som:     { band: '#fdf2f8', stroke: '#db2777', nodeText: '#9d174d', label: '#f9a8d4' },
-  physics: { band: '#f5f3ff', stroke: '#7c3aed', nodeText: '#5b21b6', label: '#c4b5fd' },
-};
-
-const DARK: Record<SubjectKey, ColorScheme> = {
-  maths:   { band: '#1a2744', stroke: '#60a5fa', nodeText: '#93c5fd', label: '#1d4ed8' },
-  thermo:  { band: '#2a1a06', stroke: '#d97706', nodeText: '#fcd34d', label: '#92400e' },
-  fluid:   { band: '#0a2019', stroke: '#34d399', nodeText: '#6ee7b7', label: '#065f46' },
-  som:     { band: '#2a0a1a', stroke: '#f472b6', nodeText: '#fbcfe8', label: '#9d174d' },
-  physics: { band: '#1a1030', stroke: '#a78bfa', nodeText: '#c4b5fd', label: '#5b21b6' },
-};
-
-const PROGRESS_LIGHT = {
-  'in-progress': { fill: '#fefce8', stroke: '#ca8a04', text: '#78350f' },
-  'completed':   { fill: '#f0fdf4', stroke: '#16a34a', text: '#14532d' },
-};
-
-const PROGRESS_DARK = {
-  'in-progress': { fill: '#3a2800', stroke: '#fbbf24', text: '#fde68a' },
-  'completed':   { fill: '#042010', stroke: '#22c55e', text: '#86efac' },
-};
-
-function getEdgePath(from: NodeDef, to: NodeDef): string {
+function getEdgePath(
+  from: { x: number; y: number },
+  to: { x: number; y: number },
+): string {
   const sx = from.x + NW;
   const sy = from.y + NH / 2;
   const tx = to.x;
   const ty = to.y + NH / 2;
-
-  if (to.x > from.x) {
-    const dy = Math.abs(ty - sy);
-    if (dy < 4) {
-      // Same row — arc above if 2+ columns apart
-      const colDiff = (tx - sx) / (NW + 45);
-      if (colDiff >= 2) {
-        const mx = (sx + tx) / 2;
-        return `M ${sx} ${sy} Q ${mx} ${sy - 22} ${tx} ${ty}`;
-      }
-      return `M ${sx} ${sy} L ${tx} ${ty}`;
-    }
-    // Different rows — S-curve
+  if (tx > sx) {
+    if (Math.abs(ty - sy) < 4) return `M ${sx} ${sy} L ${tx} ${ty}`;
     const mx = (sx + tx) / 2;
     return `M ${sx} ${sy} C ${mx} ${sy} ${mx} ${ty} ${tx} ${ty}`;
-  }
-  if (to.x === from.x) {
-    // Same column — vertical
-    const cx = from.x + NW / 2;
-    return `M ${cx} ${from.y + NH} L ${cx} ${to.y}`;
   }
   return '';
 }
 
-const SUBJECT_LABELS: Record<SubjectKey, string> = {
-  maths: 'Engineering Mathematics',
-  thermo: 'Engineering Thermodynamics',
-  fluid: 'Fluid Mechanics',
-  som: 'Strength of Materials',
-  physics: 'Engineering Physics',
-};
-
-const ALL_SUBJECTS = Object.keys(SUBJECT_LABELS) as SubjectKey[];
-
 export function KnowledgeMap() {
-  useSEO('Knowledge Map', 'Visual map of all engineering topics and how they connect — prerequisites, related topics, and learning paths.');
+  useSEO('Knowledge Map', 'Visual map of topic prerequisites and dependencies — pick any subject and see how topics connect.');
   const navigate = useNavigate();
   const { progressMap } = useUserData();
   const { resolved } = useTheme();
   const isDark = resolved === 'dark';
   const [hovered, setHovered] = useState<string | null>(null);
-  const [filter, setFilter] = useState<SubjectKey | 'all'>('all');
+  const [selectedSubjectId, setSelectedSubjectId] = useState<string>('');
 
-  const scheme = isDark ? DARK : LIGHT;
-  const progScheme = isDark ? PROGRESS_DARK : PROGRESS_LIGHT;
+  const subjects = useMemo(() => subjectRepo.getAll(), []);
+  const effectiveSubjectId = selectedSubjectId || (subjects[0]?.id ?? '');
+  const selectedSubject = useMemo(() => subjects.find(s => s.id === effectiveSubjectId), [subjects, effectiveSubjectId]);
+
+  const topics = useMemo(() => {
+    if (!effectiveSubjectId) return [] as Topic[];
+    return topicRepo.getBySubjectId(effectiveSubjectId).slice(0, 42);
+  }, [effectiveSubjectId]);
+
+  const positions = useMemo(() => computeLayout(topics), [topics]);
+  const inSubject = useMemo(() => new Set(topics.map(t => t.id)), [topics]);
+
+  const edges = useMemo(
+    () =>
+      topics.flatMap(t =>
+        t.prerequisiteIds
+          .filter(pid => inSubject.has(pid))
+          .map(pid => ({ from: pid, to: t.id })),
+      ),
+    [topics, inSubject],
+  );
+
+  const svgWidth = useMemo(() => {
+    let max = 400;
+    for (const p of positions.values()) max = Math.max(max, p.x + NW + PAD);
+    return max;
+  }, [positions]);
+
+  const svgHeight = useMemo(() => {
+    let max = 200;
+    for (const p of positions.values()) max = Math.max(max, p.y + NH + PAD);
+    return max;
+  }, [positions]);
+
+  const nodeBg = isDark ? '#1c1917' : '#ffffff';
+  const nodeStroke = isDark ? '#5b8ad4' : '#2563eb';
+  const nodeText = isDark ? '#93c5fd' : '#1e3a8a';
   const edgeColor = isDark ? '#374151' : '#d1d5db';
   const arrowFill = isDark ? '#6b7280' : '#9ca3af';
-  const nodeBg = isDark ? '#1c1917' : '#ffffff';
-  const bandLabelColor = isDark ? '#6b7280' : '#9ca3af';
-
-  const visibleNodes = filter === 'all' ? NODES : NODES.filter(n => n.subject === filter);
-  const visibleIds = new Set(visibleNodes.map(n => n.id));
-  const visibleEdges = EDGES.filter(e => visibleIds.has(e.from) && visibleIds.has(e.to));
-  const visibleBands = filter === 'all' ? BANDS : BANDS.filter(b => b.id === filter);
-
-  // Dynamic viewBox: trim to visible content
-  const svgMinY = visibleBands.length > 0 ? visibleBands[0].y1 - 4 : 0;
-  const svgMaxY = visibleBands.length > 0 ? visibleBands[visibleBands.length - 1].y2 + 8 : TOTAL_H;
-  const dynamicH = svgMaxY - svgMinY;
+  const prog = isDark
+    ? {
+        'in-progress': { fill: '#3a2800', stroke: '#fbbf24', text: '#fde68a' },
+        completed:     { fill: '#042010', stroke: '#22c55e', text: '#86efac' },
+      }
+    : {
+        'in-progress': { fill: '#fefce8', stroke: '#ca8a04', text: '#78350f' },
+        completed:     { fill: '#f0fdf4', stroke: '#16a34a', text: '#14532d' },
+      };
 
   function getStatus(id: string): ProgressStatus {
     return (progressMap[id] as ProgressStatus) ?? 'not-started';
   }
-
-  function getNodeColors(node: NodeDef) {
-    const status = getStatus(node.id);
-    if (status !== 'not-started') {
-      const p = progScheme[status];
-      return { fill: p.fill, stroke: p.stroke, text: p.text };
-    }
-    const s = scheme[node.subject];
-    return { fill: nodeBg, stroke: s.stroke, text: s.nodeText };
+  function getNodeColors(id: string) {
+    const s = getStatus(id);
+    if (s !== 'not-started') return prog[s];
+    return { fill: nodeBg, stroke: nodeStroke, text: nodeText };
   }
 
-  const totalTopics = NODES.length;
-  const completedCount = NODES.filter(n => getStatus(n.id) === 'completed').length;
-  const inProgressCount = NODES.filter(n => getStatus(n.id) === 'in-progress').length;
+  const completedCount = topics.filter(t => getStatus(t.id) === 'completed').length;
+  const inProgressCount = topics.filter(t => getStatus(t.id) === 'in-progress').length;
+  const totalInSubject = selectedSubject?.topicIds.length ?? topics.length;
 
   return (
     <div className="space-y-5">
@@ -200,170 +149,163 @@ export function KnowledgeMap() {
       <div className="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Map size={18} className="text-veda-700 dark:text-veda-400" />
+            <MapIcon size={18} className="text-veda-700 dark:text-veda-400" />
             <h1 className="text-2xl font-bold text-stone-900 dark:text-stone-100">Knowledge Map</h1>
           </div>
           <p className="text-sm text-stone-500 dark:text-stone-400">
-            Topic dependencies across all subjects — click any topic to open it.
+            Topic prerequisites and dependencies — click any node to open it.
           </p>
         </div>
         <div className="flex gap-4 text-sm text-stone-500 dark:text-stone-400">
-          <span><strong className="text-stone-900 dark:text-stone-100">{totalTopics}</strong> topics</span>
+          <span><strong className="text-stone-900 dark:text-stone-100">{topics.length}</strong> topics</span>
           <span><strong className="text-amber-600 dark:text-amber-400">{inProgressCount}</strong> in progress</span>
           <span><strong className="text-emerald-600 dark:text-emerald-400">{completedCount}</strong> completed</span>
         </div>
       </div>
 
-      {/* Subject filter */}
-      <div className="flex flex-wrap gap-2">
-        {(['all', ...ALL_SUBJECTS] as const).map(s => (
-          <button
-            key={s}
-            onClick={() => setFilter(s)}
-            className={[
-              'px-3 py-1 rounded-full text-xs font-medium border transition-colors',
-              filter === s
-                ? 'bg-veda-700 text-white border-veda-700 dark:bg-veda-500 dark:border-veda-500'
-                : 'border-stone-200 dark:border-stone-700 text-stone-600 dark:text-stone-400 hover:bg-stone-50 dark:hover:bg-stone-800',
-            ].join(' ')}
+      {/* Subject selector */}
+      <div className="flex items-center gap-3 flex-wrap">
+        <label className="text-sm font-medium text-stone-600 dark:text-stone-400 shrink-0">Subject:</label>
+        <div className="relative">
+          <select
+            value={effectiveSubjectId}
+            onChange={e => setSelectedSubjectId(e.target.value)}
+            className="appearance-none pl-3 pr-8 py-1.5 text-sm rounded-lg border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-800 dark:text-stone-200 focus:outline-none focus:ring-2 focus:ring-veda-500 cursor-pointer"
           >
-            {s === 'all' ? 'All subjects' : SUBJECT_LABELS[s]}
-          </button>
-        ))}
+            {subjects.map(s => (
+              <option key={s.id} value={s.id}>{s.title}</option>
+            ))}
+          </select>
+          <ChevronDown size={14} className="absolute right-2.5 top-2 text-stone-400 pointer-events-none" />
+        </div>
+        {totalInSubject > 42 && (
+          <span className="text-xs text-stone-400">(showing first 42 of {totalInSubject})</span>
+        )}
       </div>
 
       {/* Legend */}
       <div className="flex flex-wrap items-center gap-4 text-xs text-stone-500 dark:text-stone-400">
         <span className="font-medium text-stone-600 dark:text-stone-400">Progress:</span>
         {[
-          { icon: Circle,       label: 'Not started', color: 'text-stone-400' },
-          { icon: Clock,        label: 'In progress',  color: 'text-amber-500' },
-          { icon: CheckCircle,  label: 'Completed',    color: 'text-emerald-500' },
+          { icon: Circle,      label: 'Not started', color: 'text-stone-400' },
+          { icon: Clock,       label: 'In progress',  color: 'text-amber-500' },
+          { icon: CheckCircle, label: 'Completed',    color: 'text-emerald-500' },
         ].map(({ icon: Icon, label, color }) => (
           <span key={label} className="flex items-center gap-1">
             <Icon size={12} className={color} /> {label}
           </span>
         ))}
-        <span className="ml-2 flex items-center gap-1">
-          <svg width="24" height="8"><line x1="0" y1="4" x2="18" y2="4" stroke={edgeColor} strokeWidth="1.5" markerEnd="url(#arrow-legend)" /><defs><marker id="arrow-legend" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill={arrowFill} /></marker></defs></svg>
-          Leads to
+        <span className="ml-2 flex items-center gap-1.5">
+          <svg width="28" height="8">
+            <defs>
+              <marker id="arrow-legend" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill={arrowFill} />
+              </marker>
+            </defs>
+            <line x1="0" y1="4" x2="22" y2="4" stroke={edgeColor} strokeWidth="1.5" markerEnd="url(#arrow-legend)" />
+          </svg>
+          Requires →
         </span>
       </div>
 
       {/* Map */}
-      <div className="overflow-x-auto rounded-lg border border-stone-200 dark:border-stone-800">
-        <svg
-          viewBox={`0 ${svgMinY} ${TOTAL_W} ${dynamicH}`}
-          style={{ minWidth: 600, width: '100%', display: 'block' }}
-          role="img"
-          aria-label="VEDA Knowledge Map"
-        >
-          <defs>
-            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d={`M0,0 L0,6 L6,3 z`} fill={arrowFill} />
-            </marker>
-          </defs>
+      {topics.length === 0 ? (
+        <div className="rounded-lg border border-stone-200 dark:border-stone-800 p-12 text-center text-sm text-stone-400">
+          No topics found for this subject.
+        </div>
+      ) : (
+        <div className="overflow-x-auto rounded-lg border border-stone-200 dark:border-stone-800">
+          <svg
+            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+            style={{ minWidth: Math.min(svgWidth, 560), width: '100%', display: 'block' }}
+            role="img"
+            aria-label={`Knowledge map for ${selectedSubject?.title ?? 'selected subject'}`}
+          >
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill={arrowFill} />
+              </marker>
+            </defs>
 
-          {/* Subject band backgrounds */}
-          {visibleBands.map(band => {
-            const c = scheme[band.id];
-            return (
-              <g key={band.id}>
-                <rect
-                  x={6} y={band.y1}
-                  width={TOTAL_W - 12} height={band.y2 - band.y1}
-                  rx={8} fill={c.band} opacity={0.6}
+            {/* Edges */}
+            {edges.map(e => {
+              const fp = positions.get(e.from);
+              const tp = positions.get(e.to);
+              if (!fp || !tp) return null;
+              const d = getEdgePath(fp, tp);
+              if (!d) return null;
+              return (
+                <path
+                  key={`${e.from}-${e.to}`}
+                  d={d}
+                  fill="none"
+                  stroke={edgeColor}
+                  strokeWidth={1.5}
+                  markerEnd="url(#arrow)"
+                  opacity={0.8}
                 />
-                {/* Subject label */}
-                <text
-                  x={14}
-                  y={band.y1 + 13}
-                  fontSize="9"
-                  fontWeight="600"
-                  letterSpacing="0.05em"
-                  fill={bandLabelColor}
-                  textAnchor="start"
+              );
+            })}
+
+            {/* Nodes */}
+            {topics.map(topic => {
+              const pos = positions.get(topic.id);
+              if (!pos) return null;
+              const { fill, stroke, text } = getNodeColors(topic.id);
+              const isHovered = hovered === topic.id;
+              const status = getStatus(topic.id);
+              const label = topic.title.length > 21 ? topic.title.slice(0, 19) + '…' : topic.title;
+
+              return (
+                <g
+                  key={topic.id}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => navigate(`/topics/${topic.slug}`)}
+                  onMouseEnter={() => setHovered(topic.id)}
+                  onMouseLeave={() => setHovered(null)}
                 >
-                  {band.label.toUpperCase()}
-                </text>
-              </g>
-            );
-          })}
-
-          {/* Edges */}
-          {visibleEdges.map(e => {
-            const from = nodeMap[e.from];
-            const to = nodeMap[e.to];
-            if (!from || !to) return null;
-            const d = getEdgePath(from, to);
-            if (!d) return null;
-            return (
-              <path
-                key={`${e.from}-${e.to}`}
-                d={d}
-                fill="none"
-                stroke={edgeColor}
-                strokeWidth={1.5}
-                markerEnd="url(#arrow)"
-                opacity={0.8}
-              />
-            );
-          })}
-
-          {/* Nodes */}
-          {visibleNodes.map(node => {
-            const { fill, stroke, text } = getNodeColors(node);
-            const isHovered = hovered === node.id;
-            const status = getStatus(node.id);
-
-            return (
-              <g
-                key={node.id}
-                style={{ cursor: 'pointer' }}
-                onClick={() => navigate(`/topics/${node.slug}`)}
-                onMouseEnter={() => setHovered(node.id)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <rect
-                  x={node.x} y={node.y}
-                  width={NW} height={NH}
-                  rx={6}
-                  fill={fill}
-                  stroke={stroke}
-                  strokeWidth={isHovered ? 2 : 1.5}
-                  filter={isHovered ? 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' : undefined}
-                />
-                {/* Progress indicator dot */}
-                {status !== 'not-started' && (
-                  <circle
-                    cx={node.x + NW - 8}
-                    cy={node.y + 8}
-                    r={4}
-                    fill={status === 'completed' ? '#16a34a' : '#d97706'}
+                  <rect
+                    x={pos.x} y={pos.y}
+                    width={NW} height={NH}
+                    rx={6}
+                    fill={fill}
+                    stroke={stroke}
+                    strokeWidth={isHovered ? 2 : 1.5}
+                    filter={isHovered ? 'drop-shadow(0 2px 6px rgba(0,0,0,0.18))' : undefined}
                   />
-                )}
-                <text
-                  x={node.x + NW / 2}
-                  y={node.y + NH / 2 + 1}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fontSize="10.5"
-                  fontWeight="500"
-                  fill={text}
-                  style={{ userSelect: 'none', pointerEvents: 'none' }}
-                >
-                  {node.title}
-                </text>
-                <title>{node.title}</title>
-              </g>
-            );
-          })}
-        </svg>
-      </div>
+                  {status !== 'not-started' && (
+                    <circle
+                      cx={pos.x + NW - 8}
+                      cy={pos.y + 8}
+                      r={4}
+                      fill={status === 'completed' ? '#16a34a' : '#d97706'}
+                    />
+                  )}
+                  <text
+                    x={pos.x + NW / 2}
+                    y={pos.y + NH / 2 + 1}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="10.5"
+                    fontWeight="500"
+                    fill={text}
+                    style={{ userSelect: 'none', pointerEvents: 'none' }}
+                  >
+                    {label}
+                  </text>
+                  <title>{topic.title} — {topic.difficulty}</title>
+                </g>
+              );
+            })}
+          </svg>
+        </div>
+      )}
 
-      {/* Empty state for filter */}
-      {visibleNodes.length === 0 && (
-        <p className="text-center text-sm text-stone-400 py-8">No topics match the selected filter.</p>
+      {/* No-edges notice */}
+      {topics.length > 0 && edges.length === 0 && (
+        <p className="text-xs text-stone-400 text-center">
+          No prerequisite links defined within this subject — topics are independent.
+        </p>
       )}
     </div>
   );

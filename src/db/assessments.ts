@@ -27,6 +27,7 @@ function openDB(): Promise<IDBDatabase> {
     };
     req.onsuccess = () => { _db = req.result; resolve(req.result); };
     req.onerror = () => reject(req.error);
+    req.onblocked = () => reject(new Error('IndexedDB blocked'));
   });
 }
 
