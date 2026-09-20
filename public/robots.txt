@@ -1,12 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /veda-kendra
-Disallow: /veda-kendra/
-Disallow: /api/
-
-# Keep admin CMS private
-User-agent: Googlebot
-Disallow: /veda-kendra
-Disallow: /veda-kendra/
 
 Sitemap: https://veda.dhurta.org/sitemap.xml
