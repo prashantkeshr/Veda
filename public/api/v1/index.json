@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-15T21:34:42.249Z",
+  "generatedAt": "2026-09-20T13:26:11.444Z",
   "endpoints": [
     {
       "entity": "subject",
@@ -35,7 +35,7 @@
     {
       "entity": "exam",
       "file": "exams.json",
-      "count": 5,
+      "count": 20,
       "path": "/Veda/api/v1/exams.json"
     },
     {

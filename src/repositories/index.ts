@@ -50,6 +50,7 @@ import { resourcesFluidMechData } from '../data/resources-fluid-mech';
 import { resourcesSomData } from '../data/resources-som';
 import { resourcesPhysicsData } from '../data/resources-physics';
 import { resourcesPdfsData } from '../data/resources-pdfs';
+import { resourcesHindiData } from '../data/resources-hindi';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -286,6 +287,7 @@ export const resourceRepo = new ResourceRepository([
   ...resourcesSomData,
   ...resourcesPhysicsData,
   ...resourcesPdfsData,
+  ...resourcesHindiData,
 ]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);

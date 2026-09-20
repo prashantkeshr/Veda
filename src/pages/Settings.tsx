@@ -3,6 +3,7 @@ import { useSEO } from '../hooks/useSEO';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { useTheme } from '../app/providers/ThemeProvider';
 import { useUserData } from '../app/providers/UserDataProvider';
+import { useVideoLanguage } from '../hooks/useVideoLanguage';
 import { assessmentsDB } from '../db/assessments';
 import { flashcardsDB } from '../db/flashcards';
 import { notesDB } from '../db/notes';
@@ -379,6 +380,7 @@ export function Settings() {
   useSEO('Settings', 'App preferences, data management, and install options for VEDA.');
   const { theme, setTheme }    = useTheme();
   const { canInstall, installed, install } = usePWAInstall();
+  const { lang, setLang, languages } = useVideoLanguage();
   const { quizAttempts, bookmarks, progressMap } = useUserData();
 
   const [backupStatus,   setBackupStatus]   = useState<Status>('idle');
@@ -704,6 +706,33 @@ ${body}
               >
                 <Icon size={13} />
                 <span className="hidden sm:inline">{label}</span>
+              </button>
+            ))}
+          </div>
+        </Row>
+      </Section>
+
+      {/* Content Language */}
+      <Section title="Content Language">
+        <Row>
+          <RowLabel
+            title="Video language"
+            description="Supporting explanation videos are shown in your preferred language. English source documents (PDFs, courses, notes) are always shown."
+          />
+          <div className="flex flex-wrap gap-1.5 flex-shrink-0 max-w-[230px] justify-end">
+            {languages.map(l => (
+              <button
+                key={l.code}
+                onClick={() => setLang(l.code)}
+                title={l.label}
+                className={cn(
+                  'flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-colors',
+                  lang === l.code
+                    ? 'bg-veda-700 text-white dark:bg-veda-500'
+                    : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+                )}
+              >
+                {l.flag} {l.nativeLabel}
               </button>
             ))}
           </div>

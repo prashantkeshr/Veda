@@ -2,8 +2,8 @@
   "$schema": "/Veda/api/v1/schema.json",
   "version": "1.0.0",
   "entity": "exam",
-  "count": 5,
-  "generatedAt": "2026-09-15T21:34:42.248Z",
+  "count": 20,
+  "generatedAt": "2026-09-20T13:26:11.442Z",
   "data": [
     {
       "id": "veda-exam-gate-me",
@@ -97,6 +97,283 @@
       ],
       "websiteUrl": "https://gate.iitb.ac.in",
       "updatedAt": "2026-08-01"
+    },
+    {
+      "id": "veda-exam-gate-cs",
+      "slug": "gate-computer-science",
+      "title": "GATE Computer Science & IT",
+      "shortTitle": "GATE CS",
+      "description": "Graduate Aptitude Test in Engineering for Computer Science and Information Technology — one of the highest-appearing GATE papers. Key for M.Tech admissions, PSU IT roles (BARC, DRDO, BSNL), and software-sector research programmes.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-cs-dsa",
+        "veda-subject-cs-os",
+        "veda-subject-cs-dbms",
+        "veda-subject-cs-networks",
+        "veda-subject-cs-toc",
+        "veda-subject-cs-digital-logic",
+        "veda-subject-cs-compiler",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-cs-arrays-linked-lists",
+        "veda-topic-cs-trees-graphs",
+        "veda-topic-cs-os-processes",
+        "veda-topic-cs-db-relational",
+        "veda-topic-cs-net-osi",
+        "veda-topic-cs-toc-automata"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech / B.E. / MCA / M.Sc (CS/IT/Mathematics) — final year or passed",
+      "syllabus": [
+        "Engineering Mathematics",
+        "Digital Logic",
+        "Computer Organisation & Architecture",
+        "Programming & Data Structures",
+        "Algorithms",
+        "Theory of Computation",
+        "Compiler Design",
+        "Operating Systems",
+        "Databases",
+        "Computer Networks"
+      ],
+      "tags": [
+        "GATE",
+        "CS",
+        "IT",
+        "national",
+        "M.Tech",
+        "PSU"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-gate-ee",
+      "slug": "gate-electrical-engineering",
+      "title": "GATE Electrical Engineering",
+      "shortTitle": "GATE EE",
+      "description": "Graduate Aptitude Test in Engineering for Electrical Engineering — covers circuits, machines, power systems, control systems, and signals. Critical for power-sector PSUs (BHEL, NTPC, PGCIL) and M.Tech admissions.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-ee-circuit-theory",
+        "veda-subject-ee-machines",
+        "veda-subject-ee-power-systems",
+        "veda-subject-ee-control",
+        "veda-subject-ee-signals",
+        "veda-subject-ee-power-electronics",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-ee-ct-network-theorems",
+        "veda-topic-ee-machines-transformers",
+        "veda-topic-ee-ps-transmission",
+        "veda-topic-ee-cs-stability"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech / B.E. in Electrical Engineering or related (final year or passed)",
+      "syllabus": [
+        "Engineering Mathematics",
+        "Electric Circuits",
+        "Electromagnetic Fields",
+        "Signals & Systems",
+        "Electrical Machines",
+        "Power Systems",
+        "Control Systems",
+        "Electrical & Electronic Measurements",
+        "Analog & Digital Electronics",
+        "Power Electronics"
+      ],
+      "tags": [
+        "GATE",
+        "EE",
+        "Electrical",
+        "national",
+        "PSU",
+        "M.Tech"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-gate-ece",
+      "slug": "gate-electronics-communication-engineering",
+      "title": "GATE Electronics & Communication Engineering",
+      "shortTitle": "GATE ECE",
+      "description": "Graduate Aptitude Test in Engineering for Electronics and Communication — covers analog/digital circuits, communications, signals, VLSI, and electromagnetics. Important for ISRO, DRDO, BEL, and M.Tech in VLSI/Communications.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-ece-analog",
+        "veda-subject-ece-digital",
+        "veda-subject-ece-comms",
+        "veda-subject-ece-em",
+        "veda-subject-ece-vlsi",
+        "veda-subject-ee-signals",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-ece-ac-opamp",
+        "veda-topic-ece-de-sequential",
+        "veda-topic-ece-cm-digital-mod",
+        "veda-topic-ece-em-waves"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech / B.E. in Electronics, ECE, EEE, Instrumentation (final year or passed)",
+      "syllabus": [
+        "Engineering Mathematics",
+        "Networks & Circuits",
+        "Electronic Devices",
+        "Analog Circuits",
+        "Digital Circuits",
+        "Control Systems",
+        "Signals & Systems",
+        "Communications",
+        "Electromagnetics"
+      ],
+      "tags": [
+        "GATE",
+        "ECE",
+        "Electronics",
+        "national",
+        "VLSI",
+        "M.Tech"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-gate-ch",
+      "slug": "gate-chemical-engineering",
+      "title": "GATE Chemical Engineering",
+      "shortTitle": "GATE CH",
+      "description": "Graduate Aptitude Test in Engineering for Chemical Engineering — covers thermodynamics, transport phenomena, reaction engineering, and process control. Key for ONGC, IOCL, BPCL PSU roles and M.Tech/MS admissions.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-ch-chem-thermo",
+        "veda-subject-ch-mass-transfer",
+        "veda-subject-ch-reaction-engg",
+        "veda-subject-ch-process-control",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-ch-thermo-phase",
+        "veda-topic-ch-mt-distillation",
+        "veda-topic-ch-re-ideal-reactors",
+        "veda-topic-ch-pc-pid"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech / B.E. in Chemical Engineering or related (final year or passed)",
+      "syllabus": [
+        "Engineering Mathematics",
+        "Process Calculations",
+        "Thermodynamics",
+        "Fluid Mechanics & Mechanical Operations",
+        "Heat Transfer",
+        "Mass Transfer",
+        "Chemical Reaction Engineering",
+        "Instrumentation & Process Control",
+        "Plant Design & Economics",
+        "Chemical Technology"
+      ],
+      "tags": [
+        "GATE",
+        "Chemical",
+        "national",
+        "PSU",
+        "M.Tech"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-gate-ae",
+      "slug": "gate-aerospace-engineering",
+      "title": "GATE Aerospace Engineering",
+      "shortTitle": "GATE AE",
+      "description": "Graduate Aptitude Test in Engineering for Aerospace Engineering — covers aerodynamics, structures, propulsion, and flight mechanics. Key for ISRO, DRDO, HAL, and M.Tech in Aerospace / Aeronautical programmes.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-ae-aerodynamics",
+        "veda-subject-ae-structures",
+        "veda-subject-ae-propulsion",
+        "veda-subject-ae-flight-mech",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-ae-aero-fundamentals",
+        "veda-topic-ae-prop-jet",
+        "veda-topic-ae-fm-stability"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech / B.E. in Aerospace, Aeronautical, or Avionics Engineering (final year or passed)",
+      "syllabus": [
+        "Engineering Mathematics",
+        "Flight Mechanics",
+        "Space Dynamics",
+        "Aerodynamics",
+        "Structures",
+        "Propulsion"
+      ],
+      "tags": [
+        "GATE",
+        "Aerospace",
+        "Aeronautical",
+        "ISRO",
+        "DRDO",
+        "national"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-gate-bt",
+      "slug": "gate-biotechnology",
+      "title": "GATE Biotechnology",
+      "shortTitle": "GATE BT",
+      "description": "Graduate Aptitude Test in Engineering for Biotechnology — covers microbiology, biochemistry, molecular biology, bioprocess engineering, and bioinformatics. Relevant for DBT, CSIR labs, and pharma-sector research roles.",
+      "type": "competitive",
+      "conductingBody": "IIT / IISc (on behalf of MHRD)",
+      "subjectIds": [
+        "veda-subject-bt-biochemistry",
+        "veda-subject-bt-genetics",
+        "veda-subject-bt-bioprocess",
+        "veda-subject-bt-bioinformatics",
+        "veda-subject-engg-maths"
+      ],
+      "topicIds": [
+        "veda-topic-bt-bc-enzymes",
+        "veda-topic-bt-gen-recombinant",
+        "veda-topic-bt-bp-bioreactors"
+      ],
+      "level": "national",
+      "eligibility": "B.Tech in Biotechnology / Biomedical / Biochemical Engineering, or B.Sc / M.Sc Life Sciences (final year or passed)",
+      "syllabus": [
+        "Engineering Mathematics",
+        "General Biology",
+        "Biochemistry",
+        "Microbiology",
+        "Cell Biology",
+        "Molecular Biology",
+        "Genetic Engineering",
+        "Bioprocess Engineering",
+        "Plant & Animal Biotechnology",
+        "Bioinformatics"
+      ],
+      "tags": [
+        "GATE",
+        "Biotechnology",
+        "national",
+        "CSIR",
+        "DBT",
+        "pharma"
+      ],
+      "websiteUrl": "https://gate.iitb.ac.in",
+      "updatedAt": "2026-09-16"
     },
     {
       "id": "veda-exam-jee-main",
@@ -204,6 +481,321 @@
       ],
       "websiteUrl": "https://upsc.gov.in",
       "updatedAt": "2026-07-20"
+    },
+    {
+      "id": "veda-exam-jam-physics",
+      "slug": "iit-jam-physics",
+      "title": "IIT JAM Physics",
+      "shortTitle": "JAM PH",
+      "description": "IIT Joint Admission Test for M.Sc Physics — the primary route from B.Sc to M.Sc at IITs and IISc. Covers Classical Mechanics, Electromagnetism, Quantum Mechanics, Statistical Mechanics, and Mathematical Methods.",
+      "type": "entrance",
+      "conductingBody": "IIT (on rotation)",
+      "subjectIds": [
+        "veda-subject-bsc-ph-classical-mechanics",
+        "veda-subject-bsc-ph-em-theory",
+        "veda-subject-bsc-ph-quantum",
+        "veda-subject-bsc-ph-statistical"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "B.Sc Physics (final year or passed), minimum 55% aggregate",
+      "syllabus": [
+        "Mathematical Methods",
+        "Classical Mechanics",
+        "Electromagnetic Theory",
+        "Quantum Mechanics",
+        "Thermodynamics & Statistical Physics",
+        "Atomic & Molecular Physics",
+        "Solid State Physics",
+        "Nuclear & Particle Physics"
+      ],
+      "tags": [
+        "JAM",
+        "M.Sc",
+        "IIT",
+        "Physics",
+        "national",
+        "entrance"
+      ],
+      "websiteUrl": "https://jam.iitm.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-jam-mathematics",
+      "slug": "iit-jam-mathematics",
+      "title": "IIT JAM Mathematics",
+      "shortTitle": "JAM MA",
+      "description": "IIT Joint Admission Test for M.Sc Mathematics — gateway to IIT and IISc M.Sc / PhD programmes in Mathematics. Covers Real Analysis, Linear Algebra, Abstract Algebra, Calculus, and ODE/PDE.",
+      "type": "entrance",
+      "conductingBody": "IIT (on rotation)",
+      "subjectIds": [
+        "veda-subject-bsc-ma-real-analysis",
+        "veda-subject-bsc-ma-algebra",
+        "veda-subject-bsc-ma-linear-algebra",
+        "veda-subject-bsc-ma-calculus"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "B.Sc / B.A. Mathematics (final year or passed), minimum 55% aggregate",
+      "syllabus": [
+        "Sequences, Series, Continuity, Differentiability",
+        "Functions of Multiple Variables",
+        "Integral Calculus",
+        "Differential Equations",
+        "Vector Calculus",
+        "Group Theory",
+        "Linear Algebra",
+        "Real Analysis"
+      ],
+      "tags": [
+        "JAM",
+        "M.Sc",
+        "IIT",
+        "Mathematics",
+        "national",
+        "entrance"
+      ],
+      "websiteUrl": "https://jam.iitm.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-jam-chemistry",
+      "slug": "iit-jam-chemistry",
+      "title": "IIT JAM Chemistry",
+      "shortTitle": "JAM CY",
+      "description": "IIT Joint Admission Test for M.Sc Chemistry — route from B.Sc Chemistry to M.Sc at IITs. Covers Physical, Organic, and Inorganic Chemistry comprehensively.",
+      "type": "entrance",
+      "conductingBody": "IIT (on rotation)",
+      "subjectIds": [
+        "veda-subject-bsc-cy-physical",
+        "veda-subject-bsc-cy-organic",
+        "veda-subject-bsc-cy-inorganic"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "B.Sc Chemistry (final year or passed), minimum 55% aggregate",
+      "syllabus": [
+        "Physical Chemistry: Quantum, Thermodynamics, Kinetics, Electrochemistry",
+        "Organic Chemistry: Mechanisms, Stereochemistry, Spectroscopy",
+        "Inorganic Chemistry: Coordination, Organometallic, Main Group"
+      ],
+      "tags": [
+        "JAM",
+        "M.Sc",
+        "IIT",
+        "Chemistry",
+        "national",
+        "entrance"
+      ],
+      "websiteUrl": "https://jam.iitm.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-cuet-ug",
+      "slug": "cuet-ug",
+      "title": "CUET UG",
+      "shortTitle": "CUET UG",
+      "description": "Common University Entrance Test (Undergraduate) — the single gateway for UG admissions to all Central Universities, many State Universities, and deemed universities. Conducted by NTA. Covers domain-specific subjects, language, and general aptitude.",
+      "type": "entrance",
+      "conductingBody": "National Testing Agency (NTA)",
+      "subjectIds": [],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "Class 12 pass or appearing — all streams",
+      "syllabus": [
+        "Section IA: Language (13 options)",
+        "Section IB: Additional Language (20 options)",
+        "Section II: Domain Subjects (27 subjects — Physics, Chemistry, Maths, Biology, Economics, Accountancy, Business Studies, History, Geography, Political Science, Psychology, etc.)",
+        "Section III: General Test (Quantitative, Logical Reasoning, GK)"
+      ],
+      "tags": [
+        "CUET",
+        "UG",
+        "Central University",
+        "DU",
+        "JNU",
+        "NTA",
+        "national",
+        "entrance"
+      ],
+      "websiteUrl": "https://cuet.samarth.ac.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-ca-foundation",
+      "slug": "ca-foundation",
+      "title": "CA Foundation",
+      "shortTitle": "CA Foundation",
+      "description": "Chartered Accountancy Foundation level — first step of the ICAI CA programme. Covers Accounting Principles, Business Laws, Quantitative Aptitude, and Business Economics. Can be attempted after Class 12.",
+      "type": "professional",
+      "conductingBody": "Institute of Chartered Accountants of India (ICAI)",
+      "subjectIds": [
+        "veda-subject-bcom-financial-accounting",
+        "veda-subject-bcom-corporate-law"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "Class 12 pass or appearing (registered for 4 months before attempt)",
+      "syllabus": [
+        "Paper 1: Principles & Practice of Accounting",
+        "Paper 2: Business Laws",
+        "Paper 3: Quantitative Aptitude (Maths + Statistics)",
+        "Paper 4: Business Economics & Business & Commercial Knowledge"
+      ],
+      "tags": [
+        "CA",
+        "Chartered Accountancy",
+        "ICAI",
+        "Foundation",
+        "Commerce",
+        "professional"
+      ],
+      "websiteUrl": "https://icai.org",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-ugc-net-commerce",
+      "slug": "ugc-net-commerce",
+      "title": "UGC NET Commerce",
+      "shortTitle": "UGC NET Commerce",
+      "description": "University Grants Commission National Eligibility Test for Commerce — qualifies candidates for Assistant Professor posts and Junior Research Fellowship in Commerce at Indian universities.",
+      "type": "competitive",
+      "conductingBody": "National Testing Agency (NTA) on behalf of UGC",
+      "subjectIds": [
+        "veda-subject-bcom-financial-accounting",
+        "veda-subject-bcom-business-management",
+        "veda-subject-bcom-taxation"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "M.Com or equivalent (minimum 55% marks)",
+      "syllabus": [
+        "Accounting",
+        "Business Finance & Financial Markets",
+        "Management",
+        "Marketing",
+        "Human Resource Management",
+        "Statistics for Business Decisions",
+        "Company Law & Corporate Governance",
+        "Taxation"
+      ],
+      "tags": [
+        "UGC NET",
+        "Commerce",
+        "lecturer",
+        "JRF",
+        "national"
+      ],
+      "websiteUrl": "https://ugcnet.nta.nic.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-ugc-net-economics",
+      "slug": "ugc-net-economics",
+      "title": "UGC NET Economics",
+      "shortTitle": "UGC NET Eco",
+      "description": "University Grants Commission National Eligibility Test for Economics — qualifies for Assistant Professor and JRF in Economics. Covers Micro/Macro Economics, Statistics, Development Economics, and International Trade.",
+      "type": "competitive",
+      "conductingBody": "National Testing Agency (NTA) on behalf of UGC",
+      "subjectIds": [
+        "veda-subject-ba-eco-micro",
+        "veda-subject-ba-eco-macro",
+        "veda-subject-ba-eco-development",
+        "veda-subject-ba-eco-statistics"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "M.A. / M.Sc Economics (minimum 55% marks)",
+      "syllabus": [
+        "Micro & Macro Economics",
+        "Statistics & Econometrics",
+        "Money, Banking & Finance",
+        "International Economics",
+        "Public Finance",
+        "Development Economics",
+        "Growth & Fluctuations",
+        "Environmental Economics"
+      ],
+      "tags": [
+        "UGC NET",
+        "Economics",
+        "lecturer",
+        "JRF",
+        "national"
+      ],
+      "websiteUrl": "https://ugcnet.nta.nic.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-neet",
+      "slug": "neet-ug",
+      "title": "NEET UG",
+      "shortTitle": "NEET",
+      "description": "National Eligibility cum Entrance Test (Undergraduate) — the sole entrance for MBBS, BDS, BAMS, BHMS, and other medical/dental/ayush undergraduate programmes in India. Conducted by NTA. Physics, Chemistry, Biology — 180 questions, 720 marks.",
+      "type": "entrance",
+      "conductingBody": "National Testing Agency (NTA)",
+      "subjectIds": [
+        "veda-subject-cbse-biology",
+        "veda-subject-cbse-physics",
+        "veda-subject-cbse-chemistry"
+      ],
+      "topicIds": [
+        "veda-topic-cbse-bi-cell-biology",
+        "veda-topic-cbse-bi-genetics",
+        "veda-topic-cbse-bi-human-physiology"
+      ],
+      "level": "national",
+      "eligibility": "Class 12 pass with PCB, minimum 50% aggregate (40% for reserved categories)",
+      "syllabus": [
+        "Physics: Class 11 & 12 NCERT syllabus",
+        "Chemistry: Class 11 & 12 NCERT syllabus",
+        "Biology: Class 11 & 12 NCERT Botany + Zoology"
+      ],
+      "tags": [
+        "NEET",
+        "MBBS",
+        "medical",
+        "entrance",
+        "national",
+        "Class 12"
+      ],
+      "websiteUrl": "https://neet.nta.nic.in",
+      "updatedAt": "2026-09-16"
+    },
+    {
+      "id": "veda-exam-cbse-board",
+      "slug": "cbse-board-exam",
+      "title": "CBSE Board Examination",
+      "shortTitle": "CBSE Board",
+      "description": "Central Board of Secondary Education annual board examinations. Class 10 (Secondary School Certificate) and Class 12 (Senior Secondary Certificate) are the major certificate examinations taken by millions of students across India.",
+      "type": "board",
+      "conductingBody": "Central Board of Secondary Education (CBSE)",
+      "subjectIds": [
+        "veda-subject-cbse-9-10-science",
+        "veda-subject-cbse-9-10-mathematics",
+        "veda-subject-cbse-9-10-social-science",
+        "veda-subject-cbse-9-10-english",
+        "veda-subject-cbse-9-10-hindi",
+        "veda-subject-cbse-9-10-it"
+      ],
+      "topicIds": [],
+      "level": "national",
+      "eligibility": "Students enrolled in CBSE-affiliated schools for Classes 9-12",
+      "syllabus": [
+        "NCERT prescribed curriculum for respective classes",
+        "CBSE annual curriculum document"
+      ],
+      "tags": [
+        "CBSE",
+        "board exam",
+        "Class 9",
+        "Class 10",
+        "Class 12",
+        "secondary",
+        "higher-secondary"
+      ],
+      "websiteUrl": "https://cbse.gov.in",
+      "updatedAt": "2026-09-16"
     }
   ]
 }

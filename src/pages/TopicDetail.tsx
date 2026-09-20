@@ -3,7 +3,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import { useStructuredData, LD_BASE, LD_PROVIDER } from '../hooks/useStructuredData';
 import { ShareButton } from '../components/ui/ShareButton';
-import { Clock, Zap, BookOpen, ChevronRight, ArrowRight, Circle, CheckCircle } from 'lucide-react';
+import { Clock, Zap, BookOpen, ChevronRight, ArrowRight, Circle, CheckCircle, Globe } from 'lucide-react';
 import { topicRepo, subjectRepo, resourceRepo, questionRepo } from '../repositories';
 import { ResourceCard } from '../components/knowledge/ResourceCard';
 import { TopicCard } from '../components/knowledge/TopicCard';
@@ -13,6 +13,8 @@ import { BookmarkButton } from '../components/ui/BookmarkButton';
 import { ProgressBadge } from '../components/ui/ProgressBadge';
 import { Badge, DifficultyBadge, SectionHeader, Button } from '../components/ui';
 import { useUserData } from '../app/providers/UserDataProvider';
+import { useVideoLanguage } from '../hooks/useVideoLanguage';
+import { getYouTubeEmbed } from '../utils/youtube';
 import { formatMinutes } from '../utils/format';
 import { cn } from '../utils/cn';
 
@@ -42,6 +44,7 @@ export function TopicDetail() {
     provider: LD_PROVIDER,
   } : null);
   const { progressMap, setTopicProgress, saveQuizAttempt } = useUserData();
+  const { lang, setLang, languages } = useVideoLanguage();
   const [quizOpen, setQuizOpen] = useState(false);
 
   if (!topic) return <Navigate to="/subjects" replace />;
@@ -51,6 +54,12 @@ export function TopicDetail() {
   const relatedTopics = topicRepo.getRelatedTopics(topic.id);
   const leadsTo = topicRepo.getLeadsTo(topic.id);
   const resources = resourceRepo.getByTopicId(topic.id);
+  const docResources = resources.filter(r => r.type !== 'video');
+  const videoResources = resources.filter(r => r.type === 'video');
+  const videosInLang = videoResources.filter(r => r.language === lang);
+  const videosToShow = videosInLang.length > 0 ? videosInLang : videoResources.filter(r => r.language === 'en');
+  const isLangFallback = videosInLang.length === 0 && videosToShow.length > 0;
+  const firstEmbedUrl = videosToShow.map(r => r.url ? getYouTubeEmbed(r.url) : null).find(Boolean) ?? null;
   const questions = questionRepo.getByTopicId(topic.id);
 
   const primarySubject = subjects[0];
@@ -209,9 +218,68 @@ export function TopicDetail() {
           {resources.length > 0 && (
             <div>
               <SectionHeader title="Resources" description={`${resources.length} resource${resources.length !== 1 ? 's' : ''} for this topic`} />
-              <div className="grid sm:grid-cols-2 gap-3">
-                {resources.map(r => <ResourceCard key={r.id} resource={r} />)}
-              </div>
+
+              {/* Video language selector */}
+              {videoResources.length > 0 && (
+                <div className="flex items-center gap-2 mb-4 flex-wrap">
+                  <Globe size={13} className="text-stone-400 flex-shrink-0" />
+                  <span className="text-xs text-stone-500 font-medium">Videos in:</span>
+                  <div className="flex gap-1 flex-wrap">
+                    {languages.map(l => (
+                      <button
+                        key={l.code}
+                        onClick={() => setLang(l.code)}
+                        title={l.label}
+                        className={cn(
+                          'flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-colors',
+                          lang === l.code
+                            ? 'bg-veda-700 text-white dark:bg-veda-500'
+                            : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
+                        )}
+                      >
+                        {l.flag} {l.nativeLabel}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Embedded video player */}
+              {firstEmbedUrl && (
+                <div className="mb-4 rounded-lg overflow-hidden bg-black relative" style={{ paddingTop: '56.25%' }}>
+                  <iframe
+                    src={firstEmbedUrl}
+                    className="absolute inset-0 w-full h-full border-0"
+                    title={`Explanation video in ${languages.find(l => l.code === lang)?.label ?? 'selected language'}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )}
+              {isLangFallback && (
+                <p className="text-xs text-stone-400 mb-3">
+                  No videos available in {languages.find(l => l.code === lang)?.label} yet — showing English videos.
+                </p>
+              )}
+
+              {/* English document resources — always shown */}
+              {docResources.length > 0 && (
+                <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                  {docResources.map(r => <ResourceCard key={r.id} resource={r} />)}
+                </div>
+              )}
+
+              {/* Video cards for selected language */}
+              {videosToShow.length > 0 && (
+                <>
+                  <p className="text-xs font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-2">
+                    {languages.find(l => l.code === lang)?.label ?? 'English'} Videos
+                  </p>
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    {videosToShow.map(r => <ResourceCard key={r.id} resource={r} />)}
+                  </div>
+                </>
+              )}
             </div>
           )}
         </div>
