@@ -10,7 +10,7 @@ import { ShareButton } from '../components/ui/ShareButton';
 export function CourseDetail() {
   const { slug } = useParams<{ slug: string }>();
   const course = courseRepo.getBySlug(slug ?? '');
-  useSEO(course?.title, course?.description);
+  useSEO(course?.title, course?.description, course ? `/courses/${course.slug}` : undefined);
   useStructuredData(course ? {
     '@context': 'https://schema.org',
     '@type': 'Course',

@@ -19,7 +19,7 @@ const stepTypeIcon: Record<string, typeof Hash> = {
 export function LearningPathDetail() {
   const { slug } = useParams<{ slug: string }>();
   const path = learningPathRepo.getBySlug(slug ?? '');
-  useSEO(path?.title, path?.description);
+  useSEO(path?.title, path?.description, slug ? `/learning-paths/${slug}` : undefined);
   useStructuredData(path ? {
     '@context': 'https://schema.org',
     '@type': 'Course',

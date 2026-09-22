@@ -29,7 +29,7 @@ const progressSteps: { status: ProgressStatus; label: string; icon: typeof Circl
 export function TopicDetail() {
   const { slug } = useParams<{ slug: string }>();
   const topic = topicRepo.getBySlug(slug ?? '');
-  useSEO(topic?.title, topic?.description);
+  useSEO(topic?.title, topic?.description, topic ? `/topics/${topic.slug}` : undefined);
   useStructuredData(topic ? {
     '@context': 'https://schema.org',
     '@type': 'LearningResource',

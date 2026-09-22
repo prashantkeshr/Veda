@@ -12,7 +12,7 @@ import { Badge, SectionHeader, EmptyState } from '../components/ui';
 export function SubjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const subject = subjectRepo.getBySlug(slug ?? '');
-  useSEO(subject?.title, subject?.description);
+  useSEO(subject?.title, subject?.description, subject ? `/subjects/${subject.slug}` : undefined);
   useStructuredData(subject ? {
     '@context': 'https://schema.org',
     '@type': 'LearningResource',

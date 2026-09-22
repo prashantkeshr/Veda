@@ -11,7 +11,7 @@ import { ShareButton } from '../components/ui/ShareButton';
 export function ExamDetail() {
   const { slug } = useParams<{ slug: string }>();
   const exam = examRepo.getBySlug(slug ?? '');
-  useSEO(exam?.title, exam?.description);
+  useSEO(exam?.title, exam?.description, exam ? `/exams/${exam.slug}` : undefined);
   useStructuredData(exam ? {
     '@context': 'https://schema.org',
     '@type': 'LearningResource',
