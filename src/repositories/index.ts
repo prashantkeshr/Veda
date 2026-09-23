@@ -53,6 +53,9 @@ import { resourcesPdfsData } from '../data/resources-pdfs';
 import { resourcesHindiData } from '../data/resources-hindi';
 import { resourcesTamilData } from '../data/resources-tamil';
 import { resourcesTeluguData } from '../data/resources-telugu';
+import { resourcesEnggCsData } from '../data/resources-engg-cs';
+import { resourcesEnggEeData } from '../data/resources-engg-ee';
+import { resourcesEnggEceData } from '../data/resources-engg-ece';
 
 // ── Generic local repository ───────────────────────────────────────────
 
@@ -292,6 +295,9 @@ export const resourceRepo = new ResourceRepository([
   ...resourcesHindiData,
   ...resourcesTamilData,
   ...resourcesTeluguData,
+  ...resourcesEnggCsData,
+  ...resourcesEnggEeData,
+  ...resourcesEnggEceData,
 ]);
 export const courseRepo = new CourseRepository(coursesData as Course[]);
 export const examRepo = new ExamRepository(examsData as Exam[]);
